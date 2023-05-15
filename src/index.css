@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.visually-hidden {
+  display: none;
+}
+
 body {
   margin-top: 101px;
 }
