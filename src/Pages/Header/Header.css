@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 22px;
+  padding-bottom: 24px;
+  background-color: #ffffffda;
+}
+
+.header-logo-wrapper {
+  cursor: pointer;
+}
+
+.header-logo-link {
+  text-decoration: none;
+}
+
+.header-logo-link:hover {
+  opacity: 0.7;
+}
+
+.header-logo-link:active {
+  opacity: 0.4;
+}
+
+.header-desc {
+  font-weight: bold;
+  color: #32779C;
+  font-size: 25px;
+}
+
+.header-line {
+  width: 1px;
+  height: 55px;
+  background-color: #CCCCCC;
+}
+
+.header-nav-item + .header-nav-item {
+  margin-left: 31px;
+}
+
+.header-nav-link {
+  text-decoration: none;
+  color: #5A5A5A;
+  font-size: 17px;
+  font-family: 'Wix Madefor Display', sans-serif;
+}
+
+.header-nav-link:hover {
+  color: #32779C;
+  opacity: 0.7s;
+}
+
+.header-nav-link:active {
+  color: #5A5A5A;
+  opacity: 0.3s;
+}
+
+.header-nav-select {
+  border: transparent;
+  max-width: 85px;
+  color: #5A5A5A;
+}
+
+@media (max-width: 1230px) {
+
+  .header-desc {
+    display: none;
+  }
+
+  .header-line {
+    display: none;
+  }
+
+}
