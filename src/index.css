@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.visually-hidden {
+  display: none;
+}
+
 body {
   margin-top: 101px;
 }
@@ -24,5 +28,3 @@ body {
   margin: 0 auto !important;
   padding: 0 20px !important;
 }
-
-/* dsadadasda */
