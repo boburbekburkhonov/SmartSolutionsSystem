@@ -79,6 +79,7 @@ const Header = () => {
           </div>
 
           <button className="header-hamburger"></button>
+          <div className="header__bg"></div>
         </div>
       </header>
     </>

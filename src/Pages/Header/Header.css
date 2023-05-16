@@ -104,6 +104,17 @@
     display: inline-block;
   }
 
+  .header--open .header__bg {
+    display: inline-block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 25%;
+    height: 100vh;
+    background-color: #000;
+    opacity: 0.75;
+  }
+
   .header--open .site-nav {
     padding-top: 64px;
     padding-bottom: 24px;

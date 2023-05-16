@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .hero {
-  padding-top: 260px !important;
-  padding-bottom: 240px;
+  padding-top: 250px !important;
+  padding-bottom: 180px;
   background-image: url(../../assets//images/heros2.png);
   background-repeat: no-repeat;
   background-size: cover;
