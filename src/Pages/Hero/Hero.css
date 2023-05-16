@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.hero {
+  padding-top: 260px !important;
+  padding-bottom: 240px;
+  background-image: url(../../assets//images/heros2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-wrapper {
+  margin: auto;
+  max-width: 650px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-heading {
+  font-weight: 700;
+  font-size: 44px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.hero-desc {
+  margin-top: 40px !important;
+  margin-bottom: 20px !important;
+  font-weight: 400;
+  font-size: 19px;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+@media (max-width: 700px) {
+
+  .hero-heading {
+    font-size: 35px;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+  }
+
+}
+
+@media (max-width: 550px) {
+  .hero {
+    padding-top: 210px !important;
+  }
+
+  .hero-heading {
+    font-size: 30px;
+  }
+
+  .hero-desc {
+    font-size: 12px;
+  }
+
+}
+
+@media (max-width: 420px) {
+
+
+  .hero-heading {
+    font-size: 28px;
+  }
+
+  .hero-desc {
+    font-size: 11px;
+  }
+
+}

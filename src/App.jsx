@@ -10,21 +10,28 @@ import Message from "./Pages/Message/Message";
 import Partners from "./Pages/Partners/Partners";
 import Footer from "./Pages/Footer/Footer";
 import "./index.css";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <Products />
-      <Services />
-      <News />
-      <Videos />
-      <Employees />
-      <Message />
-      <Partners />
-      <Footer />
-    </>
+    <HelmetProvider>
+      <>
+        <Header />
+        <Hero />
+        <Products />
+        <Services />
+        <News />
+        <Videos />
+        <Employees />
+        <Message />
+        <Partners />
+        <Footer />
+
+        <Helmet>
+          <script src="/src/assets/js/main.js"></script>
+        </Helmet>
+      </>
+    </HelmetProvider>
   );
 }
 

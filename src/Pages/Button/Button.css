@@ -1,0 +1,22 @@
+.more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 23px;
+  background-color: #ffffff;
+  color: #5A5A5A;
+  border: transparent;
+  border-radius: 10px;
+}
+
+.more-btn-span {
+  margin-left: 10px;
+}
+
+.more-btn:hover {
+  opacity: 0.7;
+}
+
+.more-btn:active {
+  opacity: 0.4;
+}
