@@ -87,7 +87,7 @@ const News = () => {
 
         <div className="news__top">
           <div></div>
-          <h2 className="header__news">Mahsulotlar</h2>
+          <h2 className="header__news">Yangiliklar</h2>
 
           <div>
             <button className="more-btn">
