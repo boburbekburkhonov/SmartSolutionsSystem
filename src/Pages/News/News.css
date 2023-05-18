@@ -74,7 +74,7 @@
   font-size: 20px;
 }
 
-.more-btn {
+.more-btn4 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -119,7 +119,7 @@
 
 
 @media (max-width: 900px) {
-  .more-btn {
+  .more-btn4 {
     display: none;
   }
 
