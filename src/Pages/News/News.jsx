@@ -99,7 +99,7 @@ const News = () => {
           <h2 className="header__news">Yangiliklar</h2>
 
           <div>
-            <button className="more-btn">
+            <button className="more-btn4">
               <img src={right} alt="right" width="20" height="16" />
               <span className="more-btn-span">Bacha yangiliklar</span>
             </button>
