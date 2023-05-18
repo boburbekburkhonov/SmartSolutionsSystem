@@ -28,7 +28,7 @@ const Videos = () => {
 
         </ul>
 
-        <button className="more-btn">
+        <button className="more-btn3">
           <img src={right} alt="right" width="20" height="16" />
           <span className="more-btn-span">Bacha videolar</span>
         </button>

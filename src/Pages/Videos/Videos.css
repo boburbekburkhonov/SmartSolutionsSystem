@@ -3,7 +3,7 @@
 
 .videos{
   background-color: #F5F5F5;
-  /* display: none; */
+  padding-bottom: 40px;
 }
 
 .videos__header{
@@ -39,7 +39,7 @@
   border-radius: 30px;
 }
 
-.more-btn{
+.more-btn3{
   display: flex;
   align-items: center !important;
   justify-content: center;
