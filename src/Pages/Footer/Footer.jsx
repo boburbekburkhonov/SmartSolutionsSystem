@@ -7,7 +7,6 @@ const Footer = () => {
   return (<>
   
     <footer className="footer">
-      <div className="container footer__container">
 
         <div className="footer__top">
           <img className="footer_logo" src={logo} width={55} height={55} alt="logo" />
@@ -15,6 +14,9 @@ const Footer = () => {
 
         </div>
 
+      <div className="container footer__container">
+
+      
         <div className="footer__middle">
           <nav className="footer-nav">
             <ul className="list-unstyled d-flex align-items-center m-0 ">

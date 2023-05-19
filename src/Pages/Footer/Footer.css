@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
 
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .footer__container{
   display:  flex;
   flex-direction: column;
@@ -7,13 +13,19 @@
 }
 
 .footer__top {
+  width: 100%;
   display:  flex;
+  justify-content: center;
   align-items: flex-end;
   margin: 20px 0;
 }
 
 .footer__middle{
   margin-bottom: 20px;
+}
+
+.footer__bottom{
+  width: 100%;
 }
 
 .footer__header {
@@ -23,6 +35,8 @@
 }
 
 .foooter__txt{
+  margin: 0;
+  padding: 0;
   padding: 8px;
   color: #5A858D;
   font-size: 15px;
@@ -51,6 +65,16 @@
   opacity: 0.3s;
 }
 @media (max-width: 700px){
+
+  .footer__top{
+    background-color: #EFF9FF;
+  }
+
+ .foooter__txt{
+  background-color: transparent;
+ }
+
+
   .footer__middle{
     display: none;
     margin: 0;
@@ -72,6 +96,7 @@
 
   .footer__header {    
     font-size: 15px;
+    padding-top: 20px;
   }
 
   .foooter__txt{
