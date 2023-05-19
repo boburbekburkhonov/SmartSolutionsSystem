@@ -17,6 +17,12 @@
   align-items: baseline;
 }
 
+.news__bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .header__news {
   font-size: 55px;
   margin-bottom: 80px;
@@ -125,8 +131,7 @@
 
   .more-btn2{
     display: flex !important;
-
-
+    margin-top: 20px;
   }
 }
 
@@ -194,7 +199,7 @@
   }
 
   .news__img{
-    max-width: 220px;
+    max-width: 182px;
     max-height: 146px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
