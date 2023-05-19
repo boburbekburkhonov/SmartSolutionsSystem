@@ -10,9 +10,8 @@
 .products__header{
   font-size: 55px;
   margin-bottom: 80px;
-  color: #707070;
+  color: #000000;
   font-weight: bold;
-  /* background-image: url(); */
 }
 
 ul{
@@ -37,16 +36,10 @@ ul{
   width: 100%;
 }
 
-/* .item__img {
-  margin: 494px;
-  height: 266px;
-} */
-
 .item__header {
   font-size: 38px;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
-
 }
 
 .products__link {

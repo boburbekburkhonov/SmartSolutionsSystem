@@ -29,9 +29,9 @@
   justify-content: space-between !important;
 }
 
-.videos__item{  
+.videos__item{
   max-width: 400px;
-  border-radius: 30px;  
+  border-radius: 30px;
 }
 
 .videos__you{
@@ -49,6 +49,14 @@
   border: transparent;
   border-radius: 10px;
   box-shadow: 5px 3px 8px #5A5A5A;
+}
+
+.more-btn3:hover {
+  opacity: 0.7;
+}
+
+.more-btn3:active {
+  opacity: 0.4;
 }
 
 .more-btn-span {
@@ -70,7 +78,7 @@
     max-width: 300px;
     max-height: 170px;
   }
-  
+
 }
 
 
@@ -79,7 +87,7 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .videos__you{
     border-radius: 30px;
     max-width: 560px;
@@ -111,7 +119,7 @@
     max-width: 320px;
     max-height: 180px;
   }
-  
+
 }
 
 @media (max-width: 350px){
@@ -120,5 +128,5 @@
     max-width: 250px;
     max-height: 140px;
   }
-  
+
 }

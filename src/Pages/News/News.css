@@ -92,6 +92,14 @@
   box-shadow: 5px 3px 8px #5A5A5A;
 }
 
+.more-btn4:hover {
+  opacity: 0.7;
+}
+
+.more-btn4:active {
+  opacity: 0.4;
+}
+
 .more-btn2{
   display: none;
   align-items: center !important;
@@ -102,6 +110,14 @@
   border: transparent;
   border-radius: 10px;
   box-shadow: 5px 3px 8px #5A5A5A;
+}
+
+.more-btn2:hover {
+  opacity: 0.7;
+}
+
+.more-btn2:active {
+  opacity: 0.4;
 }
 
 .more-btn-span {

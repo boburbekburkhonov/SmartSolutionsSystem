@@ -65,13 +65,14 @@
 
   .services-item {
     max-width: 500px;
+    height: 380px;
     width: 100%;
   }
 
   .services-img {
     max-width: 500px !important;
     width: 100%;
-    height: 200px;
+    height: 300px;
   }
 
 }

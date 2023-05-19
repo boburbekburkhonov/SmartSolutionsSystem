@@ -11,6 +11,8 @@ import Partners from "./Pages/Partners/Partners";
 import Footer from "./Pages/Footer/Footer";
 import "./index.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import { Route, Routes } from "react-router-dom";
+import HeroAbout from "./Pages/HeroAbout/HeroAbout";
 
 function App() {
   return (
