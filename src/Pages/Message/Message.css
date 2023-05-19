@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-.message {
-  padding-bottom: 50px;
-}
-
 .message-heading {
   margin: 0;
+  margin-top: 80px;
   margin-bottom: 80px;
   font-size: 55px;
   font-weight: 700;
@@ -256,6 +253,23 @@
 
   .message-send-form-input-text-aria {
     height: 184px;
+  }
+
+}
+
+@media (max-width: 720px){
+
+  .message-heading {
+      font-size: 33px;
+  }
+
+}
+
+@media (max-width: 510px){
+
+  .message-heading {
+    margin: 50px 0;
+    font-size: 30px;
   }
 
 }
