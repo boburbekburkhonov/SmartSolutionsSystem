@@ -5,6 +5,36 @@ import phone from "../../assets/images/call.png";
 import "./Message.css";
 
 const Message = () => {
+  const sendMessage = (e) => {
+    e.preventDefault();
+
+    const { name, email, topic, message } = e.target;
+
+    console.log(name.value, email.value, topic.value, message.value);
+
+    fetch("http://localhost:5656/users/create", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        name: name.value,
+        mail: email.value,
+        title: topic.value,
+        desc: message.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+
+    name.value = "";
+    email.value = "";
+    topic.value = "";
+    message.value = "";
+  };
+
   return (
     <section className="message">
       <div className="container">
@@ -14,7 +44,13 @@ const Message = () => {
           <div className="message-location-wrapper">
             <div>
               <div className="message-location-item d-flex align-items-center">
-                <img className="message-location-img" src={location} alt="location" width={35} height={52} />
+                <img
+                  className="message-location-img"
+                  src={location}
+                  alt="location"
+                  width={35}
+                  height={52}
+                />
                 <div className="message-location-item-wrapper">
                   <h4 className="message-location-item-wrapper-header">
                     Joylashuv
@@ -26,7 +62,13 @@ const Message = () => {
               </div>
 
               <div className="message-location-item d-flex align-items-center">
-                <img className="message-email-img" src={email} alt="location" width={40} height={32} />
+                <img
+                  className="message-email-img"
+                  src={email}
+                  alt="location"
+                  width={40}
+                  height={32}
+                />
                 <div className="message-location-item-wrapper">
                   <h4 className="message-location-item-wrapper-header">
                     Email:
@@ -38,7 +80,13 @@ const Message = () => {
               </div>
 
               <div className="message-location-item d-flex align-items-center">
-                <img className="message-email-phone" src={phone} alt="location" width={40} height={40} />
+                <img
+                  className="message-email-phone"
+                  src={phone}
+                  alt="location"
+                  width={40}
+                  height={40}
+                />
                 <div className="message-location-item-wrapper">
                   <h4 className="message-location-item-wrapper-header">
                     Telefon:
@@ -61,7 +109,7 @@ const Message = () => {
           </div>
 
           <div className="message-send-wrapper">
-            <form className="message-send-form">
+            <form className="message-send-form" onSubmit={sendMessage}>
               <div className="d-flex align-items-center justify-content-between flex-wrap">
                 <div className="message-send-form-input-wrapper">
                   <label className="message-send-form-label" htmlFor="nameId">
@@ -72,6 +120,7 @@ const Message = () => {
                     type="text"
                     id="nameId"
                     name="name"
+                    required
                   />
                 </div>
 
@@ -84,6 +133,7 @@ const Message = () => {
                     type="text"
                     id="emailId"
                     name="email"
+                    required
                   />
                 </div>
               </div>
@@ -97,6 +147,7 @@ const Message = () => {
                   type="text"
                   id="topicId"
                   name="topic"
+                  required
                 />
               </div>
 
@@ -108,6 +159,7 @@ const Message = () => {
                   className="message-send-form-input-text-aria form-control mt-2"
                   name="message"
                   id="messageId"
+                  required
                 ></textarea>
               </div>
 
