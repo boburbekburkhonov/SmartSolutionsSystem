@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-import Main from "./Pages/Main/Main";
 import HeroAbout from "./Pages/HeroAbout/HeroAbout";
 import ServiceAbout from "./Pages/ServiceAbout/ServiceAbout";
 import NewsAbout from "./Pages/NewsAbout/NewsAbout";

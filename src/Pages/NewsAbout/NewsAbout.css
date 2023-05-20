@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+.a_news__about{
+  background-color: #fff;
+}
+
+.news__about__container{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 20px 20px;
+}
+
+.a_news__header{
+  margin-bottom: 20px;
+  padding-bottom: 50px;
+  text-align: center;
+  font-size: 42px;
+  font-weight: bold;
+  background-color: #fff !important;
+}
+
+.a_news__list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: -15px;
+}
+
+.a_news__item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 336px;
+  margin: 15px;
+  border-radius: 20px;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.2)
+}
+
+.a_news__img{
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.a_news__body{
+  padding: 10px 15px;
+}
+
+.a_news__title{
+  font-size: 26px;
+  line-height: 29px;
+}
+
+.a_news__desc{
+  font-size: 17px;
+  line-height: 19px;
+}
+
+.a_news_location{
+  font-size: 26px;
+  margin: 0;
+  padding: 0;
+}
+
+.a_news__date{
+  font-size: 20px;
+}
+
+@media (max-width: 750px) {
+
+  .a_news__header {
+    margin-bottom: 10px;
+    padding-bottom: 25px;
+    font-size: 40px;
+  }
+}
+
+
+
+@media (max-width: 720px) {
+
+  .a_news__item{
+    max-width: 275px;
+    border-radius: 18px;
+  }
+
+  .a_news__img{
+    max-width: 275px;
+    max-height: 221px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  .a_news__title{
+    font-size: 21px;
+    line-height: 24px;
+  }
+
+  .a_news__desc{
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .a_news_location{
+    font-size: 21px;
+  }
+  
+  .a_news__date{
+    font-size: 18px;
+  }
+
+}
+
+@media (max-width: 550px){
+  .a_news__header {  
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 510px) {
+
+  .a_news__item{
+    max-width: 182px;
+    border-radius: 12px;
+  }
+
+  .a_news__img{
+    max-width: 182px;
+    max-height: 146px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  .a_news__title{
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .a_news__desc{
+    font-size: 15px;
+    line-height: 19px;
+  }
+
+  .a_news_location{
+    font-size: 14px;
+  }
+  .a_news__date{
+    font-size: 15px;
+  }
+}
