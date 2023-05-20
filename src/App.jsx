@@ -6,6 +6,8 @@ import EmployeeAbout from "./Pages/EmployeeAbout/EmployeeAbout";
 import ProductsAbout from "./Pages/ProductAbout/ProductsAbout";
 import { Route, Routes } from "react-router-dom";
 import logo from "./assets/images/logo1.svg";
+import { useState } from "react";
+import Main from "./Pages/Main/Main";
 
 function App() {
   const [selectLan, setSelectLan] = useState("uz");

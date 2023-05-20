@@ -104,7 +104,7 @@ body {
   background-color: transparent;
   margin: 0;
   padding: 0;
-  background-image: url(../../assets/images/hamburger.png);
+  background-image: url(../src/assets/images/hamburger.png);
   width: 25px;
   height: 25px;
   background-size: contain;
@@ -169,7 +169,7 @@ body {
   }
 
   .header--open .header-hamburger {
-    background-image: url(../../assets/images/close.png);
+    background-image: url(../src/assets/images/close.png);
     width: 25px;
     height: 25px;
   }
