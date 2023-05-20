@@ -1,127 +1,51 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import service from "../../assets/images/services.png";
-import './ServiceAbout.css'
+import "./ServiceAbout.css";
 
-const ServiceAbout = () => {
-  return (<>
-    <main className="main">
+const ServiceAbout = (props) => {
+  const { selectLan } = props;
+  const [dataService, setDataService] = useState([]);
 
-      <h2 className="a_service__header">Xizmatlar haqida</h2>
+  useEffect(() => {
+    fetch("http://localhost:5656/users/services")
+      .then((res) => res.json())
+      .then((data) => {
+        setDataService([]);
+        const arr = data.filter((e) => e.len == selectLan);
+        setDataService(arr);
+      });
+  }, [selectLan]);
 
-      <section className="a_service__about">
+  return (
+    <>
+      <main className="main">
+        <h2 className="a_service__header">Xizmatlar haqida</h2>
 
-        <div className="container service__about__container">
-
-        <ul className="list-unstyled m-0 a_services-list">
-          
-          <li className="a_services-item">
-            <img
-              className="a_services-img"
-              src={service}
-              alt="service"
-              width="300"
-              height="220"
-            />
-            <h3 className="a_services-title m-0">Quyosh panellari</h3>
-            <p className="a_service-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum vel, assumenda dolore numquam quis excepturi similique. Labore alias autem rem!</p>
-          </li>
-
-          <li className="a_services-item">
-            <img
-              className="a_services-img"
-              src={service}
-              alt="service"
-              width="300"
-              height="220"
-            />
-            <h3 className="a_services-title m-0">Quyosh panellari</h3>
-            <p className="a_service-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum vel, assumenda dolore numquam quis excepturi similique. Labore alias autem rem!</p>
-          </li>
-
-          <li className="a_services-item">
-            <img
-              className="a_services-img"
-              src={service}
-              alt="service"
-              width="300"
-              height="220"
-            />
-            <h3 className="a_services-title m-0">Quyosh panellari</h3>
-            <p className="a_service-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum vel, assumenda dolore numquam quis excepturi similique. Labore alias autem rem!</p>
-          </li>
-
-          <li className="a_services-item">
-            <img
-              className="a_services-img"
-              src={service}
-              alt="service"
-              width="300"
-              height="220"
-            />
-            <h3 className="a_services-title m-0">Quyosh panellari</h3>
-            <p className="a_service-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum vel, assumenda dolore numquam quis excepturi similique. Labore alias autem rem!</p>
-          </li>
-
-          <li className="a_services-item">
-            <img
-              className="a_services-img"
-              src={service}
-              alt="service"
-              width="300"
-              height="220"
-            />
-            <h3 className="a_services-title m-0">Quyosh panellari</h3>
-            <p className="a_service-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum vel, assumenda dolore numquam quis excepturi similique. Labore alias autem rem!</p>
-          </li>
-
-          <li className="a_services-item">
-            <img
-              className="a_services-img"
-              src={service}
-              alt="service"
-              width="300"
-              height="220"
-            />
-            <h3 className="a_services-title m-0">Quyosh panellari</h3>
-            <p className="a_service-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum vel, assumenda dolore numquam quis excepturi similique. Labore alias autem rem!</p>
-          </li>
-
-          <li className="a_services-item">
-            <img
-              className="a_services-img"
-              src={service}
-              alt="service"
-              width="300"
-              height="220"
-            />
-            <h3 className="a_services-title m-0">Quyosh panellari</h3>
-            <p className="a_service-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum vel, assumenda dolore numquam quis excepturi similique. Labore alias autem rem!</p>
-          </li>
-
-          <li className="a_services-item">
-            <img
-              className="a_services-img"
-              src={service}
-              alt="service"
-              width="300"
-              height="220"
-            />
-            <h3 className="a_services-title m-0">Quyosh panellari</h3>
-            <p className="a_service-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum vel, assumenda dolore numquam quis excepturi similique. Labore alias autem rem!</p>
-          </li>
-
-          
-        </ul>
-          
-
-        </div>
-
-      </section>
-      
-    </main>
-  </>);
+        <section className="a_service__about">
+          <div className="container service__about__container">
+            <ul className="list-unstyled m-0 a_services-list">
+              {dataService.map((item, index) => {
+                return (
+                  <li className="services-item" key={index}>
+                    <img
+                      className="services-img"
+                      src={item.img}
+                      alt="service"
+                      width="300"
+                      height="220"
+                    />
+                    <p className="services-desc m-0">{item.title}</p>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+      </main>
+    </>
+  );
 };
 
 export default ServiceAbout;

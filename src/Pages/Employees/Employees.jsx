@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import right from "../../assets/images/hero-btn.png";
 import "./Employees.css";
+import { useNavigate } from "react-router-dom";
 
 const Employees = (props) => {
   const { selectLan } = props;
   const [dataEmployees, setDataEmployees] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:5656/users/employees")
@@ -86,7 +88,10 @@ const Employees = (props) => {
             })}
           </ul>
 
-          <button className="employees-btn">
+          <button
+            className="employees-btn"
+            onClick={() => navigate("/employee/about")}
+          >
             <img src={right} alt="right" width="20" height="16" />
             <span className="employees-btn-span">Barcha jamoa</span>
           </button>

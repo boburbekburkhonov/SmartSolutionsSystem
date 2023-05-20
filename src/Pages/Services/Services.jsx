@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import service from "../../assets/images/services.png";
+import right from "../../assets/images/hero-btn.png";
 import "./Services.css";
+import { useNavigate } from "react-router-dom";
 
 const Services = (props) => {
   const { selectLan } = props;
   const [dataService, setDataService] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:5656/users/services")
@@ -37,6 +40,14 @@ const Services = (props) => {
             );
           })}
         </ul>
+
+        <button
+          className="employees-btn "
+          onClick={() => navigate("/service/about")}
+        >
+          <img src={right} alt="right" width="20" height="16" />
+          <span className="employees-btn-span">Barcha xizmatlar</span>
+        </button>
       </div>
     </section>
   );

@@ -1,40 +1,46 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "./ProductsAbout.css";
+import { useNavigate, useParams } from "react-router-dom";
 
-const handleDragStart = (e) => e.preventDefault();
+const ProductsAbout = (props) => {
+  const handleDragStart = (e) => e.preventDefault();
+  const { id } = useParams();
+  const { selectLan } = props;
+  const [dataProduct, setDataProduct] = useState([]);
 
-const items = [
-  <img
-    className="a_products__img"
-    src="https://images.pexels.com/photos/16783095/pexels-photo-16783095.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-    onDragStart={handleDragStart}
-    role="presentation"
-  />,
-  <img
-    className="a_products__img"
-    src="https://images.pexels.com/photos/15254467/pexels-photo-15254467.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    onDragStart={handleDragStart}
-    role="presentation"
-  />,
-  <img
-    className="a_products__img"
-    src="https://images.pexels.com/photos/788855/pexels-photo-788855.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-    onDragStart={handleDragStart}
-    role="presentation"
-  />,
-  <img
-    className="a_products__img"
-    src="https://images.pexels.com/photos/16776399/pexels-photo-16776399.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-    onDragStart={handleDragStart}
-    role="presentation"
-  />,
-];
+  useEffect(() => {
+    fetch("http://localhost:5656/users/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setDataProduct([]);
+        const arr = data.filter((e) => e.len == selectLan && e.id == id);
+        setDataProduct(arr);
+      });
+  }, [selectLan]);
 
-const ProductsAbout = () => {
+  const items = [
+    <>
+      {dataProduct.map((item, index) => {
+        return (
+          <>
+            <img
+              key={index}
+              className="a_products__img"
+              src={item.pImages.map((e) => e.link)}
+              onDragStart={handleDragStart}
+              role="presentation"
+            />
+            ,
+          </>
+        );
+      })}
+    </>,
+  ];
+
   return (
     <>
       <main className="main">
@@ -52,23 +58,17 @@ const ProductsAbout = () => {
               />
             </ul>
 
-            <div className="a_products__right">
-              <p className="a_products__desc">
-                {" "}
-                <strong>«Smart Solution System»</strong> kompaniyasi 2019-yilda
-                tashkil topgan. Bugungi kunda kompaniya O’zbekistonda aqlli
-                texnologiyalarni joriy qilishda ko’plab yutuqlarga erishib
-                kelmoqda. "Smart Water", "Smart Well" aqlli qurilmalari
-                aynan«Smart Solution System» kompaniyasi tomonidan ishlab
-                chiqilgan. Bundan tashqari suv inshootlarini, nasos
-                stansiyalarini, gidro uzellarni va suv omborlarini
-                avtomatlashtirish va monitoring qilish ham kompaniyaning asosiy
-                yo’nalishlaridan biri. Yurtimizda energetika soxasida olib
-                borilayotgan islohotlarda jumladan quyosh panellari va mini
-                GESlar soxasida ham ishlar olib borilmoqda. Ayni vaqtda
-                kompaniyada doimiy asosda 30 dan ortiq xodim ishlamoqda.
-              </p>
-            </div>
+            {dataProduct.map((item, index) => {
+              return (
+                <div className="a_products__right" key={index}>
+                  <p className="a_products__desc">
+                    {" "}
+                    <strong>{item.name}</strong>
+                    {item.desc}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </section>
       </main>

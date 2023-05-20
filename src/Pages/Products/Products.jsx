@@ -3,10 +3,12 @@
 import "./Products.css";
 import Button from "../Button/Button";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Products = (props) => {
   const { selectLan } = props;
   const [dataProduct, setDataProduct] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:5656/users/products")
@@ -38,70 +40,13 @@ const Products = (props) => {
                   <div className="item__body">
                     <h4 className="item__header">{item.name}</h4>
                     <p className="item__desc">{item.desc}</p>
-                    <a className="products__link" href="#">
+                    <span onClick={() => navigate(`/product/about/${item.id}`)}>
                       <Button />
-                    </a>
+                    </span>
                   </div>
                 </li>
               );
             })}
-            {/* <li className="products__item">
-              <img
-                className="item__img"
-                src="https://images.pexels.com/photos/16359537/pexels-photo-16359537.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-                width={494}
-                height={266}
-                alt=""
-              />
-
-              <div className="item__body">
-                <h4 className="item__header">Smart Water</h4>
-                <p className="item__desc">
-                  Lorem ipsum dolor sit amet consectetur adipisdicing elit. ci!
-                </p>
-                <a className="products__link" href="#">
-                  <Button />
-                </a>
-              </div>
-            </li>
-            <li className="products__item">
-              <img
-                className="item__img"
-                src="https://images.pexels.com/photos/16359537/pexels-photo-16359537.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-                width={494}
-                height={266}
-                alt=""
-              />
-
-              <div className="item__body">
-                <h4 className="item__header">Smart Water</h4>
-                <p className="item__desc">
-                  Lorem ipsum dolor sit amet consectetur adipisdicing elit. ci!
-                </p>
-                <a className="products__link" href="#">
-                  <Button />
-                </a>
-              </div>
-            </li>
-            <li className="products__item">
-              <img
-                className="item__img"
-                src="https://images.pexels.com/photos/16359537/pexels-photo-16359537.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-                width={494}
-                height={266}
-                alt=""
-              />
-
-              <div className="item__body">
-                <h4 className="item__header">Smart Water</h4>
-                <p className="item__desc">
-                  Lorem ipsum dolor sit amet consectetur adipisdicing elit. ci!
-                </p>
-                <a className="products__link" href="#">
-                  <Button />
-                </a>
-              </div>
-            </li> */}
           </ul>
         </div>
       </section>

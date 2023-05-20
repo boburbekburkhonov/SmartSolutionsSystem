@@ -72,7 +72,11 @@ function App() {
 
           <div className="header-select-wrapper d-flex align-items-center justify-content-between">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Flag_of_Uzbekistan.png/1200px-Flag_of_Uzbekistan.png"
+              src={
+                selectLan == "uz"
+                  ? "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Flag_of_Uzbekistan.png/1200px-Flag_of_Uzbekistan.png"
+                  : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png"
+              }
               width="52"
               height="27"
               alt="Flag_of_Uzbekistan"
@@ -98,12 +102,30 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Main selectLan={selectLan} />} />
-        <Route path="/hero/about" element={<HeroAbout />} />
-        <Route path="/product/about" element={<ProductsAbout />} />
-        <Route path="/service/about" element={<ServiceAbout />} />
-        <Route path="/news/about" element={<NewsAbout />} />
-        <Route path="/video/about" element={<VideoAbout />} />
-        <Route path="/employee/about" element={<EmployeeAbout />} />
+        <Route
+          path="/hero/about"
+          element={<HeroAbout selectLan={selectLan} />}
+        />
+        <Route
+          path="/product/about/:id"
+          element={<ProductsAbout selectLan={selectLan} />}
+        />
+        <Route
+          path="/service/about"
+          element={<ServiceAbout selectLan={selectLan} />}
+        />
+        <Route
+          path="/news/about"
+          element={<NewsAbout selectLan={selectLan} />}
+        />
+        <Route
+          path="/video/about"
+          element={<VideoAbout selectLan={selectLan} />}
+        />
+        <Route
+          path="/employee/about"
+          element={<EmployeeAbout selectLan={selectLan} />}
+        />
       </Routes>
 
       <footer className="footer">

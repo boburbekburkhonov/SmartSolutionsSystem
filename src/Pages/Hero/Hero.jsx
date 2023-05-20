@@ -1,8 +1,11 @@
 import React from "react";
 import "./Hero.css";
 import Button from "../Button/Button";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <>
       <section className="hero">
@@ -18,7 +21,9 @@ const Hero = () => {
               avtomatlashtirish va monitoring qilish kompaniyaning asosiy
               yo’nalishlaridan biri.
             </p>
-            <Button />
+            <span onClick={() => navigate("/hero/about")}>
+              <Button />
+            </span>
           </div>
         </div>
       </section>

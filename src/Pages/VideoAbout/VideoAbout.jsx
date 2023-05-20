@@ -1,60 +1,52 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import './VideoAbout.css'
+import React, { useEffect, useState } from "react";
+import "./VideoAbout.css";
+import { useNavigate } from "react-router-dom";
 
-const VideoAbout = () => {
-  return (<>
+const VideoAbout = (props) => {
+  const { selectLan } = props;
+  const [dataVideos, setDataVideos] = useState([]);
 
-    <main className="main">
-    <h2 className="a_video__header">Barcha Videolar</h2>
-      
-      <section className="a_video__about">
+  useEffect(() => {
+    fetch("http://localhost:5656/users/cases")
+      .then((res) => res.json())
+      .then((data) => {
+        setDataVideos([]);
+        const arr = data.filter((e) => e.len == selectLan);
+        setDataVideos(arr);
+      });
+  }, [selectLan]);
 
-        <div className="container video__about__container">
+  return (
+    <>
+      <main className="main">
+        <h2 className="a_video__header">Barcha Videolar</h2>
 
-          <ul className="a_videos__list">
-
-            <li className="a_videos__item">       
-              <iframe  className="a_videos__you" width="400" height="224" src="https://www.youtube.com/embed/FUg2JMqQdMo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-            </li>
-
-            <li className="videos__item">       
-              <iframe  className="videos__you" width="400" height="224" src="https://www.youtube.com/embed/FUg2JMqQdMo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-            </li>
-
-            <li className="videos__item">       
-              <iframe  className="videos__you" width="400" height="224" src="https://www.youtube.com/embed/FUg2JMqQdMo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-            </li>
-
-            <li className="videos__item">       
-              <iframe  className="videos__you" width="400" height="224" src="https://www.youtube.com/embed/FUg2JMqQdMo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-            </li>
-
-            <li className="videos__item">       
-              <iframe  className="videos__you" width="400" height="224" src="https://www.youtube.com/embed/FUg2JMqQdMo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-            </li>
-
-            <li className="videos__item">       
-              <iframe  className="videos__you" width="400" height="224" src="https://www.youtube.com/embed/FUg2JMqQdMo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-            </li>
-
-            <li className="videos__item">       
-              <iframe  className="videos__you" width="400" height="224" src="https://www.youtube.com/embed/FUg2JMqQdMo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-            </li>
-
-            <li className="videos__item">       
-              <iframe  className="videos__you" width="400" height="224" src="https://www.youtube.com/embed/FUg2JMqQdMo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-            </li>
-
-          </ul>
-
-        </div>
-
-      </section>
-      
-    </main>
-
-  </>);
+        <section className="a_video__about">
+          <div className="container video__about__container">
+            <ul className="a_videos__list">
+              {dataVideos.map((item, index) => {
+                return (
+                  <li className="videos__item" key={index}>
+                    <iframe
+                      className="videos__you"
+                      width="400"
+                      height="224"
+                      src={item.link}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+      </main>
+    </>
+  );
 };
 
 export default VideoAbout;

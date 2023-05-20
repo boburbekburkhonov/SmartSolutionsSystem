@@ -3,10 +3,12 @@
 import "./Videos.css";
 import right from "../../assets/images/hero-btn.png";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Videos = (props) => {
   const { selectLan } = props;
   const [dataVideos, setDataVideos] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch("http://localhost:5656/users/cases")
@@ -43,7 +45,10 @@ const Videos = (props) => {
             })}
           </ul>
 
-          <button className="more-btn3">
+          <button
+            className="more-btn3"
+            onClick={() => navigate("/video/about")}
+          >
             <img src={right} alt="right" width="20" height="16" />
             <span className="more-btn-span">Bacha videolar</span>
           </button>

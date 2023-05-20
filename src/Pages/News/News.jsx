@@ -6,9 +6,11 @@ import "./News.css";
 // eslint-disable-next-line no-unused-vars
 import right from "../../assets/images/hero-btn.png";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const News = (props) => {
   const handleDragStart = (e) => e.preventDefault();
+  const navigate = useNavigate();
 
   const { selectLan } = props;
   const [dataNews, setDataNews] = useState([]);
@@ -74,7 +76,10 @@ const News = (props) => {
             <h2 className="header__news">Yangiliklar</h2>
 
             <div>
-              <button className="more-btn4">
+              <button
+                className="more-btn4"
+                onClick={() => navigate("/news/about")}
+              >
                 <img src={right} alt="right" width="20" height="16" />
                 <span className="more-btn-span">Bacha yangiliklar</span>
               </button>
@@ -95,7 +100,10 @@ const News = (props) => {
               />
             </ul>
 
-            <button className="more-btn2">
+            <button
+              className="more-btn2"
+              onClick={() => navigate("/news/about")}
+            >
               <img src={right} alt="right" width="20" height="16" />
               <span className="more-btn-span">Bacha yangiliklar</span>
             </button>
