@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import right from "../../assets/images/hero-btn.png";
 import "./Employees.css";
 
-const Employees = () => {
+const Employees = (props) => {
+  const { selectLan } = props;
+  const [dataEmployees, setDataEmployees] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5656/users/employees")
+      .then((res) => res.json())
+      .then((data) => {
+        setDataEmployees([]);
+        const arr = data.filter((e) => e.len == selectLan);
+        setDataEmployees(arr);
+      });
+  }, [selectLan]);
+
   return (
     <>
       <section className="employees">
@@ -10,181 +23,67 @@ const Employees = () => {
           <h2 className="employees-heading">Jamoa</h2>
 
           <ul className="employees-list m-0 list-unstyled">
-            <li className="employees-item d-flex align-items-center justify-content-between flex-wrap">
-              <img
-                className="employees-item-img"
-                src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm328-366-tong-08_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=6a37204762fdd64612ec2ca289977b5e"
-                alt="employee"
-                width="170"
-                height="170"
-              />
-              <div className="employees-item-right">
-                <h4 className="employees-item-right-heading">
-                  Fozilov Ilyosjon
-                </h4>
-                <p className="employees-item-right-desc">Director</p>
+            {dataEmployees.map((item, index) => {
+              return (
+                <li
+                  className="employees-item d-flex align-items-center justify-content-between flex-wrap"
+                  key={index}
+                >
+                  <img
+                    className="employees-item-img"
+                    src={item.img}
+                    width="170"
+                    height="170"
+                  />
+                  <div className="employees-item-right">
+                    <h4 className="employees-item-right-heading">
+                      {item.name}
+                    </h4>
+                    <p className="employees-item-right-desc">{item.job}</p>
 
-                <span className="employees-item-right-span"></span>
+                    <span className="employees-item-right-span"></span>
 
-                <ul className="employees-item-right-list m-0 mt-3 list-unstyled d-flex align-items-center justify-content-betweem">
-                  <li>
-                    <a href="#" className="employees-item-right-link">
-                      <i className="bx bxl-instagram"></i>
-                    </a>
-                  </li>
+                    <ul className="employees-item-right-list m-0 mt-3 list-unstyled d-flex align-items-center justify-content-betweem">
+                      <li>
+                        <a
+                          href={item.insta}
+                          className="employees-item-right-link"
+                        >
+                          <i className="bx bxl-instagram"></i>
+                        </a>
+                      </li>
 
-                  <li>
-                    <a href="#" className="employees-item-right-link ms-2">
-                      <i className="bx bxl-telegram"></i>
-                    </a>
-                  </li>
+                      <li>
+                        <a
+                          href={item.telegram}
+                          className="employees-item-right-link ms-2"
+                        >
+                          <i className="bx bxl-telegram"></i>
+                        </a>
+                      </li>
 
-                  <li>
-                    <a href="#" className="employees-item-right-link ms-2">
-                      <i className="bx bxl-gmail"></i>
-                    </a>
-                  </li>
+                      <li>
+                        <a
+                          href={item.mail}
+                          className="employees-item-right-link ms-2"
+                        >
+                          <i className="bx bxl-gmail"></i>
+                        </a>
+                      </li>
 
-                  <li>
-                    <a href="#" className="employees-item-right-link ms-2">
-                      <i className="bx bxl-whatsapp"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li className="employees-item d-flex align-items-center justify-content-between flex-wrap">
-              <img
-                className="employees-item-img"
-                src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm328-366-tong-08_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=6a37204762fdd64612ec2ca289977b5e"
-                alt="employee"
-                width="170"
-                height="170"
-              />
-              <div className="employees-item-right">
-                <h4 className="employees-item-right-heading">
-                  Fozilov Ilyosjon
-                </h4>
-                <p className="employees-item-right-desc">Director</p>
-
-                <span className="employees-item-right-span"></span>
-
-                <ul className="employees-item-right-list m-0 mt-3 list-unstyled d-flex align-items-center justify-content-betweem">
-                  <li>
-                    <a href="#" className="employees-item-right-link">
-                      <i className="bx bxl-instagram"></i>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" className="employees-item-right-link ms-2">
-                      <i className="bx bxl-telegram"></i>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" className="employees-item-right-link ms-2">
-                      <i className="bx bxl-gmail"></i>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" className="employees-item-right-link ms-2">
-                      <i className="bx bxl-whatsapp"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li className="employees-item d-flex align-items-center justify-content-between flex-wrap">
-              <img
-                className="employees-item-img"
-                src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm328-366-tong-08_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=6a37204762fdd64612ec2ca289977b5e"
-                alt="employee"
-                width="170"
-                height="170"
-              />
-              <div className="employees-item-right">
-                <h4 className="employees-item-right-heading">
-                  Fozilov Ilyosjon
-                </h4>
-                <p className="employees-item-right-desc">Director</p>
-
-                <span className="employees-item-right-span"></span>
-
-                <ul className="employees-item-right-list m-0 mt-3 list-unstyled d-flex align-items-center justify-content-betweem">
-                  <li>
-                    <a href="#" className="employees-item-right-link">
-                      <i className="bx bxl-instagram"></i>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" className="employees-item-right-link ms-2">
-                      <i className="bx bxl-telegram"></i>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" className="employees-item-right-link ms-2">
-                      <i className="bx bxl-gmail"></i>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" className="employees-item-right-link ms-2">
-                      <i className="bx bxl-whatsapp"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
-
-            <li className="employees-item d-flex align-items-center justify-content-between flex-wrap">
-              <img
-                className="employees-item-img"
-                src="https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/rm328-366-tong-08_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=6a37204762fdd64612ec2ca289977b5e"
-                alt="employee"
-                width="170"
-                height="170"
-              />
-              <div className="employees-item-right">
-                <h4 className="employees-item-right-heading">
-                  Fozilov Ilyosjon
-                </h4>
-                <p className="employees-item-right-desc">Director</p>
-
-                <span className="employees-item-right-span"></span>
-
-                <ul className="employees-item-right-list m-0 mt-3 list-unstyled d-flex align-items-center justify-content-betweem">
-                  <li>
-                    <a href="#" className="employees-item-right-link">
-                      <i className="bx bxl-instagram"></i>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" className="employees-item-right-link ms-2">
-                      <i className="bx bxl-telegram"></i>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" className="employees-item-right-link ms-2">
-                      <i className="bx bxl-gmail"></i>
-                    </a>
-                  </li>
-
-                  <li>
-                    <a href="#" className="employees-item-right-link ms-2">
-                      <i className="bx bxl-whatsapp"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </li>
+                      <li>
+                        <a
+                          href={`tel:${item.phone}`}
+                          className="employees-item-right-link ms-2"
+                        >
+                          <i className="bx bxl-whatsapp"></i>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
 
           <button className="employees-btn">
