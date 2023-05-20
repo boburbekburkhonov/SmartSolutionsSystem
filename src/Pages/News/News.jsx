@@ -5,144 +5,72 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import "./News.css";
 // eslint-disable-next-line no-unused-vars
 import right from "../../assets/images/hero-btn.png";
+import { useEffect, useState } from "react";
 
-const handleDragStart = (e) => e.preventDefault();
-const responsive = {
-  0: { items: 1 },
-  900: { items: 2 },
-  1255: { items: 3 },
-};
+const News = (props) => {
+  const handleDragStart = (e) => e.preventDefault();
 
-const items = [
-  <ul key={9}>
-    <li
-      key={2}
-      onDragStart={handleDragStart}
-      role="presentation"
-      className="news__item"
-    >
-      <img
-        src="https://images.pexels.com/photos/15205276/pexels-photo-15205276.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-        width={336}
-        height={270}
-        alt=""
-        className="news__img"
-      />
+  const { selectLan } = props;
+  const [dataNews, setDataNews] = useState([]);
 
-      <div className="news__body">
-        <h3 className="news__header">Lorem, ipsum dolor.</h3>
-        <p className="news__desc">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-          suscipit, tenetur quibusdam, numquam velit eligendi quas ad laborum
-          vel dolor non necessitatibus repudiandae dolore quisquam sapiente
-          voluptatum a! Cupiditate praesentium ut odit ipsa veritatis incidunt
-          nihil dicta quae error? Atque architecto ipsum, nam doloremque qui
-          reiciendis quidem nisi repellat dolor?
-        </p>
-        <p className="news_location">Lorem, ipsum.</p>
-        <strong className="news__date">Lorem, ipsum dolor.</strong>
-      </div>
-    </li>
-  </ul>,
-  <ul key={9}>
-    <li
-      key={2}
-      onDragStart={handleDragStart}
-      role="presentation"
-      className="news__item"
-    >
-      <img
-        src="https://images.pexels.com/photos/15205276/pexels-photo-15205276.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-        width={336}
-        height={270}
-        alt=""
-        className="news__img"
-      />
+  useEffect(() => {
+    fetch("http://localhost:5656/users/news")
+      .then((res) => res.json())
+      .then((data) => {
+        setDataNews([]);
+        const arr = data.filter((e) => e.len == selectLan);
+        setDataNews(arr);
+      });
+  }, [selectLan]);
 
-      <div className="news__body">
-        <h3 className="news__header">Lorem, ipsum dolor.</h3>
-        <p className="news__desc">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-          suscipit, tenetur quibusdam, numquam velit eligendi quas ad laborum
-          vel dolor non necessitatibus repudiandae dolore quisquam sapiente
-          voluptatum a! Cupiditate praesentium ut odit ipsa veritatis incidunt
-          nihil dicta quae error? Atque architecto ipsum, nam doloremque qui
-          reiciendis quidem nisi repellat dolor?
-        </p>
-        <p className="news_location">Lorem, ipsum.</p>
-        <strong className="news__date">Lorem, ipsum dolor.</strong>
-      </div>
-    </li>
-  </ul>,
-  <ul key={9}>
-    <li
-      key={2}
-      onDragStart={handleDragStart}
-      role="presentation"
-      className="news__item"
-    >
-      <img
-        src="https://images.pexels.com/photos/15205276/pexels-photo-15205276.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-        width={336}
-        height={270}
-        alt=""
-        className="news__img"
-      />
+  const responsive = {
+    0: { items: 1 },
+    900: { items: 2 },
+    1255: { items: 3 },
+  };
 
-      <div className="news__body">
-        <h3 className="news__header">Lorem, ipsum dolor.</h3>
-        <p className="news__desc">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-          suscipit, tenetur quibusdam, numquam velit eligendi quas ad laborum
-          vel dolor non necessitatibus repudiandae dolore quisquam sapiente
-          voluptatum a! Cupiditate praesentium ut odit ipsa veritatis incidunt
-          nihil dicta quae error? Atque architecto ipsum, nam doloremque qui
-          reiciendis quidem nisi repellat dolor?
-        </p>
-        <p className="news_location">Lorem, ipsum.</p>
-        <strong className="news__date">Lorem, ipsum dolor.</strong>
-      </div>
-    </li>
-  </ul>,
-  <ul className="list-unstyled m-0" key={9}>
-    <li
-      key={2}
-      onDragStart={handleDragStart}
-      role="presentation"
-      className="news__item"
-    >
-      <img
-        src="https://images.pexels.com/photos/15205276/pexels-photo-15205276.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load"
-        width={336}
-        height={270}
-        alt=""
-        className="news__img"
-      />
+  const items = [
+    <>
+      <ul key={9}>
+        {dataNews?.map((item, index) => {
+          return (
+            <>
+              <li
+                key={index}
+                onDragStart={handleDragStart}
+                role="presentation"
+                className="news__item"
+              >
+                <img
+                  src={item.img}
+                  width={336}
+                  height={270}
+                  alt=""
+                  className="news__img"
+                />
 
-      <div className="news__body">
-        <h3 className="news__header">Lorem, ipsum dolor.</h3>
-        <p className="news__desc">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet
-          suscipit, tenetur quibusdam, numquam velit eligendi quas ad laborum
-          vel dolor non necessitatibus repudiandae dolore quisquam sapiente
-          voluptatum a! Cupiditate praesentium ut odit ipsa veritatis incidunt
-          nihil dicta quae error? Atque architecto ipsum, nam doloremque qui
-          reiciendis quidem nisi repellat dolor?
-        </p>
-        <p className="news_location">Lorem, ipsum.</p>
-        <strong className="news__date">Lorem, ipsum dolor.</strong>
-      </div>
-    </li>
-  </ul>,
-];
+                <div className="news__body">
+                  <h3 className="news__header">{item.title}</h3>
+                  <p className="news__desc">{item.desc}</p>
+                  <p className="news_location">{item.location}</p>
+                  <strong className="news__date">{item.createAt}</strong>
+                </div>
+              </li>
+              ,
+            </>
+          );
+        })}
+      </ul>
+    </>,
+  ];
 
-const News = () => {
   return (
     <>
       <section className="news__section">
         <div className="container news__container">
           <div className="news__top">
             <div></div>
+            <span></span>
             <h2 className="header__news">Yangiliklar</h2>
 
             <div>
