@@ -17,6 +17,12 @@
   padding: 20px 20px;
 }
 
+.a_hero_link{
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+
 .a_hero__right{
   width: 70%;
 }
