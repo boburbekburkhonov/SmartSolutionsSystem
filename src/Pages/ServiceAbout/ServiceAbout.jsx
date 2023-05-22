@@ -20,7 +20,14 @@ const ServiceAbout = (props) => {
   return (
     <>
       <main className="main">
-        <h2 className="a_service__header">Xizmatlar haqida</h2>
+        <h2 className="a_service__header">
+          {" "}
+          {selectLan == "uz"
+            ? "Xizmatlar haqida"
+            : selectLan == "eng"
+            ? "About services"
+            : null}
+        </h2>
 
         <section className="a_service__about">
           <div className="container service__about__container">

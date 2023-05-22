@@ -16,16 +16,14 @@ const Main = (props) => {
     <div>
       <HelmetProvider>
         <>
-          {/* <Header /> */}
-          <Hero />
+          <Hero selectLan={selectLan} />
           <Products selectLan={selectLan} />
           <Services selectLan={selectLan} />
           <News selectLan={selectLan} />
           <Videos selectLan={selectLan} />
           <Employees selectLan={selectLan} />
-          <Message />
-          <Partners />
-          {/* <Footer /> */}
+          <Message selectLan={selectLan} />
+          <Partners selectLan={selectLan} />
 
           <Helmet>
             <script src="/src/assets/js/main.js"></script>

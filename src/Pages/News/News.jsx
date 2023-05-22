@@ -55,7 +55,13 @@ const News = (props) => {
           <div className="news__top">
             <div></div>
             <span></span>
-            <h2 className="header__news">Yangiliklar</h2>
+            <h2 className="header__news">
+              {selectLan == "uz"
+                ? "Yangiliklar"
+                : selectLan == "eng"
+                ? "News"
+                : null}
+            </h2>
 
             <div>
               <button
@@ -63,7 +69,13 @@ const News = (props) => {
                 onClick={() => navigate("/news/about")}
               >
                 <img src={right} alt="right" width="20" height="16" />
-                <span className="more-btn-span">Bacha yangiliklar</span>
+                <span className="more-btn-span">
+                  {selectLan == "uz"
+                    ? "Barcha yangiliklar"
+                    : selectLan == "eng"
+                    ? "All News"
+                    : null}
+                </span>
               </button>
             </div>
           </div>

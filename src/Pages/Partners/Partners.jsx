@@ -8,43 +8,46 @@ import partner4 from "../../assets/images/client-4.svg";
 import partner5 from "../../assets/images/client-6.svg";
 
 
-const Partners = () => {
-  return (<>
-    <section className="partners">
+const Partners = (props) => {
+  const { selectLan } = props;
 
-      <h2 className="partners__header">Hamkorlar</h2>
+  return (
+    <>
+      <section className="partners">
+        <h2 className="partners__header">
+          {selectLan == "uz"
+            ? "Hamkorlar"
+            : selectLan == "eng"
+            ? "Partners"
+            : null}
+        </h2>
 
-      <div className="container partners__container">
-         
+        <div className="container partners__container">
+          <ul className="partners__list">
+            <li className="partners__item">
+              <img src={partner2} alt="" className="partners__img" />
+            </li>
 
-        <ul className="partners__list">
+            <li className="partners__item">
+              <img src={partner1} alt="" className="partners__img" />
+            </li>
 
-          <li className="partners__item">
-            <img src={partner2} alt="" className="partners__img" />
-          </li>
+            <li className="partners__item">
+              <img src={partner3} alt="" className="partners__img" />
+            </li>
 
-          <li className="partners__item">
-            <img src={partner1} alt="" className="partners__img" />
-          </li>
+            <li className="partners__item">
+              <img src={partner4} alt="" className="partners__img" />
+            </li>
 
-          <li className="partners__item">
-            <img src={partner3} alt="" className="partners__img" />
-          </li>
-
-          <li className="partners__item">
-            <img src={partner4} alt="" className="partners__img" />
-          </li>
-
-          <li className="partners__item">
-            <img src={partner5} alt="" className="partners__img" />
-          </li>
-
-        </ul>
-
-      </div>
-
-    </section>
-  </>);
+            <li className="partners__item">
+              <img src={partner5} alt="" className="partners__img" />
+            </li>
+          </ul>
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default Partners;

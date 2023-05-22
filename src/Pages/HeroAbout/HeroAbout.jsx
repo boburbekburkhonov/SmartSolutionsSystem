@@ -1,27 +1,48 @@
 import React from "react";
 import "./HeroAbout.css";
 
-const HeroAbout = () => {
+const HeroAbout = (props) => {
+  const { selectLan } = props;
+
   return (
     <>
       <main className="main">
-        <h2 className="a_hero__header">Kompaniya haqida</h2>
+        <h2 className="a_hero__header">
+          {" "}
+          {selectLan == "uz"
+            ? "Kompaniya haqida"
+            : selectLan == "eng"
+            ? "About the company"
+            : null}
+        </h2>
         <section className="hero__about">
           <div className="container hero__about__container">
             <ul className="a_hero__left">
               <li>
                 <a className="a_hero_link" href="">
-                  Kompaniya haqida
+                  {selectLan == "uz"
+                    ? "Kompaniya haqida"
+                    : selectLan == "eng"
+                    ? "About the company"
+                    : null}
                 </a>
               </li>
               <li>
                 <a className="a_hero_link" href="#hamkorlar">
-                  Hamkorlar
+                  {selectLan == "uz"
+                    ? "Hamkorlar"
+                    : selectLan == "eng"
+                    ? "Partners"
+                    : null}
                 </a>
               </li>
               <li>
                 <a className="a_hero_link" href="#mijozlarimiz">
-                  Bizning mijozlarimiz
+                  {selectLan == "uz"
+                    ? "Bizning mijozlarimiz"
+                    : selectLan == "eng"
+                    ? "Our customers"
+                    : null}
                 </a>
               </li>
             </ul>

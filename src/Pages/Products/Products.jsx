@@ -24,7 +24,13 @@ const Products = (props) => {
     <>
       <section className="products">
         <div className="products__container container">
-          <h2 className="products__header">Mahsulotlar</h2>
+          <h2 className="products__header">
+            {selectLan == "uz"
+              ? "Mahsulotlar"
+              : selectLan == "eng"
+              ? "Products"
+              : null}
+          </h2>
 
           <ul className="products__list">
             {dataProduct?.map((item, index) => {
@@ -41,7 +47,7 @@ const Products = (props) => {
                     <h4 className="item__header">{item.name}</h4>
                     <p className="item__desc">{item.desc}</p>
                     <span onClick={() => navigate(`/product/about/${item.id}`)}>
-                      <Button />
+                      <Button selectLan={selectLan} />
                     </span>
                   </div>
                 </li>

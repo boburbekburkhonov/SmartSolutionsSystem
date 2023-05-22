@@ -19,7 +19,13 @@ const EmployeeAbout = (props) => {
   return (
     <>
       <main className="main">
-        <h2 className="a_employee__header">Barcha Videolar</h2>
+        <h2 className="a_employee__header">
+          {selectLan == "uz"
+            ? "Jamoa a'zolari"
+            : selectLan == "eng"
+            ? "Team members"
+            : null}
+        </h2>
 
         <section className="a_employee__about">
           <div className="container employee__about__container">

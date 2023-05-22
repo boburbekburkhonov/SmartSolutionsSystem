@@ -20,7 +20,13 @@ const VideoAbout = (props) => {
   return (
     <>
       <main className="main">
-        <h2 className="a_video__header">Barcha Videolar</h2>
+        <h2 className="a_video__header">
+          {selectLan == "uz"
+            ? "Barcha Videolar"
+            : selectLan == "eng"
+            ? "All Videos"
+            : null}
+        </h2>
 
         <section className="a_video__about">
           <div className="container video__about__container">

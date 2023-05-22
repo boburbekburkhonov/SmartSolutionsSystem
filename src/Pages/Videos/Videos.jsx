@@ -23,7 +23,13 @@ const Videos = (props) => {
   return (
     <>
       <section className="videos">
-        <h2 className="videos__header">Videolar</h2>
+        <h2 className="videos__header">
+          {selectLan == "uz"
+            ? "Videolar"
+            : selectLan == "eng"
+            ? "Videos"
+            : null}
+        </h2>
 
         <div className="container videos__constainer">
           <ul className="videos__list">
@@ -50,7 +56,13 @@ const Videos = (props) => {
             onClick={() => navigate("/video/about")}
           >
             <img src={right} alt="right" width="20" height="16" />
-            <span className="more-btn-span">Bacha videolar</span>
+            <span className="more-btn-span">
+              {selectLan == "uz"
+                ? "Bacha videolar"
+                : selectLan == "eng"
+                ? "All Videos"
+                : null}
+            </span>
           </button>
         </div>
       </section>

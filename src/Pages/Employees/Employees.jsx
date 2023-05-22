@@ -22,7 +22,10 @@ const Employees = (props) => {
     <>
       <section className="employees">
         <div className="container employees_container">
-          <h2 className="employees-heading">Jamoa</h2>
+          <h2 className="employees-heading">
+            {" "}
+            {selectLan == "uz" ? "Jamoa" : selectLan == "eng" ? "Team" : null}
+          </h2>
 
           <ul className="employees-list m-0 list-unstyled">
             {dataEmployees.map((item, index) => {
@@ -93,7 +96,13 @@ const Employees = (props) => {
             onClick={() => navigate("/employee/about")}
           >
             <img src={right} alt="right" width="20" height="16" />
-            <span className="employees-btn-span">Barcha jamoa</span>
+            <span className="employees-btn-span">
+              {selectLan == "uz"
+                ? "Barcha jamoa"
+                : selectLan == "eng"
+                ? "All Team"
+                : null}
+            </span>
           </button>
         </div>
       </section>

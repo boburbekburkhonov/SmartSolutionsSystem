@@ -4,13 +4,13 @@ import email from "../../assets/images/email.png";
 import phone from "../../assets/images/call.png";
 import "./Message.css";
 
-const Message = () => {
+const Message = (props) => {
+  const { selectLan } = props;
+
   const sendMessage = (e) => {
     e.preventDefault();
 
     const { name, email, topic, message } = e.target;
-
-    console.log(name.value, email.value, topic.value, message.value);
 
     fetch("http://localhost:5656/users/create", {
       method: "POST",
@@ -38,7 +38,13 @@ const Message = () => {
   return (
     <section className="message">
       <div className="container">
-        <h2 className="message-heading">Aloqa</h2>
+        <h2 className="message-heading">
+          {selectLan == "uz"
+            ? "Aloqa"
+            : selectLan == "eng"
+            ? "Contact us"
+            : null}
+        </h2>
 
         <div className="message-wrapper d-flex align-items-center justify-content-between flex-wrap">
           <div className="message-location-wrapper">
@@ -53,7 +59,11 @@ const Message = () => {
                 />
                 <div className="message-location-item-wrapper">
                   <h4 className="message-location-item-wrapper-header">
-                    Joylashuv
+                    {selectLan == "uz"
+                      ? "Joylashuv:"
+                      : selectLan == "eng"
+                      ? "Location:"
+                      : null}
                   </h4>
                   <p className="message-location-item-wrapper-desc">
                     Mo'ynoq ko'chasi 249-uy
@@ -89,7 +99,11 @@ const Message = () => {
                 />
                 <div className="message-location-item-wrapper">
                   <h4 className="message-location-item-wrapper-header">
-                    Telefon:
+                    {selectLan == "uz"
+                      ? "Telefon:"
+                      : selectLan == "eng"
+                      ? "Phone:"
+                      : null}
                   </h4>
                   <p className="message-location-item-wrapper-desc">
                     +998 55 506-00-64
@@ -113,7 +127,11 @@ const Message = () => {
               <div className="d-flex align-items-center justify-content-between flex-wrap">
                 <div className="message-send-form-input-wrapper">
                   <label className="message-send-form-label" htmlFor="nameId">
-                    Ism
+                    {selectLan == "uz"
+                      ? "Ism:"
+                      : selectLan == "eng"
+                      ? "Name:"
+                      : null}
                   </label>
                   <input
                     className="message-send-form-input form-control mt-2"
@@ -140,7 +158,11 @@ const Message = () => {
 
               <div className="mt-4">
                 <label className="message-send-form-label" htmlFor="topicId">
-                  Mavzu
+                  {selectLan == "uz"
+                    ? "Mavzu:"
+                    : selectLan == "eng"
+                    ? "Subject:"
+                    : null}
                 </label>
                 <input
                   className="message-send-form-input-topic form-control mt-2"
@@ -153,7 +175,11 @@ const Message = () => {
 
               <div className="mt-4">
                 <label className="message-send-form-label" htmlFor="messageId">
-                  Xabar
+                  {selectLan == "uz"
+                    ? "Xabar:"
+                    : selectLan == "eng"
+                    ? "Message:"
+                    : null}
                 </label>
                 <textarea
                   className="message-send-form-input-text-aria form-control mt-2"
@@ -164,7 +190,11 @@ const Message = () => {
               </div>
 
               <button className="message-send-form-btn">
-                Xabarni yuborish
+                {selectLan == "uz"
+                  ? "Xabarni yuborish"
+                  : selectLan == "eng"
+                  ? "Send message"
+                  : null}
               </button>
             </form>
           </div>

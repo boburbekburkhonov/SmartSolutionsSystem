@@ -19,7 +19,13 @@ const NewsAbout = (props) => {
   return (
     <>
       <main className="main">
-        <h2 className="a_news__header">Barcha Yangiliklar</h2>
+        <h2 className="a_news__header">
+          {selectLan == "uz"
+            ? "Barcha Yangiliklar"
+            : selectLan == "eng"
+            ? "All News"
+            : null}
+        </h2>
 
         <section className="a_news__about">
           <div className="container news__about__container">

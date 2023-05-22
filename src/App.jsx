@@ -34,37 +34,61 @@ function App() {
             <ul className="list-unstyled d-flex align-items-center m-0 site-nav-list">
               <li className="header-nav-item">
                 <a href="#" className="header-nav-link">
-                  Kompaniya haqida
+                  {selectLan == "uz"
+                    ? "Kompaniya haqida"
+                    : selectLan == "eng"
+                    ? "About us"
+                    : null}
                 </a>
               </li>
 
               <li className="header-nav-item">
                 <a href="#" className="header-nav-link">
-                  Mahsulotlar
+                  {selectLan == "uz"
+                    ? "Mahsulotlar"
+                    : selectLan == "eng"
+                    ? "Products"
+                    : null}
                 </a>
               </li>
 
               <li className="header-nav-item">
                 <a href="#" className="header-nav-link">
-                  Xizmatlar
+                  {selectLan == "uz"
+                    ? "Xizmatlar"
+                    : selectLan == "eng"
+                    ? "Services"
+                    : null}
                 </a>
               </li>
 
               <li className="header-nav-item">
                 <a href="#" className="header-nav-link">
-                  Yangiliklar
+                  {selectLan == "uz"
+                    ? "Yangiliklar"
+                    : selectLan == "eng"
+                    ? "News"
+                    : null}
                 </a>
               </li>
 
               <li className="header-nav-item">
                 <a href="#" className="header-nav-link">
-                  Jamoa
+                  {selectLan == "uz"
+                    ? "Jamoa"
+                    : selectLan == "eng"
+                    ? "Team"
+                    : null}
                 </a>
               </li>
 
               <li className="header-nav-item">
                 <a href="#" className="header-nav-link">
-                  Aloqa
+                  {selectLan == "uz"
+                    ? "Aloqa"
+                    : selectLan == "eng"
+                    ? "Contact us"
+                    : null}
                 </a>
               </li>
             </ul>
@@ -87,10 +111,10 @@ function App() {
               className="form-select header-nav-select ms-3"
             >
               <option value="uz" className="header-nav-option">
-                O'zb
+                Uz
               </option>
               <option value="eng" className="header-nav-select">
-                English
+                Eng
               </option>
             </select>
           </div>
@@ -146,37 +170,61 @@ function App() {
               <ul className="list-unstyled d-flex align-items-center m-0 ">
                 <li className="footer-nav-item">
                   <a href="#" className="footer-nav-link">
-                    Kompaniya haqida
+                    {selectLan == "uz"
+                      ? "Kompaniya haqida"
+                      : selectLan == "eng"
+                      ? "About us"
+                      : null}
                   </a>
                 </li>
 
                 <li className="footer-nav-item">
                   <a href="#" className="footer-nav-link">
-                    Mahsulotlar
+                    {selectLan == "uz"
+                      ? "Mahsulotlar"
+                      : selectLan == "eng"
+                      ? "Products"
+                      : null}
                   </a>
                 </li>
 
                 <li className="footer-nav-item">
                   <a href="#" className="footer-nav-link">
-                    Xizmatlar
+                    {selectLan == "uz"
+                      ? "Xizmatlar"
+                      : selectLan == "eng"
+                      ? "Services"
+                      : null}
                   </a>
                 </li>
 
                 <li className="footer-nav-item">
                   <a href="#" className="footer-nav-link">
-                    Yangiliklar
+                    {selectLan == "uz"
+                      ? "Yangiliklar"
+                      : selectLan == "eng"
+                      ? "News"
+                      : null}
                   </a>
                 </li>
 
                 <li className="footer-nav-item">
                   <a href="#" className="footer-nav-link">
-                    Jamoa
+                    {selectLan == "uz"
+                      ? "Jamoa"
+                      : selectLan == "eng"
+                      ? "Team"
+                      : null}
                   </a>
                 </li>
 
                 <li className="footer-nav-item">
                   <a href="#" className="footer-nav-link">
-                    Aloqa
+                    {selectLan == "uz"
+                      ? "Aloqa"
+                      : selectLan == "eng"
+                      ? "Contact us"
+                      : null}
                   </a>
                 </li>
               </ul>

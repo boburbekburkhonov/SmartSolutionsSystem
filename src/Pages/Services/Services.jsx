@@ -22,7 +22,13 @@ const Services = (props) => {
   return (
     <section className="services">
       <div className="container">
-        <h2 className="services-heading">Xizmatlar</h2>
+        <h2 className="services-heading">
+          {selectLan == "uz"
+            ? "Xizmatlar"
+            : selectLan == "eng"
+            ? "Services"
+            : null}
+        </h2>
 
         <ul className="list-unstyled m-0 services-list">
           {dataService.map((item, index) => {
@@ -46,7 +52,13 @@ const Services = (props) => {
           onClick={() => navigate("/service/about")}
         >
           <img src={right} alt="right" width="20" height="16" />
-          <span className="employees-btn-span">Barcha xizmatlar</span>
+          <span className="employees-btn-span">
+            {selectLan == "uz"
+              ? "Barcha xizmatlar"
+              : selectLan == "eng"
+              ? "All services"
+              : null}
+          </span>
         </button>
       </div>
     </section>
