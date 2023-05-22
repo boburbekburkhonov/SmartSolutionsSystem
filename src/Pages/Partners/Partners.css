@@ -12,6 +12,8 @@
 }
 
 .partners__list{
+  margin-bottom: 10px;
+  padding-bottom: 10px;
   display: flex;
   flex-wrap: wrap;
   width: 100%;

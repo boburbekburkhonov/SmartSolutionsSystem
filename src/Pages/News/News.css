@@ -141,6 +141,11 @@
 
 
 @media (max-width: 900px) {
+
+  .news__top{
+    justify-content: center;
+  }
+
   .more-btn4 {
     display: none;
   }

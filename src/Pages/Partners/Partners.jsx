@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 // import React from "react";
 import "./Partners.css";
@@ -44,6 +45,7 @@ const Partners = (props) => {
               <img src={partner5} alt="" className="partners__img" />
             </li>
           </ul>
+          
         </div>
       </section>
     </>

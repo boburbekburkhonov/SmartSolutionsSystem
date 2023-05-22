@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import service from "../../assets/images/services.png";
 import right from "../../assets/images/hero-btn.png";
@@ -20,7 +22,7 @@ const Services = (props) => {
   }, [selectLan]);
 
   return (
-    <section className="services">
+    <section id="services" className="services">
       <div className="container">
         <h2 className="services-heading">
           {selectLan == "uz"

@@ -22,6 +22,8 @@
 }
 
 .a_employees-list {
+  width: 100%;
+  padding: 30px 0;
   display: grid;
   grid-row: auto;
   gap: 20px;
