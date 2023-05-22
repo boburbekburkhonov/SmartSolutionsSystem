@@ -93,6 +93,12 @@
   opacity: 0.4;
 }
 
+.employees-item-right-job-desc {
+  margin: 0;
+  font-size: 18px;
+  color: #000000;
+}
+
 
 
 @media (max-width: 1078px) {
@@ -131,8 +137,8 @@
   .a_employees-list {
     grid-template-columns: repeat(1, 1fr);
   }
-  
-  /* .a_employees-item {    
+
+  /* .a_employees-item {
     max-width: 400px;
   } */
 
@@ -144,7 +150,7 @@
     font-size: 15px;
   }
 
-  .a_employee__header {  
+  .a_employee__header {
     font-size: 30px;
   }
 }

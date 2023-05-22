@@ -26,16 +26,13 @@ const ProductsAbout = (props) => {
     <>
       {dataProduct.map((item, index) => {
         return (
-          <>
-            <img
-              key={index}
-              className="a_products__img"
-              src={item.pImages.map((e) => e.link)}
-              onDragStart={handleDragStart}
-              role="presentation"
-            />
-            ,
-          </>
+          <img
+            key={index}
+            className="a_products__img"
+            src={item.pImages.map((e) => e.link)}
+            onDragStart={handleDragStart}
+            role="presentation"
+          />
         );
       })}
     </>,

@@ -42,6 +42,10 @@ const EmployeeAbout = (props) => {
                       </h4>
                       <p className="employees-item-right-desc">{item.job}</p>
 
+                      <p className="employees-item-right-job-desc">
+                        {item.desc}
+                      </p>
+
                       <span className="employees-item-right-span"></span>
 
                       <ul className="employees-item-right-list m-0 mt-3 list-unstyled d-flex align-items-center justify-content-betweem">

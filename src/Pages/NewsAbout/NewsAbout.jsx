@@ -26,25 +26,22 @@ const NewsAbout = (props) => {
             <ul className="a_news__list">
               {dataNews?.map((item, index) => {
                 return (
-                  <>
-                    <li key={index} role="presentation" className="news__item">
-                      <img
-                        src={item.img}
-                        width={336}
-                        height={270}
-                        alt=""
-                        className="news__img"
-                      />
+                  <li key={index} role="presentation" className="news__item">
+                    <img
+                      src={item.img}
+                      width={336}
+                      height={270}
+                      alt=""
+                      className="news__img"
+                    />
 
-                      <div className="news__body">
-                        <h3 className="news__header">{item.title}</h3>
-                        <p className="news__desc">{item.desc}</p>
-                        <p className="news_location">{item.location}</p>
-                        <strong className="news__date">{item.createAt}</strong>
-                      </div>
-                    </li>
-                    ,
-                  </>
+                    <div className="news__body">
+                      <h3 className="news__header">{item.title}</h3>
+                      <p className="news__desc">{item.desc}</p>
+                      <p className="news_location">{item.location}</p>
+                      <strong className="news__date">{item.createAt}</strong>
+                    </div>
+                  </li>
                 );
               })}
             </ul>

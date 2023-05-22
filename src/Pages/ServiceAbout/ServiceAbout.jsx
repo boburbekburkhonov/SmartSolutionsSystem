@@ -1,7 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
-import service from "../../assets/images/services.png";
 import "./ServiceAbout.css";
 
 const ServiceAbout = (props) => {
@@ -37,6 +36,7 @@ const ServiceAbout = (props) => {
                       height="220"
                     />
                     <p className="services-desc m-0">{item.title}</p>
+                    <p className="services-desc-title m-0">{item.desc}</p>
                   </li>
                 );
               })}

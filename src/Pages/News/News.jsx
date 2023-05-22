@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const News = (props) => {
-  const handleDragStart = (e) => e.preventDefault();
   const navigate = useNavigate();
 
   const { selectLan } = props;
@@ -31,40 +30,23 @@ const News = (props) => {
     1255: { items: 3 },
   };
 
-  const items = [
-    <>
-      <ul key={9}>
-        {dataNews?.map((item, index) => {
-          return (
-            <>
-              <li
-                key={index}
-                onDragStart={handleDragStart}
-                role="presentation"
-                className="news__item"
-              >
-                <img
-                  src={item.img}
-                  width={336}
-                  height={270}
-                  alt=""
-                  className="news__img"
-                />
+  const items = dataNews?.map((item, index) => {
+    return (
+      <div key={index} className="news__item">
+        <img
+          src={item.img}
+          width={336}
+          height={270}
+          alt=""
+          className="news__img"
+        />
 
-                <div className="news__body">
-                  <h3 className="news__header">{item.title}</h3>
-                  <p className="news__desc">{item.desc}</p>
-                  <p className="news_location">{item.location}</p>
-                  <strong className="news__date">{item.createAt}</strong>
-                </div>
-              </li>
-              ,
-            </>
-          );
-        })}
-      </ul>
-    </>,
-  ];
+        <div className="news__body">
+          <h3 className="news__header">{item.title}</h3>
+        </div>
+      </div>
+    );
+  });
 
   return (
     <>
