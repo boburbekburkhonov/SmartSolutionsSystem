@@ -1,3 +1,6 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable no-unused-vars */
 import React from "react";
 import location from "../../assets/images/location.png";
 import email from "../../assets/images/email.png";
@@ -36,7 +39,7 @@ const Message = (props) => {
   };
 
   return (
-    <section className="message">
+    <section id="message" className="message">
       <div className="container">
         <h2 className="message-heading">
           {selectLan == "uz"

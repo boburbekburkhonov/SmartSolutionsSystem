@@ -23,7 +23,13 @@
   color: #000;
 }
 
+.a_hero__left{
+  padding-top: 30px;
+
+}
+
 .a_hero__right{
+  padding-top: 30px;
   width: 70%;
 }
 
@@ -54,6 +60,10 @@
 
 @media (max-width: 750px) {
 
+  .a_hero__left{
+    display: none;  
+  }
+
   .a_hero__header {
     margin-bottom: 10px;
     padding-bottom: 25px;
@@ -79,5 +89,11 @@
 @media (max-width: 550px){
   .a_hero__header {  
     font-size: 30px;
+  }
+}
+
+@media (max-width: 450px){
+  .a_hero__header {  
+    font-size: 25px;
   }
 }

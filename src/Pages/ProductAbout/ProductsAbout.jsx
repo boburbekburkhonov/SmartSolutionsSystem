@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react/prop-types */
 /* eslint-disable react/jsx-key */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
@@ -31,8 +33,7 @@ const ProductsAbout = (props) => {
           src={item.link}
           onDragStart={handleDragStart}
           role="presentation"
-        />
-        ,
+        />        
       </>
     );
   });
@@ -53,9 +54,13 @@ const ProductsAbout = (props) => {
             />
 
             <div className="a_products__right">
+
+              <h3 className="a_products__title">
+                <strong>{dataProduct.name}</strong>
+
+              </h3>
               <p className="a_products__desc">
                 {" "}
-                <strong>{dataProduct.name}</strong>
                 {dataProduct.desc}
               </p>
             </div>

@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
@@ -34,16 +35,16 @@ const ServiceAbout = (props) => {
             <ul className="list-unstyled m-0 a_services-list">
               {dataService.map((item, index) => {
                 return (
-                  <li className="services-item" key={index}>
+                  <li className="a_services-item" key={index}>
                     <img
-                      className="services-img"
+                      className="a_services-img"
                       src={item.img}
                       alt="service"
                       width="300"
                       height="220"
                     />
-                    <p className="services-desc m-0">{item.title}</p>
-                    <p className="services-desc-title m-0">{item.desc}</p>
+                    <p className="a_services-title m-0">{item.title}</p>
+                    <p className="a_service-desc m-0">{item.desc}</p>
                   </li>
                 );
               })}

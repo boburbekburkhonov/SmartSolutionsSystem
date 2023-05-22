@@ -33,7 +33,7 @@ function App() {
           <nav className="site-nav">
             <ul className="list-unstyled d-flex align-items-center m-0 site-nav-list">
               <li className="header-nav-item">
-                <a href="#" className="header-nav-link">
+                <a href="#hero" className="header-nav-link">
                   {selectLan == "uz"
                     ? "Kompaniya haqida"
                     : selectLan == "eng"
@@ -43,7 +43,7 @@ function App() {
               </li>
 
               <li className="header-nav-item">
-                <a href="#" className="header-nav-link">
+                <a href="#products" className="header-nav-link">
                   {selectLan == "uz"
                     ? "Mahsulotlar"
                     : selectLan == "eng"
@@ -53,7 +53,7 @@ function App() {
               </li>
 
               <li className="header-nav-item">
-                <a href="#" className="header-nav-link">
+                <a href="#services" className="header-nav-link">
                   {selectLan == "uz"
                     ? "Xizmatlar"
                     : selectLan == "eng"
@@ -63,7 +63,7 @@ function App() {
               </li>
 
               <li className="header-nav-item">
-                <a href="#" className="header-nav-link">
+                <a href="#news" className="header-nav-link">
                   {selectLan == "uz"
                     ? "Yangiliklar"
                     : selectLan == "eng"
@@ -73,7 +73,7 @@ function App() {
               </li>
 
               <li className="header-nav-item">
-                <a href="#" className="header-nav-link">
+                <a href="#employees" className="header-nav-link">
                   {selectLan == "uz"
                     ? "Jamoa"
                     : selectLan == "eng"
@@ -83,7 +83,7 @@ function App() {
               </li>
 
               <li className="header-nav-item">
-                <a href="#" className="header-nav-link">
+                <a href="#message" className="header-nav-link">
                   {selectLan == "uz"
                     ? "Aloqa"
                     : selectLan == "eng"

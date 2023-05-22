@@ -9,7 +9,7 @@ const Hero = (props) => {
 
   return (
     <>
-      <section className="hero">
+      <section id="hero" className="hero">
         <div className="container hero_container">
           <div className="hero-wrapper">
             <h1 className="hero-heading m-0">

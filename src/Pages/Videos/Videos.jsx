@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 // import React from "react";
 import "./Videos.css";
@@ -22,7 +23,7 @@ const Videos = (props) => {
 
   return (
     <>
-      <section className="videos">
+      <section id="videos" className="videos">
         <h2 className="videos__header">
           {selectLan == "uz"
             ? "Videolar"
