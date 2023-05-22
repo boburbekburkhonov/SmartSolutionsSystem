@@ -23,7 +23,12 @@
   color: #000;
 }
 
+.a_hero__left{
+  padding: 20px 0;
+}
+
 .a_hero__right{
+  padding: 20px 0;
   width: 70%;
 }
 
@@ -53,6 +58,11 @@
 
 
 @media (max-width: 750px) {
+
+  .a_hero__left{
+    display: none;
+  }
+  
 
   .a_hero__header {
     margin-bottom: 10px;

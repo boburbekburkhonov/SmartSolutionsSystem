@@ -36,7 +36,7 @@ const Message = () => {
   };
 
   return (
-    <section className="message">
+    <section id="message" className="message">
       <div className="container">
         <h2 className="message-heading">Aloqa</h2>
 

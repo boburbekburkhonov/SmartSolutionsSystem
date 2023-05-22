@@ -33,6 +33,10 @@
   background-color: #fff;
 }
 
+.a_products__left{
+  padding: 20px 0;
+}
+
 .a_products__title{
   padding-bottom: 10px;  
   font-weight: bold;

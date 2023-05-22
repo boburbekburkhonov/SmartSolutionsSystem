@@ -28,6 +28,7 @@
 }
 
 .a_services-list {
+  padding: 20px 0;
   display: grid;
   gap: 50px;
   grid-template-columns: repeat(3, 1fr);

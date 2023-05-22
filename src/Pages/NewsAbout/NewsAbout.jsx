@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./NewsAbout.css";
@@ -26,7 +27,7 @@ const NewsAbout = (props) => {
             <ul className="a_news__list">
               {dataNews?.map((item, index) => {
                 return (
-                  <li key={index} role="presentation" className="news__item">
+                  <li key={index} role="presentation" className="a_news__item">
                     <img
                       src={item.img}
                       width={336}
@@ -35,11 +36,11 @@ const NewsAbout = (props) => {
                       className="news__img"
                     />
 
-                    <div className="news__body">
-                      <h3 className="news__header">{item.title}</h3>
-                      <p className="news__desc">{item.desc}</p>
-                      <p className="news_location">{item.location}</p>
-                      <strong className="news__date">{item.createAt}</strong>
+                    <div className="a_news__body">
+                      <h3 className="a_news__title">{item.title}</h3>
+                      <p className="a_news__desc">{item.desc}</p>
+                      <p className="a_news_location">{item.location}</p>
+                      <strong className="a_news__date">{item.createAt}</strong>
                     </div>
                   </li>
                 );

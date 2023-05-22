@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // import React from "react";
 // import React from 'react';
 import AliceCarousel from "react-alice-carousel";
@@ -50,7 +51,7 @@ const News = (props) => {
 
   return (
     <>
-      <section className="news__section">
+      <section id="news" className="news">
         <div className="container news__container">
           <div className="news__top">
             <div></div>

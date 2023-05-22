@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import right from "../../assets/images/hero-btn.png";
 import "./Employees.css";
@@ -20,7 +22,7 @@ const Employees = (props) => {
 
   return (
     <>
-      <section className="employees">
+      <section id="employees" className="employees">
         <div className="container employees_container">
           <h2 className="employees-heading">Jamoa</h2>
 

@@ -22,11 +22,13 @@
 }
 
 .a_employees-list {
+  padding: 20px 0;
   display: grid;
   grid-row: auto;
   gap: 20px;
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
+  width: 100%;
 }
 
 .a_employees-item {
@@ -108,7 +110,7 @@
   }
 
   .a_employees-list{
-  grid-template-columns: repeat(2, 1fr);
+   grid-template-columns: repeat(2, 1fr);
 
   }
 
@@ -138,9 +140,7 @@
     grid-template-columns: repeat(1, 1fr);
   }
 
-  /* .a_employees-item {
-    max-width: 400px;
-  } */
+ 
 
 }
 

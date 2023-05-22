@@ -21,16 +21,17 @@
 }
 
 .a_news__list{
+  padding: 20px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: -15px;
+  width: 100%;
 }
 
 .a_news__item{
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   max-width: 336px;
   margin: 15px;
   border-radius: 20px;
@@ -44,14 +45,21 @@
 
 .a_news__body{
   padding: 10px 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 .a_news__title{
+  margin: 0;
   font-size: 26px;
   line-height: 29px;
 }
 
 .a_news__desc{
+  margin: 0;
   font-size: 17px;
   line-height: 19px;
 }

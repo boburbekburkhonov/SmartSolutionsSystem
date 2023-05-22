@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./EmployeeAbout.css";
@@ -19,7 +21,7 @@ const EmployeeAbout = (props) => {
   return (
     <>
       <main className="main">
-        <h2 className="a_employee__header">Barcha Videolar</h2>
+        <h2 className="a_employee__header">Jamoa A'zolari</h2>
 
         <section className="a_employee__about">
           <div className="container employee__about__container">
@@ -27,32 +29,32 @@ const EmployeeAbout = (props) => {
               {dataEmployees.map((item, index) => {
                 return (
                   <li
-                    className="employees-item d-flex align-items-center justify-content-between flex-wrap"
+                    className="a_employees-item d-flex align-items-center justify-content-between flex-wrap"
                     key={index}
                   >
                     <img
-                      className="employees-item-img"
+                      className="a_employees-item-img"
                       src={item.img}
                       width="170"
                       height="170"
                     />
-                    <div className="employees-item-right">
-                      <h4 className="employees-item-right-heading">
+                    <div className="a_employees-item-right">
+                      <h4 className="a_employees-item-right-heading">
                         {item.name}
                       </h4>
-                      <p className="employees-item-right-desc">{item.job}</p>
+                      <p className="a_employees-item-right-desc">{item.job}</p>
 
-                      <p className="employees-item-right-job-desc">
+                      <p className="a_employees-item-right-job-desc">
                         {item.desc}
                       </p>
 
-                      <span className="employees-item-right-span"></span>
+                      <span className="a_employees-item-right-span"></span>
 
-                      <ul className="employees-item-right-list m-0 mt-3 list-unstyled d-flex align-items-center justify-content-betweem">
+                      <ul className="a_employees-item-right-list m-0 mt-3 list-unstyled d-flex align-items-center justify-content-betweem">
                         <li>
                           <a
                             href={item.insta}
-                            className="employees-item-right-link"
+                            className="a_employees-item-right-link"
                           >
                             <i className="bx bxl-instagram"></i>
                           </a>
@@ -61,7 +63,7 @@ const EmployeeAbout = (props) => {
                         <li>
                           <a
                             href={item.telegram}
-                            className="employees-item-right-link ms-2"
+                            className="a_employees-item-right-link ms-2"
                           >
                             <i className="bx bxl-telegram"></i>
                           </a>
@@ -70,7 +72,7 @@ const EmployeeAbout = (props) => {
                         <li>
                           <a
                             href={item.mail}
-                            className="employees-item-right-link ms-2"
+                            className="a_employees-item-right-link ms-2"
                           >
                             <i className="bx bxl-gmail"></i>
                           </a>
@@ -79,7 +81,7 @@ const EmployeeAbout = (props) => {
                         <li>
                           <a
                             href={`tel:${item.phone}`}
-                            className="employees-item-right-link ms-2"
+                            className="a_employees-item-right-link ms-2"
                           >
                             <i className="bx bxl-whatsapp"></i>
                           </a>

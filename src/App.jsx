@@ -33,37 +33,37 @@ function App() {
           <nav className="site-nav">
             <ul className="list-unstyled d-flex align-items-center m-0 site-nav-list">
               <li className="header-nav-item">
-                <a href="#" className="header-nav-link">
+                <a href="hero" className="header-nav-link">
                   Kompaniya haqida
                 </a>
               </li>
 
               <li className="header-nav-item">
-                <a href="#" className="header-nav-link">
+                <a href="products" className="header-nav-link">
                   Mahsulotlar
                 </a>
               </li>
 
               <li className="header-nav-item">
-                <a href="#" className="header-nav-link">
+                <a href="services" className="header-nav-link">
                   Xizmatlar
                 </a>
               </li>
 
               <li className="header-nav-item">
-                <a href="#" className="header-nav-link">
+                <a href="news" className="header-nav-link">
                   Yangiliklar
                 </a>
               </li>
 
               <li className="header-nav-item">
-                <a href="#" className="header-nav-link">
+                <a href="employees" className="header-nav-link">
                   Jamoa
                 </a>
               </li>
 
               <li className="header-nav-item">
-                <a href="#" className="header-nav-link">
+                <a href="message" className="header-nav-link">
                   Aloqa
                 </a>
               </li>

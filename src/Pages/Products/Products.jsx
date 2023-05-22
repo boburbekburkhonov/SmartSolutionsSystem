@@ -22,7 +22,7 @@ const Products = (props) => {
 
   return (
     <>
-      <section className="products">
+      <section id="products" className="products">
         <div className="products__container container">
           <h2 className="products__header">Mahsulotlar</h2>
 
