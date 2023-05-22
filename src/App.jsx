@@ -169,7 +169,7 @@ function App() {
             <nav className="footer-nav">
               <ul className="list-unstyled d-flex align-items-center m-0 ">
                 <li className="footer-nav-item">
-                  <a href="#" className="footer-nav-link">
+                  <a href="#hero" className="footer-nav-link">
                     {selectLan == "uz"
                       ? "Kompaniya haqida"
                       : selectLan == "eng"
@@ -179,7 +179,7 @@ function App() {
                 </li>
 
                 <li className="footer-nav-item">
-                  <a href="#" className="footer-nav-link">
+                  <a href="#products" className="footer-nav-link">
                     {selectLan == "uz"
                       ? "Mahsulotlar"
                       : selectLan == "eng"
@@ -189,7 +189,7 @@ function App() {
                 </li>
 
                 <li className="footer-nav-item">
-                  <a href="#" className="footer-nav-link">
+                  <a href="#services" className="footer-nav-link">
                     {selectLan == "uz"
                       ? "Xizmatlar"
                       : selectLan == "eng"
@@ -199,7 +199,7 @@ function App() {
                 </li>
 
                 <li className="footer-nav-item">
-                  <a href="#" className="footer-nav-link">
+                  <a href="#news" className="footer-nav-link">
                     {selectLan == "uz"
                       ? "Yangiliklar"
                       : selectLan == "eng"
@@ -209,7 +209,7 @@ function App() {
                 </li>
 
                 <li className="footer-nav-item">
-                  <a href="#" className="footer-nav-link">
+                  <a href="#employees" className="footer-nav-link">
                     {selectLan == "uz"
                       ? "Jamoa"
                       : selectLan == "eng"
@@ -219,7 +219,7 @@ function App() {
                 </li>
 
                 <li className="footer-nav-item">
-                  <a href="#" className="footer-nav-link">
+                  <a href="#message" className="footer-nav-link">
                     {selectLan == "uz"
                       ? "Aloqa"
                       : selectLan == "eng"
