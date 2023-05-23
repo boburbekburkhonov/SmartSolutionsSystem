@@ -44,26 +44,33 @@ const ProductsAbout = (props) => {
         <h2 className="a_products__header">Smart water</h2>
         <section className="products__about">
           <div className="container products__about__container">
-            <AliceCarousel
-              autoPlay={true}
-              infinite={true}
-              animationDuration="2000"
-              disableButtonsControls={true}
-              mouseTracking
-              items={items}
-            />
 
-            <div className="a_products__right">
+            {!dataProduct.name ? <span className="loader"></span>: <> 
+              <AliceCarousel
+                autoPlay={true}
+                infinite={true}
+                animationDuration="2000"
+                disableButtonsControls={true}
+                mouseTracking
+                items={items}
+              />
 
-              <h3 className="a_products__title">
-                <strong>{dataProduct.name}</strong>
+              <div className="a_products__right">
 
-              </h3>
-              <p className="a_products__desc">
-                {" "}
-                {dataProduct.desc}
-              </p>
-            </div>
+                <h3 className="a_products__title">
+                  <strong>{dataProduct.name}</strong>
+
+                </h3>
+                <p className="a_products__desc">
+                  {" "}
+                  {dataProduct.desc}
+                </p>
+              </div>
+
+            </>  }
+
+           
+
           </div>
         </section>
       </main>

@@ -32,7 +32,9 @@ const ServiceAbout = (props) => {
 
         <section className="a_service__about">
           <div className="container service__about__container">
-            <ul className="list-unstyled m-0 a_services-list">
+            
+            {!dataService.length ? <span className="loader"></span>:<ul className="list-unstyled m-0 a_services-list">
+
               {dataService.map((item, index) => {
                 return (
                   <li className="a_services-item" key={index}>
@@ -48,7 +50,9 @@ const ServiceAbout = (props) => {
                   </li>
                 );
               })}
-            </ul>
+              </ul>
+            }
+            
           </div>
         </section>
       </main>

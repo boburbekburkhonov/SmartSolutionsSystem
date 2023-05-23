@@ -30,7 +30,7 @@ const EmployeeAbout = (props) => {
 
         <section className="a_employee__about">
           <div className="container employee__about__container">
-            <ul className="a_employees-list m-0 list-unstyled">
+            {!dataEmployees.length ? <span className="loader"></span> : <ul className="a_employees-list m-0 list-unstyled">
               {dataEmployees.map((item, index) => {
                 return (
                   <li
@@ -96,7 +96,8 @@ const EmployeeAbout = (props) => {
                   </li>
                 );
               })}
-            </ul>
+            </ul>}
+            
           </div>
         </section>
       </main>
