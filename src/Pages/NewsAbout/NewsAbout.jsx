@@ -2,13 +2,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./NewsAbout.css";
+import { api } from "../../Api/Api";
 
 const NewsAbout = (props) => {
   const { selectLan } = props;
   const [dataNews, setDataNews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5656/users/news")
+    fetch(`${api}/users/news`)
       .then((res) => res.json())
       .then((data) => {
         setDataNews([]);
@@ -30,31 +31,39 @@ const NewsAbout = (props) => {
 
         <section className="a_news__about">
           <div className="container news__about__container">
-
-
             <ul className="a_news__list">
-            {!dataNews ? <span className="loader"></span> : <>{dataNews?.map((item, index) => {
-                return (
-                  <li key={index} role="presentation" className="a_news__item">
-                    <img
-                      src={item.img}
-                      width={336}
-                      height={270}
-                      alt=""
-                      className="a_news__img"
-                    />
+              {dataNews.length == 0 ? (
+                <span className="loader"></span>
+              ) : (
+                <>
+                  {dataNews?.map((item, index) => {
+                    return (
+                      <li
+                        key={index}
+                        role="presentation"
+                        className="a_news__item"
+                      >
+                        <img
+                          src={item.img}
+                          width={336}
+                          height={270}
+                          alt=""
+                          className="a_news__img"
+                        />
 
-                    <div className="a_news__body">
-                      <h3 className="a_news__title">{item.title}</h3>
-                      <p className="a_news__desc">{item.desc}</p>
-                      <p className="a_news_location">{item.location}</p>
-                      <strong className="a_news__date">{item.createAt}</strong>
-                    </div>
-                  </li>
-                );
-              })}</>}
-
-              
+                        <div className="a_news__body">
+                          <h3 className="a_news__title">{item.title}</h3>
+                          <p className="a_news__desc">{item.desc}</p>
+                          <p className="a_news_location">{item.location}</p>
+                          <strong className="a_news__date">
+                            {item.createAt}
+                          </strong>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </>
+              )}
             </ul>
           </div>
         </section>

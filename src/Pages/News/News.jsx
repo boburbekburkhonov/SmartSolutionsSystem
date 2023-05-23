@@ -8,6 +8,7 @@ import "./News.css";
 import right from "../../assets/images/hero-btn.png";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { api } from "../../Api/Api";
 
 const News = (props) => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const News = (props) => {
   const [dataNews, setDataNews] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5656/users/news")
+    fetch(`${api}/users/news`)
       .then((res) => res.json())
       .then((data) => {
         setDataNews([]);
@@ -54,31 +55,29 @@ const News = (props) => {
       <section id="news" className="news__section">
         <div className="container news__container">
           <div className="news__top">
-            <div></div>
-            <span></span>
-            <h2 className="header__news">
+            <h2 className="header__news mb-0 m-auto">
               {selectLan == "uz"
                 ? "Yangiliklar"
                 : selectLan == "eng"
                 ? "News"
                 : null}
             </h2>
+          </div>
 
-            <div>
-              <button
-                className="more-btn4"
-                onClick={() => navigate("/news/about")}
-              >
-                <img src={right} alt="right" width="20" height="16" />
-                <span className="more-btn-span">
-                  {selectLan == "uz"
-                    ? "Barcha yangiliklar"
-                    : selectLan == "eng"
-                    ? "All News"
-                    : null}
-                </span>
-              </button>
-            </div>
+          <div className="mb-5">
+            <button
+              className="more-btn4 ms-auto"
+              onClick={() => navigate("/news/about")}
+            >
+              <img src={right} alt="right" width="20" height="16" />
+              <span className="more-btn-span">
+                {selectLan == "uz"
+                  ? "Barcha yangiliklar"
+                  : selectLan == "eng"
+                  ? "All News"
+                  : null}
+              </span>
+            </button>
           </div>
 
           <div className="news__bottom">
@@ -100,7 +99,13 @@ const News = (props) => {
               onClick={() => navigate("/news/about")}
             >
               <img src={right} alt="right" width="20" height="16" />
-              <span className="more-btn-span">Bacha yangiliklar</span>
+              <span className="more-btn-span">
+                {selectLan == "uz"
+                  ? "Barcha yangiliklar"
+                  : selectLan == "eng"
+                  ? "All News"
+                  : null}
+              </span>
             </button>
           </div>
         </div>

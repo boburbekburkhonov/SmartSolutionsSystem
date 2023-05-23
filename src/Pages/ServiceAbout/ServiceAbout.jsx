@@ -3,13 +3,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./ServiceAbout.css";
+import { api } from "../../Api/Api";
 
 const ServiceAbout = (props) => {
   const { selectLan } = props;
   const [dataService, setDataService] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5656/users/services")
+    fetch(`${api}/users/services`)
       .then((res) => res.json())
       .then((data) => {
         setDataService([]);
@@ -32,27 +33,27 @@ const ServiceAbout = (props) => {
 
         <section className="a_service__about">
           <div className="container service__about__container">
-            
-            {!dataService.length ? <span className="loader"></span>:<ul className="list-unstyled m-0 a_services-list">
-
-              {dataService.map((item, index) => {
-                return (
-                  <li className="a_services-item" key={index}>
-                    <img
-                      className="a_services-img"
-                      src={item.img}
-                      alt="service"
-                      width="300"
-                      height="220"
-                    />
-                    <p className="a_services-title m-0">{item.title}</p>
-                    <p className="a_service-desc m-0">{item.desc}</p>
-                  </li>
-                );
-              })}
+            {!dataService.length ? (
+              <span className="loader"></span>
+            ) : (
+              <ul className="list-unstyled m-0 a_services-list">
+                {dataService.map((item, index) => {
+                  return (
+                    <li className="a_services-item" key={index}>
+                      <img
+                        className="a_services-img"
+                        src={item.img}
+                        alt="service"
+                        width="300"
+                        height="220"
+                      />
+                      <p className="a_services-title m-0">{item.title}</p>
+                      <p className="a_service-desc m-0">{item.desc}</p>
+                    </li>
+                  );
+                })}
               </ul>
-            }
-            
+            )}
           </div>
         </section>
       </main>

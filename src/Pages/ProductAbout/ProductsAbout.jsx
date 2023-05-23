@@ -7,6 +7,7 @@ import React, { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "./ProductsAbout.css";
 import { useNavigate, useParams } from "react-router-dom";
+import { api } from "../../Api/Api";
 
 const ProductsAbout = (props) => {
   const handleDragStart = (e) => e.preventDefault();
@@ -15,7 +16,7 @@ const ProductsAbout = (props) => {
   const [dataProduct, setDataProduct] = useState({});
 
   useEffect(() => {
-    fetch("http://localhost:5656/users/products")
+    fetch(`${api}/users/products`)
       .then((res) => res.json())
       .then((data) => {
         setDataProduct({});
@@ -33,7 +34,7 @@ const ProductsAbout = (props) => {
           src={item.link}
           onDragStart={handleDragStart}
           role="presentation"
-        />        
+        />
       </>
     );
   });
@@ -44,33 +45,30 @@ const ProductsAbout = (props) => {
         <h2 className="a_products__header">Smart water</h2>
         <section className="products__about">
           <div className="container products__about__container">
+            {!dataProduct.name ? (
+              <span className="loader"></span>
+            ) : (
+              <>
+                <AliceCarousel
+                  autoPlay={true}
+                  infinite={true}
+                  animationDuration="2000"
+                  disableButtonsControls={true}
+                  mouseTracking
+                  items={items}
+                />
 
-            {!dataProduct.name ? <span className="loader"></span>: <> 
-              <AliceCarousel
-                autoPlay={true}
-                infinite={true}
-                animationDuration="2000"
-                disableButtonsControls={true}
-                mouseTracking
-                items={items}
-              />
-
-              <div className="a_products__right">
-
-                <h3 className="a_products__title">
-                  <strong>{dataProduct.name}</strong>
-
-                </h3>
-                <p className="a_products__desc">
-                  {" "}
-                  {dataProduct.desc}
-                </p>
-              </div>
-
-            </>  }
-
-           
-
+                <div className="a_products__right">
+                  <h3 className="a_products__title">
+                    <strong>{dataProduct.name}</strong>
+                  </h3>
+                  <p className="a_products__desc">
+                    {" "}
+                    {dataProduct.desc.split("!@#")[1]}
+                  </p>
+                </div>
+              </>
+            )}
           </div>
         </section>
       </main>

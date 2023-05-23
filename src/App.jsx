@@ -5,16 +5,16 @@ import NewsAbout from "./Pages/NewsAbout/NewsAbout";
 import VideoAbout from "./Pages/VideoAbout/VideoAbout";
 import EmployeeAbout from "./Pages/EmployeeAbout/EmployeeAbout";
 import ProductsAbout from "./Pages/ProductAbout/ProductsAbout";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import logo from "./assets/images/logo1.svg";
 import { useState, useEffect } from "react";
 import Main from "./Pages/Main/Main";
 
 function App() {
   const [selectLan, setSelectLan] = useState("uz");
+  const location = useLocation();
 
   const [dataProduct, setDataProduct] = useState([]);
-
 
   useEffect(() => {
     fetch("http://localhost:5656/users/products")
@@ -115,14 +115,19 @@ function App() {
                   ? "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Flag_of_Uzbekistan.png/1200px-Flag_of_Uzbekistan.png"
                   : "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Flag_of_the_United_Kingdom_%281-2%29.svg/1200px-Flag_of_the_United_Kingdom_%281-2%29.svg.png"
               }
-              width="52"
-              height="27"
+              className="language-img"
               alt="Flag_of_Uzbekistan"
             />
 
             <select
               onChange={(e) => setSelectLan(e.target.value)}
-              className="form-select header-nav-select ms-3"
+              className={
+                location.pathname.split("/")[1] +
+                  location.pathname.split("/")[2] ==
+                "productabout"
+                  ? "d-none"
+                  : "form-select header-nav-select ms-3"
+              }
             >
               <option value="uz" className="header-nav-option">
                 Uz
@@ -137,39 +142,40 @@ function App() {
           <div className="header__bg"></div>
         </div>
       </header>
-      <main className="main">
-      {dataProduct.length ? <span className="loader"></span>:<Routes>
-        <Route path="/" element={<Main selectLan={selectLan} />} />
-        <Route
-          path="/hero/about"
-          element={<HeroAbout selectLan={selectLan} />}
-        />
-        <Route
-          path="/product/about/:id"
-          element={<ProductsAbout selectLan={selectLan} />}
-        />
-        <Route
-          path="/service/about"
-          element={<ServiceAbout selectLan={selectLan} />}
-        />
-        <Route
-          path="/news/about"
-          element={<NewsAbout selectLan={selectLan} />}
-        />
-        <Route
-          path="/video/about"
-          element={<VideoAbout selectLan={selectLan} />}
-        />
-        <Route
-          path="/employee/about"
-          element={<EmployeeAbout selectLan={selectLan} />}
-        />
-      </Routes>}
-      </main>
-      
-      
 
-      
+      {dataProduct.length == 0 ? (
+        <div className="container d-flex align-items-center justify-content-center">
+          <span className="loader "></span>
+        </div>
+      ) : (
+        <Routes>
+          <Route path="/" element={<Main selectLan={selectLan} />} />
+          <Route
+            path="/hero/about"
+            element={<HeroAbout selectLan={selectLan} />}
+          />
+          <Route
+            path="/product/about/:id"
+            element={<ProductsAbout selectLan={selectLan} />}
+          />
+          <Route
+            path="/service/about"
+            element={<ServiceAbout selectLan={selectLan} />}
+          />
+          <Route
+            path="/news/about"
+            element={<NewsAbout selectLan={selectLan} />}
+          />
+          <Route
+            path="/video/about"
+            element={<VideoAbout selectLan={selectLan} />}
+          />
+          <Route
+            path="/employee/about"
+            element={<EmployeeAbout selectLan={selectLan} />}
+          />
+        </Routes>
+      )}
 
       <footer className="footer">
         <div className="footer__top">

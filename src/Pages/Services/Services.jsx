@@ -5,6 +5,7 @@ import service from "../../assets/images/services.png";
 import right from "../../assets/images/hero-btn.png";
 import "./Services.css";
 import { useNavigate } from "react-router-dom";
+import { api } from "../../Api/Api";
 
 const Services = (props) => {
   const { selectLan } = props;
@@ -12,7 +13,7 @@ const Services = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5656/users/services")
+    fetch(`${api}/users/services`)
       .then((res) => res.json())
       .then((data) => {
         setDataService([]);

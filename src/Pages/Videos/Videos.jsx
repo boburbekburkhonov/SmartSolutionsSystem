@@ -5,6 +5,7 @@ import "./Videos.css";
 import right from "../../assets/images/hero-btn.png";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { api } from "../../Api/Api";
 
 const Videos = (props) => {
   const { selectLan } = props;
@@ -12,7 +13,7 @@ const Videos = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5656/users/cases")
+    fetch(`${api}/users/cases`)
       .then((res) => res.json())
       .then((data) => {
         setDataVideos([]);

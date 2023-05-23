@@ -4,6 +4,7 @@ import "./Products.css";
 import Button from "../Button/Button";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { api } from "../../Api/Api";
 
 const Products = (props) => {
   const { selectLan } = props;
@@ -11,7 +12,7 @@ const Products = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5656/users/products")
+    fetch(`${api}/users/products`)
       .then((res) => res.json())
       .then((data) => {
         setDataProduct([]);
@@ -20,6 +21,10 @@ const Products = (props) => {
       });
   }, [selectLan]);
 
+  console.log(
+    dataProduct[1]?.desc.split("!@#")[0],
+    dataProduct[1]?.desc.split("!@#")[1]
+  );
   return (
     <>
       <section id="products" className="products">
@@ -45,7 +50,7 @@ const Products = (props) => {
                   />
                   <div className="item__body">
                     <h4 className="item__header">{item.name}</h4>
-                    <p className="item__desc">{item.desc}</p>
+                    <p className="item__desc">{item.desc.split("!@#")[0]}</p>
                     <span onClick={() => navigate(`/product/about/${item.id}`)}>
                       <Button selectLan={selectLan} />
                     </span>

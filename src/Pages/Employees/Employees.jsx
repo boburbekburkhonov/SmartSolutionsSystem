@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import right from "../../assets/images/hero-btn.png";
 import "./Employees.css";
 import { useNavigate } from "react-router-dom";
+import { api } from "../../Api/Api";
 
 const Employees = (props) => {
   const { selectLan } = props;
@@ -11,7 +12,7 @@ const Employees = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:5656/users/employees")
+    fetch(`${api}/users/employees`)
       .then((res) => res.json())
       .then((data) => {
         setDataEmployees([]);
