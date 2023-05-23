@@ -30,8 +30,10 @@ const NewsAbout = (props) => {
 
         <section className="a_news__about">
           <div className="container news__about__container">
+
+
             <ul className="a_news__list">
-              {dataNews?.map((item, index) => {
+            {!dataNews ? <span className="loader"></span> : <>{dataNews?.map((item, index) => {
                 return (
                   <li key={index} role="presentation" className="a_news__item">
                     <img
@@ -50,7 +52,9 @@ const NewsAbout = (props) => {
                     </div>
                   </li>
                 );
-              })}
+              })}</>}
+
+              
             </ul>
           </div>
         </section>

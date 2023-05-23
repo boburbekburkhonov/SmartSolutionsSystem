@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import HeroAbout from "./Pages/HeroAbout/HeroAbout";
 import ServiceAbout from "./Pages/ServiceAbout/ServiceAbout";
 import NewsAbout from "./Pages/NewsAbout/NewsAbout";
@@ -6,11 +7,24 @@ import EmployeeAbout from "./Pages/EmployeeAbout/EmployeeAbout";
 import ProductsAbout from "./Pages/ProductAbout/ProductsAbout";
 import { Route, Routes } from "react-router-dom";
 import logo from "./assets/images/logo1.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Main from "./Pages/Main/Main";
 
 function App() {
   const [selectLan, setSelectLan] = useState("uz");
+
+  const [dataProduct, setDataProduct] = useState([]);
+
+
+  useEffect(() => {
+    fetch("http://localhost:5656/users/products")
+      .then((res) => res.json())
+      .then((data) => {
+        setDataProduct([]);
+        const arr = data.filter((e) => e.len == selectLan);
+        setDataProduct(arr);
+      });
+  }, [selectLan]);
 
   return (
     <>
@@ -123,8 +137,8 @@ function App() {
           <div className="header__bg"></div>
         </div>
       </header>
-
-      <Routes>
+      <main className="main">
+      {dataProduct.length ? <span className="loader"></span>:<Routes>
         <Route path="/" element={<Main selectLan={selectLan} />} />
         <Route
           path="/hero/about"
@@ -150,7 +164,12 @@ function App() {
           path="/employee/about"
           element={<EmployeeAbout selectLan={selectLan} />}
         />
-      </Routes>
+      </Routes>}
+      </main>
+      
+      
+
+      
 
       <footer className="footer">
         <div className="footer__top">
