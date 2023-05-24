@@ -65,8 +65,9 @@ const News = (props) => {
           </div>
 
           <div className="mb-5">
-            <button
-              className="more-btn4 ms-auto"
+            <a
+              href="#"
+              className="more-btn4 ms-auto text-decoration-none"
               onClick={() => navigate("/news/about")}
             >
               <img src={right} alt="right" width="20" height="16" />
@@ -77,7 +78,7 @@ const News = (props) => {
                   ? "All News"
                   : null}
               </span>
-            </button>
+            </a>
           </div>
 
           <div className="news__bottom">
@@ -94,8 +95,9 @@ const News = (props) => {
               />
             </ul>
 
-            <button
-              className="more-btn2"
+            <a
+              href="#"
+              className="more-btn2 text-decoration-none"
               onClick={() => navigate("/news/about")}
             >
               <img src={right} alt="right" width="20" height="16" />
@@ -106,7 +108,7 @@ const News = (props) => {
                   ? "All News"
                   : null}
               </span>
-            </button>
+            </a>
           </div>
         </div>
       </section>

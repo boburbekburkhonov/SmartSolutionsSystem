@@ -53,8 +53,9 @@ const Videos = (props) => {
             })}
           </ul>
 
-          <button
-            className="more-btn3"
+          <a
+            href="#"
+            className="more-btn3 text-decoration-none"
             onClick={() => navigate("/video/about")}
           >
             <img src={right} alt="right" width="20" height="16" />
@@ -65,7 +66,7 @@ const Videos = (props) => {
                 ? "All Videos"
                 : null}
             </span>
-          </button>
+          </a>
         </div>
       </section>
     </>

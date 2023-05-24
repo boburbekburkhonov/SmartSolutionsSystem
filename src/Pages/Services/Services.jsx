@@ -50,8 +50,9 @@ const Services = (props) => {
           })}
         </ul>
 
-        <button
-          className="employees-btn "
+        <a
+          className="employees-btn text-decoration-none"
+          href="#"
           onClick={() => navigate("/service/about")}
         >
           <img src={right} alt="right" width="20" height="16" />
@@ -62,7 +63,7 @@ const Services = (props) => {
               ? "All services"
               : null}
           </span>
-        </button>
+        </a>
       </div>
     </section>
   );

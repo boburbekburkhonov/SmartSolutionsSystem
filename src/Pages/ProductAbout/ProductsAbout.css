@@ -1,13 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
+#root {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	flex-grow: 1;
+  margin-bottom: 50px;
+  background-color: #EFEFEF;
+}
 
 .main{
-  background-color: #EFEFEF;
   padding-bottom: 20px;
 }
 
 .products__about{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   background-color: #fff;
+  margin-top: 20px;
+  height: 100%;
 }
 
 .products__about__container{
@@ -34,7 +58,7 @@
 
 
 .a_products__header{
-  margin-bottom: 20px;
+  margin: 0;
   padding-bottom: 50px;
   text-align: center;
   font-size: 42px;
@@ -43,7 +67,7 @@
 }
 
 .a_products__title{
-  padding-bottom: 10px;  
+  padding-bottom: 10px;
   font-weight: bold;
 }
 
@@ -66,10 +90,10 @@
 
 
   .a_products__title{
-    padding-bottom: 5px;  
+    padding-bottom: 5px;
     font-size: 21px;
   }
-  
+
   .a_products__desc {
     padding-bottom: 5px;
     font-size: 15px;
@@ -85,7 +109,7 @@
 }
 
 @media (max-width: 550px){
-  .a_products__header {  
+  .a_products__header {
     font-size: 30px;
   }
 }

@@ -52,7 +52,7 @@ const ProductsAbout = (props) => {
                 <AliceCarousel
                   autoPlay={true}
                   infinite={true}
-                  animationDuration="2000"
+                  animationDuration="4000"
                   disableButtonsControls={true}
                   mouseTracking
                   items={items}

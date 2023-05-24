@@ -90,6 +90,8 @@
   border: transparent;
   border-radius: 10px;
   box-shadow: 5px 3px 8px #5A5A5A;
+  max-width: 200px;
+  width: 100%;
 }
 
 .more-btn4:hover {

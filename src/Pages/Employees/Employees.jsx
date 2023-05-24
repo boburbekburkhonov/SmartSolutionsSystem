@@ -94,8 +94,9 @@ const Employees = (props) => {
             })}
           </ul>
 
-          <button
-            className="employees-btn"
+          <a
+            href="#"
+            className="employees-btn text-decoration-none"
             onClick={() => navigate("/employee/about")}
           >
             <img src={right} alt="right" width="20" height="16" />
@@ -106,7 +107,7 @@ const Employees = (props) => {
                 ? "All Team"
                 : null}
             </span>
-          </button>
+          </a>
         </div>
       </section>
     </>

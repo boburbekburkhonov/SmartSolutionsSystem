@@ -9,6 +9,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import logo from "./assets/images/logo1.svg";
 import { useState, useEffect } from "react";
 import Main from "./Pages/Main/Main";
+import { api } from "./Api/Api";
 
 function App() {
   const [selectLan, setSelectLan] = useState("uz");
@@ -17,7 +18,7 @@ function App() {
   const [dataProduct, setDataProduct] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5656/users/products")
+    fetch(`${api}/users/products`)
       .then((res) => res.json())
       .then((data) => {
         setDataProduct([]);

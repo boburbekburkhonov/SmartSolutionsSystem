@@ -26,9 +26,13 @@ const Hero = (props) => {
                 ? "«Smart Solution System» is one of the leading companies in Uzbekistan in introducing smart technologies. Automation and monitoring of water structures, pumping stations, hydro nodes and reservoirs is one of the main directions of the company."
                 : null}
             </p>
-            <span onClick={() => navigate("/hero/about")}>
+            <a
+              href="#"
+              className="text-decoration-none"
+              onClick={() => navigate("/hero/about")}
+            >
               <Button selectLan={selectLan} />
-            </span>
+            </a>
           </div>
         </div>
       </section>

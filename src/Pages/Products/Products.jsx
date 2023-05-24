@@ -21,10 +21,6 @@ const Products = (props) => {
       });
   }, [selectLan]);
 
-  console.log(
-    dataProduct[1]?.desc.split("!@#")[0],
-    dataProduct[1]?.desc.split("!@#")[1]
-  );
   return (
     <>
       <section id="products" className="products">
@@ -51,9 +47,13 @@ const Products = (props) => {
                   <div className="item__body">
                     <h4 className="item__header">{item.name}</h4>
                     <p className="item__desc">{item.desc.split("!@#")[0]}</p>
-                    <span onClick={() => navigate(`/product/about/${item.id}`)}>
+                    <a
+                      href="#"
+                      className="text-decoration-none"
+                      onClick={() => navigate(`/product/about/${item.id}`)}
+                    >
                       <Button selectLan={selectLan} />
-                    </span>
+                    </a>
                   </div>
                 </li>
               );

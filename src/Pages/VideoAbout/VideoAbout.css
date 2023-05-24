@@ -1,7 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+}
+
+#root {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.main {
+	flex-grow: 1;
+  margin-bottom: 50px;
+  background-color: #EFEFEF;
+}
+
 .a_video__about{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   background-color: #fff;
+  margin-top: 20px;
+  height: 100%;
 }
 
 .video__about__container{
@@ -75,7 +101,7 @@
 }
 
 @media (max-width: 550px){
-  .a_video__header {  
+  .a_video__header {
     font-size: 30px;
   }
 }
