@@ -13,7 +13,7 @@ const Services = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${api}/users/services`)
+    fetch(`${api}/users/servicesThree`)
       .then((res) => res.json())
       .then((data) => {
         setDataService([]);

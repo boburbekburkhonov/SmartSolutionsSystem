@@ -17,7 +17,7 @@ const News = (props) => {
   const [dataNews, setDataNews] = useState([]);
 
   useEffect(() => {
-    fetch(`${api}/users/news`)
+    fetch(`${api}/users/newsThree`)
       .then((res) => res.json())
       .then((data) => {
         setDataNews([]);

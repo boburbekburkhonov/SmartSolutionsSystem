@@ -12,7 +12,7 @@ const Employees = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${api}/users/employees`)
+    fetch(`${api}/users/employeesThree`)
       .then((res) => res.json())
       .then((data) => {
         setDataEmployees([]);

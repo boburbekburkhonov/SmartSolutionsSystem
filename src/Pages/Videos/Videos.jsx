@@ -13,7 +13,7 @@ const Videos = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${api}/users/cases/three`)
+    fetch(`${api}/users/casesThree`)
       .then((res) => res.json())
       .then((data) => {
         setDataVideos([]);
@@ -61,7 +61,7 @@ const Videos = (props) => {
             <img src={right} alt="right" width="20" height="16" />
             <span className="more-btn-span">
               {selectLan == "uz"
-                ? "Bacha videolar"
+                ? "Barcha videolar"
                 : selectLan == "eng"
                 ? "All Videos"
                 : null}

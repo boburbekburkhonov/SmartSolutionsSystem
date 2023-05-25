@@ -5,7 +5,8 @@ import NewsAbout from "./Pages/NewsAbout/NewsAbout";
 import VideoAbout from "./Pages/VideoAbout/VideoAbout";
 import EmployeeAbout from "./Pages/EmployeeAbout/EmployeeAbout";
 import ProductsAbout from "./Pages/ProductAbout/ProductsAbout";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import logo from "./assets/images/logo1.svg";
 import { useState, useEffect } from "react";
 import Main from "./Pages/Main/Main";
@@ -14,6 +15,7 @@ import { api } from "./Api/Api";
 function App() {
   const [selectLan, setSelectLan] = useState("uz");
   const location = useLocation();
+  const navigate = useNavigate();
 
   const [dataProduct, setDataProduct] = useState([]);
 
@@ -32,7 +34,10 @@ function App() {
       <header className="header">
         <div className="container d-flex align-items-center justify-content-between">
           <div>
-            <a href="#" className="d-flex align-items-center header-logo-link">
+            <HashLink
+              to="/#"
+              className="d-flex align-items-center header-logo-link"
+            >
               <img
                 src="https://smart-solution.uz/assets/img/apple-touch-icon.png"
                 alt="logo"
@@ -40,7 +45,7 @@ function App() {
                 height="55"
               />
               <p className="header-desc m-0 ms-2">Smart Solutions System</p>
-            </a>
+            </HashLink>
           </div>
 
           <span className="header-line"></span>
@@ -48,7 +53,11 @@ function App() {
           <nav className="site-nav">
             <ul className="list-unstyled d-flex align-items-center m-0 site-nav-list">
               <li className="header-nav-item">
-                <a href="#hero" className="header-nav-link">
+                <a
+                  href="#"
+                  onClick={() => navigate("/hero/about")}
+                  className="header-nav-link"
+                >
                   {selectLan == "uz"
                     ? "Kompaniya haqida"
                     : selectLan == "eng"
@@ -58,53 +67,53 @@ function App() {
               </li>
 
               <li className="header-nav-item">
-                <a href="#products" className="header-nav-link">
+                <HashLink to="/#products" className="header-nav-link">
                   {selectLan == "uz"
                     ? "Mahsulotlar"
                     : selectLan == "eng"
                     ? "Products"
                     : null}
-                </a>
+                </HashLink>
               </li>
 
               <li className="header-nav-item">
-                <a href="#services" className="header-nav-link">
+                <HashLink to="/#services" className="header-nav-link">
                   {selectLan == "uz"
                     ? "Xizmatlar"
                     : selectLan == "eng"
                     ? "Services"
                     : null}
-                </a>
+                </HashLink>
               </li>
 
               <li className="header-nav-item">
-                <a href="#news" className="header-nav-link">
+                <HashLink to="/#news" className="header-nav-link">
                   {selectLan == "uz"
                     ? "Yangiliklar"
                     : selectLan == "eng"
                     ? "News"
                     : null}
-                </a>
+                </HashLink>
               </li>
 
               <li className="header-nav-item">
-                <a href="#employees" className="header-nav-link">
+                <HashLink to="/#employees" className="header-nav-link">
                   {selectLan == "uz"
                     ? "Jamoa"
                     : selectLan == "eng"
                     ? "Team"
                     : null}
-                </a>
+                </HashLink>
               </li>
 
               <li className="header-nav-item">
-                <a href="#message" className="header-nav-link">
+                <HashLink to="/#message" className="header-nav-link">
                   {selectLan == "uz"
                     ? "Aloqa"
                     : selectLan == "eng"
                     ? "Contact us"
                     : null}
-                </a>
+                </HashLink>
               </li>
             </ul>
           </nav>
@@ -230,43 +239,61 @@ function App() {
             </h3>
             <ul className="footer-sites-list list-unstyled d-flex align-items-center justify-content-between flex-wrap">
               <li className="footer-sites">
-                <a className="footer-sites-link text-decoration-none" href="#">
-                  <i className="bx bxl-facebook-square"></i>
-                </a>
-              </li>
-
-              <li className="footer-sites">
-                <a className="footer-sites-link text-decoration-none" href="#">
+                <a
+                  className="footer-sites-link text-decoration-none"
+                  href="https://instagram.com/smart_solutions_systemuz?igshid=MmJiY2I4NDBkZg=="
+                  target="_blank"
+                >
                   <i className="bx bxl-instagram"></i>
                 </a>
               </li>
 
               <li className="footer-sites">
-                <a className="footer-sites-link text-decoration-none" href="#">
+                <a
+                  className="footer-sites-link text-decoration-none"
+                  href="https://t.me/smartsolutions_system"
+                  target="_blank"
+                >
                   <i className="bx bxl-telegram"></i>
                 </a>
               </li>
 
               <li className="footer-sites">
-                <a className="footer-sites-link text-decoration-none" href="#">
+                <a
+                  className="footer-sites-link text-decoration-none"
+                  href="mailto:smartsolutionssystem@mail.ru"
+                  target="_blank"
+                >
                   <i className="bx bxl-gmail"></i>
                 </a>
               </li>
 
               <li className="footer-sites">
-                <a className="footer-sites-link text-decoration-none" href="#">
+                <a
+                  className="footer-sites-link text-decoration-none"
+                  href="tel:+998998341193"
+                  target="_blank"
+                >
                   <i className="bx bxl-whatsapp"></i>
                 </a>
               </li>
 
               <li className="footer-sites">
-                <a className="footer-sites-link text-decoration-none" href="#">
+                <a
+                  className="footer-sites-link text-decoration-none"
+                  href="https://youtube.com/@Smart_Solutions_System"
+                  target="_blank"
+                >
                   <i className="bx bxl-youtube"></i>
                 </a>
               </li>
 
               <li className="footer-sites">
-                <a className="footer-sites-link text-decoration-none" href="#">
+                <a
+                  className="footer-sites-link text-decoration-none"
+                  href="https://play.google.com/store/apps/details?id=uz.dilshodjon216.smart_water"
+                  target="_blank"
+                >
                   <i className="bx bxl-play-store"></i>
                 </a>
               </li>
