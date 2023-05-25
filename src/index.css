@@ -222,7 +222,6 @@ body {
 
 }
 
-
 .footer{
   display: flex;
   flex-direction: column;
@@ -230,9 +229,7 @@ body {
 }
 
 .footer__container{
-  display:  flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 50px 20px;
 }
 
 .footer__top {
@@ -240,7 +237,12 @@ body {
   display:  flex;
   justify-content: center;
   align-items: flex-end;
-  margin: 20px 0;
+}
+
+.footer__top_responsive {
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .footer__middle{
@@ -265,6 +267,7 @@ body {
   font-size: 15px;
   text-align: center;
   background-color: #EFF9FF;
+  font-weight: 700;
 }
 
 .footer-nav-item + .footer-nav-item {
@@ -287,16 +290,34 @@ body {
   color: #5A5A5A;
   opacity: 0.3s;
 }
+
 @media (max-width: 700px){
 
-  .footer__top{
+  .footer__top_responsive{
+    padding: 13px 0;
+    margin-top: 30px;
     background-color: #EFF9FF;
+  }
+
+  .footer__header {
+    padding: 0 !important;
+  }
+
+  .footer__container {
+    padding: 10px 20px !important;
+  }
+
+  .footer__top_responsive {
+    display: flex !important;
+  }
+
+  .footer__top {
+    display: none;
   }
 
  .foooter__txt{
   background-color: transparent;
  }
-
 
   .footer__middle{
     display: none;
@@ -328,6 +349,68 @@ body {
 
 }
 
+@media (max-width: 360px) {
+
+  .footer-sites-list {
+    justify-content: center !important;
+  }
+
+}
+
+.footer-sites-heading {
+  margin: 0;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #5A5A5A;
+  font-weight: 700;
+}
+
+.footer-sites-list {
+  max-width: 500px;
+  width: 100%;
+}
+
+.footer-sites-link:hover {
+  opacity: 0.7;
+}
+
+.footer-sites-link:active {
+  opacity: 0.4;
+}
+
+.footer-sites-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #dadada51;
+  border-radius: 50%;
+  color: #32779C;
+}
+
+@media (max-width: 750px) {
+
+  .footer__container {
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 20px;
+  }
+
+  .footer-sites-middle {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-sites-heading {
+    font-size: 18px;
+  }
+
+}
+
+.border-footer {
+  border-top: 20px solid #EFEFEF;
+}
 
 /* ! spinner -------------- */
 

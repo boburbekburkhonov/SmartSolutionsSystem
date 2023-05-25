@@ -51,6 +51,8 @@ body {
   width: 100%;
   margin: 0;
   padding: 30px;
+  padding-bottom: 40px;
+  padding-top: 0px ;
   display: flex;
   justify-content: space-around !important;
   flex-wrap: wrap;
@@ -104,6 +106,12 @@ body {
   .a_video__header {
     font-size: 30px;
   }
+
+  .a_videos__list {
+    padding-top: 13px;
+    padding-bottom: 30px;
+  }
+
 }
 
 @media (max-width: 420px){
@@ -120,6 +128,10 @@ body {
     border-radius: 30px;
     max-width: 250px;
     max-height: 140px;
+  }
+
+  .a_videos__list {
+    padding-top: 16px;
   }
 
 }

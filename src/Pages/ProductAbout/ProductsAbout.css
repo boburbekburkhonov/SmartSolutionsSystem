@@ -41,6 +41,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 20px 20px;
+  padding-top: 0;
+  padding-bottom: 60px !important;
 }
 
 .a_products__right{
@@ -99,6 +101,10 @@ body {
     font-size: 15px;
   }
 
+  .products__about__container{
+    padding-bottom: 40px !important;
+  }
+
 }
 
 @media (max-width: 600px){
@@ -112,11 +118,19 @@ body {
   .a_products__header {
     font-size: 30px;
   }
+
+  .products__about__container{
+    padding-bottom: 20px !important;
+  }
 }
 
 @media (max-width: 400px){
   .a_products__img{
     max-width: 250px;
     max-height: 250px;
+  }
+
+  .products__about__container{
+    padding-bottom: 6px !important;
   }
 }

@@ -178,8 +178,20 @@ function App() {
         </Routes>
       )}
 
-      <footer className="footer">
-        <div className="footer__top">
+      <footer
+        className={
+          location.pathname == "/" || location.pathname == "/hero/about"
+            ? "footer"
+            : "footer border-footer"
+        }
+      >
+        <div
+          className={
+            location.pathname == "/hero/about"
+              ? "footer__top_responsive d-none mt-0"
+              : "footer__top_responsive d-none"
+          }
+        >
           <img
             className="footer_logo"
             src={logo}
@@ -190,76 +202,75 @@ function App() {
           <h2 className="footer__header">Smart solution System</h2>
         </div>
 
-        <div className="container footer__container">
-          <div className="footer__middle">
-            <nav className="footer-nav">
-              <ul className="list-unstyled d-flex align-items-center m-0 ">
-                <li className="footer-nav-item">
-                  <a href="#hero" className="footer-nav-link">
-                    {selectLan == "uz"
-                      ? "Kompaniya haqida"
-                      : selectLan == "eng"
-                      ? "About us"
-                      : null}
-                  </a>
-                </li>
+        <div
+          className={
+            location.pathname == "/hero/about"
+              ? "container footer__container d-flex  align-items-start justify-content-between pt-0"
+              : "container footer__container d-flex  align-items-start justify-content-between"
+          }
+        >
+          <div className="footer__top">
+            <img
+              className="footer_logo"
+              src={logo}
+              width={55}
+              height={55}
+              alt="logo"
+            />
+            <h2 className="footer__header">Smart solution System</h2>
+          </div>
 
-                <li className="footer-nav-item">
-                  <a href="#products" className="footer-nav-link">
-                    {selectLan == "uz"
-                      ? "Mahsulotlar"
-                      : selectLan == "eng"
-                      ? "Products"
-                      : null}
-                  </a>
-                </li>
+          <div className="w-100 footer-sites-middle">
+            <h3 className="footer-sites-heading">
+              Bizning ijtimoiy tarmoqlarimiz
+            </h3>
+            <ul className="footer-sites-list list-unstyled d-flex align-items-center justify-content-between flex-wrap">
+              <li className="footer-sites">
+                <a className="footer-sites-link text-decoration-none" href="#">
+                  <i className="bx bxl-facebook-square"></i>
+                </a>
+              </li>
 
-                <li className="footer-nav-item">
-                  <a href="#services" className="footer-nav-link">
-                    {selectLan == "uz"
-                      ? "Xizmatlar"
-                      : selectLan == "eng"
-                      ? "Services"
-                      : null}
-                  </a>
-                </li>
+              <li className="footer-sites">
+                <a className="footer-sites-link text-decoration-none" href="#">
+                  <i className="bx bxl-instagram"></i>
+                </a>
+              </li>
 
-                <li className="footer-nav-item">
-                  <a href="#news" className="footer-nav-link">
-                    {selectLan == "uz"
-                      ? "Yangiliklar"
-                      : selectLan == "eng"
-                      ? "News"
-                      : null}
-                  </a>
-                </li>
+              <li className="footer-sites">
+                <a className="footer-sites-link text-decoration-none" href="#">
+                  <i className="bx bxl-telegram"></i>
+                </a>
+              </li>
 
-                <li className="footer-nav-item">
-                  <a href="#employees" className="footer-nav-link">
-                    {selectLan == "uz"
-                      ? "Jamoa"
-                      : selectLan == "eng"
-                      ? "Team"
-                      : null}
-                  </a>
-                </li>
+              <li className="footer-sites">
+                <a className="footer-sites-link text-decoration-none" href="#">
+                  <i className="bx bxl-gmail"></i>
+                </a>
+              </li>
 
-                <li className="footer-nav-item">
-                  <a href="#message" className="footer-nav-link">
-                    {selectLan == "uz"
-                      ? "Aloqa"
-                      : selectLan == "eng"
-                      ? "Contact us"
-                      : null}
-                  </a>
-                </li>
-              </ul>
-            </nav>
+              <li className="footer-sites">
+                <a className="footer-sites-link text-decoration-none" href="#">
+                  <i className="bx bxl-whatsapp"></i>
+                </a>
+              </li>
+
+              <li className="footer-sites">
+                <a className="footer-sites-link text-decoration-none" href="#">
+                  <i className="bx bxl-youtube"></i>
+                </a>
+              </li>
+
+              <li className="footer-sites">
+                <a className="footer-sites-link text-decoration-none" href="#">
+                  <i className="bx bxl-play-store"></i>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-
         <div className="footer__bottom">
-          <p className="foooter__txt">© 2023 Smart Solutions System</p>
+          <p className="foooter__txt py-4 ">© 2023 Smart Solutions System</p>
         </div>
       </footer>
     </>

@@ -43,7 +43,7 @@
 }
 
 .a_hero__title{
-  padding-bottom: 10px;  
+  padding-bottom: 10px;
   font-weight: bold;
 }
 
@@ -61,7 +61,7 @@
 @media (max-width: 750px) {
 
   .a_hero__left{
-    display: none;  
+    display: none;
   }
 
   .a_hero__header {
@@ -72,28 +72,27 @@
 
   .a_hero__right{
     width: 100%;
-  }  
-  
+  }
+
   .a_hero__title{
-    padding-bottom: 5px;  
+    padding-bottom: 5px;
     font-size: 21px;
   }
-  
+
   .a_hero__desc {
     padding-bottom: 5px;
     font-size: 15px;
   }
-
 }
 
 @media (max-width: 550px){
-  .a_hero__header {  
+  .a_hero__header {
     font-size: 30px;
   }
 }
 
 @media (max-width: 450px){
-  .a_hero__header {  
+  .a_hero__header {
     font-size: 25px;
   }
 }

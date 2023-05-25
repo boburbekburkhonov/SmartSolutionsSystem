@@ -45,6 +45,9 @@ const News = (props) => {
 
         <div className="news__body">
           <h3 className="news__header">{item.title}</h3>
+          <p className="a_news__desc">{item.desc}</p>
+          <p className="a_news_location">{item.location}</p>
+          <strong className="a_news__date">{item.createAt}</strong>
         </div>
       </div>
     );
@@ -88,8 +91,9 @@ const News = (props) => {
                 infinite={true}
                 autoPlayStrategy="all"
                 responsive={responsive}
-                animationDuration="2000"
+                animationDuration="2500"
                 disableDotsControls={true}
+                autoPlayInterval={2000}
                 mouseTracking
                 items={items}
               />

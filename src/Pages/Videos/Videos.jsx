@@ -13,7 +13,7 @@ const Videos = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${api}/users/cases`)
+    fetch(`${api}/users/cases/three`)
       .then((res) => res.json())
       .then((data) => {
         setDataVideos([]);
@@ -34,10 +34,10 @@ const Videos = (props) => {
         </h2>
 
         <div className="container videos__constainer">
-          <ul className="videos__list">
+          <ul className="videos__list d-flex align-items-center justify-content-between flex-wrap">
             {dataVideos.map((item, index) => {
               return (
-                <li className="videos__item" key={index}>
+                <li className="videos__item mb-3" key={index}>
                   <iframe
                     className="videos__you"
                     width="400"
