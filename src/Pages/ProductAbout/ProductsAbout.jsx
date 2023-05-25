@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import AliceCarousel from "react-alice-carousel";
 import "./ProductsAbout.css";
 import { useNavigate, useParams } from "react-router-dom";
-import { api } from "../../Api/Api";
+import { api, apiImage } from "../../Api/Api";
 
 const ProductsAbout = (props) => {
   const handleDragStart = (e) => e.preventDefault();
@@ -31,7 +31,7 @@ const ProductsAbout = (props) => {
         <img
           key={index}
           className="a_products__img"
-          src={item.link}
+          src={`${apiImage}/${item.link}`}
           onDragStart={handleDragStart}
           role="presentation"
         />

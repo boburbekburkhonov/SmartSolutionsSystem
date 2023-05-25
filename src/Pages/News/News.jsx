@@ -8,7 +8,7 @@ import "./News.css";
 import right from "../../assets/images/hero-btn.png";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api } from "../../Api/Api";
+import { api, apiImage } from "../../Api/Api";
 
 const News = (props) => {
   const navigate = useNavigate();
@@ -36,7 +36,7 @@ const News = (props) => {
     return (
       <div key={index} className="news__item">
         <img
-          src={item.img}
+          src={`${apiImage}/${item.img}`}
           width={336}
           height={270}
           alt=""

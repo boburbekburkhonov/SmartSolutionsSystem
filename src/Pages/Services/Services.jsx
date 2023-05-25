@@ -5,7 +5,7 @@ import service from "../../assets/images/services.png";
 import right from "../../assets/images/hero-btn.png";
 import "./Services.css";
 import { useNavigate } from "react-router-dom";
-import { api } from "../../Api/Api";
+import { api, apiImage } from "../../Api/Api";
 
 const Services = (props) => {
   const { selectLan } = props;
@@ -39,7 +39,7 @@ const Services = (props) => {
               <li className="services-item" key={index}>
                 <img
                   className="services-img"
-                  src={item.img}
+                  src={`${apiImage}/${item.img}`}
                   alt="service"
                   width="300"
                   height="220"

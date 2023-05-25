@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import right from "../../assets/images/hero-btn.png";
 import "./Employees.css";
 import { useNavigate } from "react-router-dom";
-import { api } from "../../Api/Api";
+import { api, apiImage } from "../../Api/Api";
 
 const Employees = (props) => {
   const { selectLan } = props;
@@ -39,9 +39,10 @@ const Employees = (props) => {
                 >
                   <img
                     className="employees-item-img"
-                    src={item.img}
+                    src={`${apiImage}/${item.img}`}
                     width="170"
                     height="170"
+                    alt="employee"
                   />
                   <div className="employees-item-right">
                     <h4 className="employees-item-right-heading">

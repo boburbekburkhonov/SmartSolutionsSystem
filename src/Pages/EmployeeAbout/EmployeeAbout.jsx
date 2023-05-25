@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./EmployeeAbout.css";
-import { api } from "../../Api/Api";
+import { api, apiImage } from "../../Api/Api";
 
 const EmployeeAbout = (props) => {
   const { selectLan } = props;
@@ -43,9 +43,10 @@ const EmployeeAbout = (props) => {
                     >
                       <img
                         className="a_employees-item-img"
-                        src={item.img}
+                        src={`${apiImage}/${item.img}`}
                         width="170"
                         height="170"
+                        alt="employee"
                       />
                       <div className="a_employees-item-right">
                         <h4 className="a_employees-item-right-heading">

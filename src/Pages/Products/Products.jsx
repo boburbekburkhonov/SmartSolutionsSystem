@@ -4,7 +4,7 @@ import "./Products.css";
 import Button from "../Button/Button";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api } from "../../Api/Api";
+import { api, apiImage } from "../../Api/Api";
 
 const Products = (props) => {
   const { selectLan } = props;
@@ -39,7 +39,7 @@ const Products = (props) => {
                 <li className="products__item" key={index}>
                   <img
                     className="item__img"
-                    src={item.pImages.map((e) => e.link)}
+                    src={`${apiImage}/${item.pImages.map((e) => e.link)}`}
                     width={494}
                     height={266}
                     alt=""

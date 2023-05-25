@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./ServiceAbout.css";
-import { api } from "../../Api/Api";
+import { api, apiImage } from "../../Api/Api";
 
 const ServiceAbout = (props) => {
   const { selectLan } = props;
@@ -42,7 +42,7 @@ const ServiceAbout = (props) => {
                     <li className="a_services-item" key={index}>
                       <img
                         className="a_services-img"
-                        src={item.img}
+                        src={`${apiImage}/${item.img}`}
                         alt="service"
                         width="300"
                         height="220"

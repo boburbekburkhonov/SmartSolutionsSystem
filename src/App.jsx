@@ -222,7 +222,11 @@ function App() {
 
           <div className="w-100 footer-sites-middle">
             <h3 className="footer-sites-heading">
-              Bizning ijtimoiy tarmoqlarimiz
+              {selectLan == "uz"
+                ? "Bizning ijtimoiy tarmoqlarimiz"
+                : selectLan == "eng"
+                ? "Our social networks"
+                : null}
             </h3>
             <ul className="footer-sites-list list-unstyled d-flex align-items-center justify-content-between flex-wrap">
               <li className="footer-sites">
