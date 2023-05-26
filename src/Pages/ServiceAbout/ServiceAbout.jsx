@@ -19,6 +19,7 @@ const ServiceAbout = (props) => {
       });
   }, [selectLan]);
 
+
   return (
     <>
       <main className="main">
@@ -48,7 +49,13 @@ const ServiceAbout = (props) => {
                         height="220"
                       />
                       <p className="a_services-title m-0">{item.title}</p>
-                      <p className="a_service-desc m-0">{item.desc}</p>
+                      {item.desc.split("!@#").map((e) => {
+                        return (
+                          <>
+                            <span className="a_service-desc m-0 pt-0">{e}</span>
+                          </>
+                        );
+                      })}
                     </li>
                   );
                 })}

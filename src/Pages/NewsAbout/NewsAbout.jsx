@@ -53,7 +53,13 @@ const NewsAbout = (props) => {
 
                         <div className="a_news__body text-center">
                           <h3 className="a_news__title">{item.title}</h3>
-                          <p className="a_news__desc">{item.desc}</p>
+                          {item.desc.split("!@#").map((e) => {
+                            return (
+                              <>
+                                <span className="a_news__desc">{e}</span>
+                              </>
+                            );
+                          })}
                           <p className="a_news_location">{item.location}</p>
                           <strong className="a_news__date">
                             {item.createAt}

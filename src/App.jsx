@@ -229,7 +229,77 @@ function App() {
             <h2 className="footer__header">Smart solution System</h2>
           </div>
 
-          <div className="w-100 footer-sites-middle">
+          <div className="footer-among-wrapper d-flex flex-column align-items-start">
+            <h4 className="m-0 footer-among-heading">Foydali havolalar</h4>
+
+            <ul className="list-unstyled d-flex flex-column align-items-start m-0 site-nav-list-footer">
+              <li className="footer-nav-item ms-0">
+                <a
+                  href="#"
+                  onClick={() => navigate("/hero/about")}
+                  className="footer-nav-link"
+                >
+                  {selectLan == "uz"
+                    ? "Kompaniya haqida"
+                    : selectLan == "eng"
+                    ? "About us"
+                    : null}
+                </a>
+              </li>
+
+              <li className="footer-nav-item ms-0">
+                <HashLink to="/#products" className="footer-nav-link">
+                  {selectLan == "uz"
+                    ? "Mahsulotlar"
+                    : selectLan == "eng"
+                    ? "Products"
+                    : null}
+                </HashLink>
+              </li>
+
+              <li className="footer-nav-item ms-0">
+                <HashLink to="/#services" className="footer-nav-link">
+                  {selectLan == "uz"
+                    ? "Xizmatlar"
+                    : selectLan == "eng"
+                    ? "Services"
+                    : null}
+                </HashLink>
+              </li>
+
+              <li className="footer-nav-item ms-0">
+                <HashLink to="/#news" className="footer-nav-link">
+                  {selectLan == "uz"
+                    ? "Yangiliklar"
+                    : selectLan == "eng"
+                    ? "News"
+                    : null}
+                </HashLink>
+              </li>
+
+              <li className="footer-nav-item ms-0">
+                <HashLink to="/#employees" className="footer-nav-link">
+                  {selectLan == "uz"
+                    ? "Jamoa"
+                    : selectLan == "eng"
+                    ? "Team"
+                    : null}
+                </HashLink>
+              </li>
+
+              <li className="footer-nav-item ms-0">
+                <HashLink to="/#message" className="footer-nav-link">
+                  {selectLan == "uz"
+                    ? "Aloqa"
+                    : selectLan == "eng"
+                    ? "Contact us"
+                    : null}
+                </HashLink>
+              </li>
+            </ul>
+          </div>
+
+          <div className="footer-sites-middle">
             <h3 className="footer-sites-heading">
               {selectLan == "uz"
                 ? "Bizning ijtimoiy tarmoqlarimiz"

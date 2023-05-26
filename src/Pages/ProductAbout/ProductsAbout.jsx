@@ -38,6 +38,9 @@ const ProductsAbout = (props) => {
       </>
     );
   });
+  const prodectDescArr = dataProduct.desc
+    ?.split("!@#")
+    .filter((e, index) => index != 0);
 
   return (
     <>
@@ -63,10 +66,14 @@ const ProductsAbout = (props) => {
                   <h3 className="a_products__title">
                     <strong>{dataProduct.name}</strong>
                   </h3>
-                  <p className="a_products__desc">
-                    {" "}
-                    {dataProduct.desc.split("!@#")[1]}
-                  </p>
+                  {prodectDescArr.map((e) => {
+                    return (
+                      <>
+                        <span className="a_products__desc p-0">{e}</span>
+                        <br />
+                      </>
+                    );
+                  })}
                 </div>
               </>
             )}
