@@ -95,20 +95,19 @@ const Employees = (props) => {
             })}
           </ul>
 
-          <a
-            href="#"
+          <span
             className="employees-btn text-decoration-none"
             onClick={() => navigate("/employee/about")}
           >
             <img src={right} alt="right" width="20" height="16" />
-            <span className="employees-btn-span">
+            <span className="employees-btn-span cursor-pointer">
               {selectLan == "uz"
                 ? "Barcha jamoa"
                 : selectLan == "eng"
                 ? "All Team"
                 : null}
             </span>
-          </a>
+          </span>
         </div>
       </section>
     </>

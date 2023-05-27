@@ -50,20 +50,19 @@ const Services = (props) => {
           })}
         </ul>
 
-        <a
+        <span
           className="employees-btn text-decoration-none"
-          href="#"
           onClick={() => navigate("/service/about")}
         >
           <img src={right} alt="right" width="20" height="16" />
-          <span className="employees-btn-span">
+          <span className="employees-btn-span cursor-pointer">
             {selectLan == "uz"
               ? "Barcha xizmatlar"
               : selectLan == "eng"
               ? "All services"
               : null}
           </span>
-        </a>
+        </span>
       </div>
     </section>
   );

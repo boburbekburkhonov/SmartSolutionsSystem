@@ -53,20 +53,19 @@ const Videos = (props) => {
             })}
           </ul>
 
-          <a
-            href="#"
+          <span
             className="more-btn3 text-decoration-none"
             onClick={() => navigate("/video/about")}
           >
             <img src={right} alt="right" width="20" height="16" />
-            <span className="more-btn-span">
+            <span className="more-btn-span cursor-pointer">
               {selectLan == "uz"
                 ? "Barcha videolar"
                 : selectLan == "eng"
                 ? "All Videos"
                 : null}
             </span>
-          </a>
+          </span>
         </div>
       </section>
     </>

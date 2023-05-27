@@ -47,13 +47,12 @@ const Products = (props) => {
                   <div className="item__body">
                     <h4 className="item__header">{item.name}</h4>
                     <p className="item__desc">{item.desc.split("!@#")[0]}</p>
-                    <a
-                      href="#"
+                    <span
                       className="text-decoration-none"
                       onClick={() => navigate(`/product/about/${item.id}`)}
                     >
                       <Button selectLan={selectLan} />
-                    </a>
+                    </span>
                   </div>
                 </li>
               );

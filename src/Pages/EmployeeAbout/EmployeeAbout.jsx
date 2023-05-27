@@ -18,6 +18,12 @@ const EmployeeAbout = (props) => {
       });
   }, [selectLan]);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, [props.location]);
+
   return (
     <>
       <main className="main">

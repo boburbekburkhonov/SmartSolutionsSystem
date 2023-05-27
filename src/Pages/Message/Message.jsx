@@ -147,7 +147,7 @@ const Message = (props) => {
 
                 <div className="message-send-form-input-wrapper message-send-form-input-wrapper-email">
                   <label className="message-send-form-label" htmlFor="emailId">
-                    Email
+                    Email:
                   </label>
                   <input
                     className="message-send-form-input form-control mt-2"

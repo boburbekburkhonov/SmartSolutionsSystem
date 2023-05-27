@@ -12,6 +12,10 @@ html {
   display: none;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 body {
   margin-top: 101px;
 }

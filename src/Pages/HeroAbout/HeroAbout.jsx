@@ -1,11 +1,17 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
+import React, { useEffect } from "react";
 import "./HeroAbout.css";
 
 const HeroAbout = (props) => {
   const { selectLan } = props;
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, [props.location]);
 
   return (
     <>

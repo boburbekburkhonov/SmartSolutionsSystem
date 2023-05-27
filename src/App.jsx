@@ -54,9 +54,8 @@ function App() {
             <ul className="list-unstyled d-flex align-items-center m-0 site-nav-list">
               <li className="header-nav-item">
                 <a
-                  href="#"
                   onClick={() => navigate("/hero/about")}
-                  className="header-nav-link"
+                  className="header-nav-link cursor-pointer"
                 >
                   {selectLan == "uz"
                     ? "Kompaniya haqida"
@@ -162,27 +161,31 @@ function App() {
           <Route path="/" element={<Main selectLan={selectLan} />} />
           <Route
             path="/hero/about"
-            element={<HeroAbout selectLan={selectLan} />}
+            element={<HeroAbout location={location} selectLan={selectLan} />}
           />
           <Route
             path="/product/about/:id"
-            element={<ProductsAbout selectLan={selectLan} />}
+            element={
+              <ProductsAbout location={location} selectLan={selectLan} />
+            }
           />
           <Route
             path="/service/about"
-            element={<ServiceAbout selectLan={selectLan} />}
+            element={<ServiceAbout location={location} selectLan={selectLan} />}
           />
           <Route
             path="/news/about"
-            element={<NewsAbout selectLan={selectLan} />}
+            element={<NewsAbout location={location} selectLan={selectLan} />}
           />
           <Route
             path="/video/about"
-            element={<VideoAbout selectLan={selectLan} />}
+            element={<VideoAbout location={location} selectLan={selectLan} />}
           />
           <Route
             path="/employee/about"
-            element={<EmployeeAbout selectLan={selectLan} />}
+            element={
+              <EmployeeAbout location={location} selectLan={selectLan} />
+            }
           />
         </Routes>
       )}
@@ -235,9 +238,8 @@ function App() {
             <ul className="list-unstyled d-flex flex-column align-items-start m-0 site-nav-list-footer">
               <li className="footer-nav-item ms-0">
                 <a
-                  href="#"
                   onClick={() => navigate("/hero/about")}
-                  className="footer-nav-link"
+                  className="footer-nav-link cursor-pointer"
                 >
                   {selectLan == "uz"
                     ? "Kompaniya haqida"
@@ -247,7 +249,7 @@ function App() {
                 </a>
               </li>
 
-              <li className="footer-nav-item ms-0">
+              <li className="footer-nav-item ms-0 mt-2">
                 <HashLink to="/#products" className="footer-nav-link">
                   {selectLan == "uz"
                     ? "Mahsulotlar"
@@ -257,7 +259,7 @@ function App() {
                 </HashLink>
               </li>
 
-              <li className="footer-nav-item ms-0">
+              <li className="footer-nav-item ms-0 mt-2">
                 <HashLink to="/#services" className="footer-nav-link">
                   {selectLan == "uz"
                     ? "Xizmatlar"
@@ -267,7 +269,7 @@ function App() {
                 </HashLink>
               </li>
 
-              <li className="footer-nav-item ms-0">
+              <li className="footer-nav-item ms-0 mt-2">
                 <HashLink to="/#news" className="footer-nav-link">
                   {selectLan == "uz"
                     ? "Yangiliklar"
@@ -277,7 +279,7 @@ function App() {
                 </HashLink>
               </li>
 
-              <li className="footer-nav-item ms-0">
+              <li className="footer-nav-item ms-0 mt-2">
                 <HashLink to="/#employees" className="footer-nav-link">
                   {selectLan == "uz"
                     ? "Jamoa"
@@ -287,8 +289,8 @@ function App() {
                 </HashLink>
               </li>
 
-              <li className="footer-nav-item ms-0">
-                <HashLink to="/#message" className="footer-nav-link">
+              <li className="footer-nav-item ms-0 mt-2">
+                <HashLink to="/#message" className="footer-nav-link" smooth>
                   {selectLan == "uz"
                     ? "Aloqa"
                     : selectLan == "eng"

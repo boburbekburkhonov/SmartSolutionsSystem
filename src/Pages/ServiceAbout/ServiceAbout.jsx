@@ -19,6 +19,11 @@ const ServiceAbout = (props) => {
       });
   }, [selectLan]);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, [props.location]);
 
   return (
     <>
@@ -40,7 +45,7 @@ const ServiceAbout = (props) => {
               <ul className="list-unstyled m-0 a_services-list">
                 {dataService.map((item, index) => {
                   return (
-                    <li className="a_services-item" key={index}>
+                    <li className="a_services-item" key={item.id}>
                       <img
                         className="a_services-img"
                         src={`${apiImage}/${item.img}`}
@@ -49,10 +54,15 @@ const ServiceAbout = (props) => {
                         height="220"
                       />
                       <p className="a_services-title m-0">{item.title}</p>
-                      {item.desc.split("!@#").map((e) => {
+                      {item.desc.split("!@#").map((e, index) => {
                         return (
                           <>
-                            <span className="a_service-desc m-0 pt-0">{e}</span>
+                            <span
+                              key={index}
+                              className="a_service-desc m-0 pt-0"
+                            >
+                              {e}
+                            </span>
                           </>
                         );
                       })}

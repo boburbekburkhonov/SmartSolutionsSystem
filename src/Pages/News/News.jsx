@@ -74,8 +74,8 @@ const News = (props) => {
           </div>
 
           <div className="mb-5">
-            <a
-              
+            <span
+              href="#"
               className="more-btn4 ms-auto text-decoration-none"
               onClick={() => navigate("/news/about")}
             >
@@ -87,7 +87,7 @@ const News = (props) => {
                   ? "All News"
                   : null}
               </span>
-            </a>
+            </span>
           </div>
 
           <div className="news__bottom">
@@ -105,9 +105,8 @@ const News = (props) => {
               />
             </ul>
 
-            <a
-              href="#"
-              className="more-btn2 text-decoration-none"
+            <span
+              className="more-btn2 text-decoration-none cursor-pointer"
               onClick={() => navigate("/news/about")}
             >
               <img src={right} alt="right" width="20" height="16" />
@@ -118,7 +117,7 @@ const News = (props) => {
                   ? "All News"
                   : null}
               </span>
-            </a>
+            </span>
           </div>
         </div>
       </section>

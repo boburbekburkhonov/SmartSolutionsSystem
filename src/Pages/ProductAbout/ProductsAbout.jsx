@@ -25,6 +25,12 @@ const ProductsAbout = (props) => {
       });
   }, [selectLan]);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+    });
+  }, [props.location]);
+
   const items = dataProduct.pImages?.map((item, index) => {
     return (
       <>
@@ -66,10 +72,12 @@ const ProductsAbout = (props) => {
                   <h3 className="a_products__title">
                     <strong>{dataProduct.name}</strong>
                   </h3>
-                  {prodectDescArr.map((e) => {
+                  {prodectDescArr.map((e, index) => {
                     return (
                       <>
-                        <span className="a_products__desc p-0">{e}</span>
+                        <span key={index} className="a_products__desc p-0">
+                          {e}
+                        </span>
                         <br />
                       </>
                     );
