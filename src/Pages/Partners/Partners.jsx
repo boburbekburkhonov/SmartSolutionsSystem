@@ -25,25 +25,27 @@ const Partners = (props) => {
 
         <div className="container partners__container">
           <ul className="partners__list">
+
+            <li className="partners__item ">
+              <img src={partner2} alt="" className="partners__img partners__img1" />
+            </li>
+            
             <li className="partners__item">
-              <img src={partner2} alt="" className="partners__img" />
+              <img src={partner1} alt="" className="partners__img partners__img2" />
             </li>
 
             <li className="partners__item">
-              <img src={partner1} alt="" className="partners__img" />
+              <img src={partner3} alt="" className="partners__img partners__img3" />
             </li>
 
             <li className="partners__item">
-              <img src={partner3} alt="" className="partners__img" />
+              <img src={partner4} alt="" className="partners__img partners__img4" />
             </li>
 
             <li className="partners__item">
-              <img src={partner4} alt="" className="partners__img" />
+              <img src={partner5} alt="" className="partners__img partners__img5" />
             </li>
-
-            <li className="partners__item">
-              <img src={partner5} alt="" className="partners__img" />
-            </li>
+           
           </ul>
           
         </div>

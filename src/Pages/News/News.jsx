@@ -28,7 +28,7 @@ const News = (props) => {
 
   const responsive = {
     0: { items: 1 },
-    900: { items: 2 },
+    650: { items: 2 },
     1255: { items: 3 },
   };
 
@@ -45,9 +45,15 @@ const News = (props) => {
 
         <div className="news__body">
           <h3 className="news__header">{item.title}</h3>
-          <p className="a_news__desc">{item.desc}</p>
-          <p className="a_news_location">{item.location}</p>
-          <strong className="a_news__date">{item.createAt}</strong>
+          {item.desc.split("!@#").map((e) => {
+            return (
+              <>
+                <span className="news__desc">{e}</span>
+              </>
+            );
+          })}
+          <p className="news_location">{item.location}</p>
+          <strong className="news__date">{item.createAt}</strong>
         </div>
       </div>
     );
@@ -69,7 +75,7 @@ const News = (props) => {
 
           <div className="mb-5">
             <a
-              href="#"
+              
               className="more-btn4 ms-auto text-decoration-none"
               onClick={() => navigate("/news/about")}
             >
