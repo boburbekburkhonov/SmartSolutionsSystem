@@ -39,7 +39,7 @@ const Products = (props) => {
                 <li className="products__item" key={index}>
                   <img
                     className="item__img"
-                    src={`${apiImage}/${item.pImages.map((e) => e.link)}`}
+                    src={`${apiImage}/${item.pImages[0].link}`}
                     width={494}
                     height={266}
                     alt=""
