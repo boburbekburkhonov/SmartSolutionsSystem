@@ -62,12 +62,14 @@ const NewsAbout = (props) => {
                           {item.desc.split("!@#").map((e) => {
                             return (
                               <>
-                                <span className="a_news__desc">{e}</span>
+                                <span className="a_news__desc text-start d-inline-block">
+                                  {e}
+                                </span>
                               </>
                             );
                           })}
                           <p className="a_news_location">{item.location}</p>
-                          <strong className="a_news__date">
+                          <strong className="a_news__date d-none">
                             {item.createAt}
                           </strong>
                         </div>

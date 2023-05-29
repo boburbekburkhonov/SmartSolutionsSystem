@@ -75,7 +75,10 @@ const ProductsAbout = (props) => {
                   {prodectDescArr.map((e, index) => {
                     return (
                       <>
-                        <span key={index} className="a_products__desc p-0">
+                        <span
+                          key={index}
+                          className="a_products__desc p-0 d-inline-block me-auto"
+                        >
                           {e}
                         </span>
                         <br />

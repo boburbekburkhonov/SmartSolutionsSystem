@@ -48,12 +48,14 @@ const News = (props) => {
           {item.desc.split("!@#").map((e) => {
             return (
               <>
-                <span className="news__desc">{e}</span>
+                <span className="news__desc text-start d-inline-block">
+                  {e}
+                </span>
               </>
             );
           })}
           <p className="news_location">{item.location}</p>
-          <strong className="news__date">{item.createAt}</strong>
+          <strong className="news__date d-none">{item.createAt}</strong>
         </div>
       </div>
     );
@@ -75,12 +77,11 @@ const News = (props) => {
 
           <div className="mb-5">
             <span
-              href="#"
               className="more-btn4 ms-auto text-decoration-none"
               onClick={() => navigate("/news/about")}
             >
               <img src={right} alt="right" width="20" height="16" />
-              <span className="more-btn-span">
+              <span className="more-btn-span cursor-pointer">
                 {selectLan == "uz"
                   ? "Barcha yangiliklar"
                   : selectLan == "eng"
@@ -110,7 +111,7 @@ const News = (props) => {
               onClick={() => navigate("/news/about")}
             >
               <img src={right} alt="right" width="20" height="16" />
-              <span className="more-btn-span">
+              <span className="more-btn-span cursor-pointer">
                 {selectLan == "uz"
                   ? "Barcha yangiliklar"
                   : selectLan == "eng"

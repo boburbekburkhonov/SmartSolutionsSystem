@@ -30,13 +30,9 @@
   padding: 10px;
 }
 
-/* .partners__item{
-  align-self: stretch;
-} */
-
 
 @media (max-width: 1100px){
- 
+
   .partners__img1{
     max-width: 182px;
   }
@@ -84,7 +80,7 @@
     max-width: 950px;
   }
 
-  
+
 
 
 }
@@ -96,7 +92,7 @@
     font-size: 33px;
   }
 
-  
+
 }
 
 @media (max-width: 450px) {
@@ -106,5 +102,5 @@
     font-size: 30px;
   }
 
- 
+
 }

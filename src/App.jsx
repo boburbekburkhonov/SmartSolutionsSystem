@@ -19,6 +19,13 @@ function App() {
 
   const [dataProduct, setDataProduct] = useState([]);
 
+  function cancel(hash) {
+    navigate(-1);
+    setTimeout(() => {
+      window.location.href = hash;
+    }, 800);
+  }
+
   useEffect(() => {
     fetch(`${api}/users/products`)
       .then((res) => res.json())
@@ -66,53 +73,118 @@ function App() {
               </li>
 
               <li className="header-nav-item">
-                <HashLink to="/#products" className="header-nav-link">
-                  {selectLan == "uz"
-                    ? "Mahsulotlar"
-                    : selectLan == "eng"
-                    ? "Products"
-                    : null}
-                </HashLink>
+                {location.pathname == "/" ? (
+                  <HashLink to="/#products" className="header-nav-link">
+                    {selectLan == "uz"
+                      ? "Mahsulotlar"
+                      : selectLan == "eng"
+                      ? "Products"
+                      : null}
+                  </HashLink>
+                ) : (
+                  <HashLink
+                    onClick={() => cancel("/#products")}
+                    className="header-nav-link"
+                  >
+                    {selectLan == "uz"
+                      ? "Mahsulotlar"
+                      : selectLan == "eng"
+                      ? "Products"
+                      : null}
+                  </HashLink>
+                )}
               </li>
 
               <li className="header-nav-item">
-                <HashLink to="/#services" className="header-nav-link">
-                  {selectLan == "uz"
-                    ? "Xizmatlar"
-                    : selectLan == "eng"
-                    ? "Services"
-                    : null}
-                </HashLink>
+                {location.pathname == "/" ? (
+                  <HashLink to="/#services" className="header-nav-link">
+                    {selectLan == "uz"
+                      ? "Xizmatlar"
+                      : selectLan == "eng"
+                      ? "Services"
+                      : null}
+                  </HashLink>
+                ) : (
+                  <HashLink
+                    onClick={() => cancel("/#services")}
+                    className="header-nav-link"
+                  >
+                    {selectLan == "uz"
+                      ? "Xizmatlar"
+                      : selectLan == "eng"
+                      ? "Services"
+                      : null}
+                  </HashLink>
+                )}
               </li>
 
               <li className="header-nav-item">
-                <HashLink to="/#news" className="header-nav-link">
-                  {selectLan == "uz"
-                    ? "Yangiliklar"
-                    : selectLan == "eng"
-                    ? "News"
-                    : null}
-                </HashLink>
+                {location.pathname == "/" ? (
+                  <HashLink to="/#news" className="header-nav-link">
+                    {selectLan == "uz"
+                      ? "Yangiliklar"
+                      : selectLan == "eng"
+                      ? "News"
+                      : null}
+                  </HashLink>
+                ) : (
+                  <HashLink
+                    onClick={() => cancel("/#news")}
+                    className="header-nav-link"
+                  >
+                    {selectLan == "uz"
+                      ? "Yangiliklar"
+                      : selectLan == "eng"
+                      ? "News"
+                      : null}
+                  </HashLink>
+                )}
               </li>
 
               <li className="header-nav-item">
-                <HashLink to="/#employees" className="header-nav-link">
-                  {selectLan == "uz"
-                    ? "Jamoa"
-                    : selectLan == "eng"
-                    ? "Team"
-                    : null}
-                </HashLink>
+                {location.pathname == "/" ? (
+                  <HashLink to="/#employees" className="header-nav-link">
+                    {selectLan == "uz"
+                      ? "Jamoa"
+                      : selectLan == "eng"
+                      ? "Team"
+                      : null}
+                  </HashLink>
+                ) : (
+                  <HashLink
+                    onClick={() => cancel("/#employees")}
+                    className="header-nav-link"
+                  >
+                    {selectLan == "uz"
+                      ? "Jamoa"
+                      : selectLan == "eng"
+                      ? "Team"
+                      : null}
+                  </HashLink>
+                )}
               </li>
 
               <li className="header-nav-item">
-                <HashLink to="/#message" className="header-nav-link">
-                  {selectLan == "uz"
-                    ? "Aloqa"
-                    : selectLan == "eng"
-                    ? "Contact us"
-                    : null}
-                </HashLink>
+                {location.pathname == "/" ? (
+                  <HashLink to="/#message" className="header-nav-link">
+                    {selectLan == "uz"
+                      ? "Aloqa"
+                      : selectLan == "eng"
+                      ? "Contact us"
+                      : null}
+                  </HashLink>
+                ) : (
+                  <HashLink
+                    onClick={() => cancel("/#message")}
+                    className="header-nav-link"
+                  >
+                    {selectLan == "uz"
+                      ? "Aloqa"
+                      : selectLan == "eng"
+                      ? "Contact us"
+                      : null}
+                  </HashLink>
+                )}
               </li>
             </ul>
           </nav>
@@ -250,53 +322,119 @@ function App() {
               </li>
 
               <li className="footer-nav-item ms-0 mt-2">
-                <HashLink to="/#products" className="footer-nav-link">
-                  {selectLan == "uz"
-                    ? "Mahsulotlar"
-                    : selectLan == "eng"
-                    ? "Products"
-                    : null}
-                </HashLink>
+                {location.pathname == "/" ? (
+                  <HashLink to="/#products" className="footer-nav-link">
+                    {selectLan == "uz"
+                      ? "Mahsulotlar"
+                      : selectLan == "eng"
+                      ? "Products"
+                      : null}
+                  </HashLink>
+                ) : (
+                  <span
+                    onClick={() => cancel("/#products")}
+                    className="footer-nav-link cursor-pointer"
+                  >
+                    {selectLan == "uz"
+                      ? "Mahsulotlar"
+                      : selectLan == "eng"
+                      ? "Products"
+                      : null}
+                  </span>
+                )}
               </li>
 
               <li className="footer-nav-item ms-0 mt-2">
-                <HashLink to="/#services" className="footer-nav-link">
-                  {selectLan == "uz"
-                    ? "Xizmatlar"
-                    : selectLan == "eng"
-                    ? "Services"
-                    : null}
-                </HashLink>
+                {location.pathname == "/" ? (
+                  <HashLink to="/#services" className="footer-nav-link">
+                    {selectLan == "uz"
+                      ? "Xizmatlar"
+                      : selectLan == "eng"
+                      ? "Services"
+                      : null}
+                  </HashLink>
+                ) : (
+                  <span
+                    onClick={() => cancel("/#services")}
+                    className="footer-nav-link cursor-pointer"
+                  >
+                    {selectLan == "uz"
+                      ? "Xizmatlar"
+                      : selectLan == "eng"
+                      ? "Services"
+                      : null}
+                  </span>
+                )}
               </li>
 
               <li className="footer-nav-item ms-0 mt-2">
-                <HashLink to="/#news" className="footer-nav-link">
-                  {selectLan == "uz"
-                    ? "Yangiliklar"
-                    : selectLan == "eng"
-                    ? "News"
-                    : null}
-                </HashLink>
+                {location.pathname == "/" ? (
+                  <HashLink to="/#news" className="footer-nav-link">
+                    {selectLan == "uz"
+                      ? "Yangiliklar"
+                      : selectLan == "eng"
+                      ? "News"
+                      : null}
+                  </HashLink>
+                ) : (
+                  <span
+                    onClick={() => cancel("/#news")}
+                    className="footer-nav-link cursor-pointer"
+                  >
+                    {selectLan == "uz"
+                      ? "Yangiliklar"
+                      : selectLan == "eng"
+                      ? "News"
+                      : null}
+                  </span>
+                )}
               </li>
 
               <li className="footer-nav-item ms-0 mt-2">
-                <HashLink to="/#employees" className="footer-nav-link">
-                  {selectLan == "uz"
-                    ? "Jamoa"
-                    : selectLan == "eng"
-                    ? "Team"
-                    : null}
-                </HashLink>
+                {location.pathname == "/" ? (
+                  <HashLink to="/#employees" className="footer-nav-link">
+                    {selectLan == "uz"
+                      ? "Jamoa"
+                      : selectLan == "eng"
+                      ? "Team"
+                      : null}
+                  </HashLink>
+                ) : (
+                  <span
+                    onClick={() => cancel("/#employees")}
+                    className="footer-nav-link cursor-pointer"
+                  >
+                    {selectLan == "uz"
+                      ? "Jamoa"
+                      : selectLan == "eng"
+                      ? "Team"
+                      : null}
+                  </span>
+                )}
               </li>
 
               <li className="footer-nav-item ms-0 mt-2">
-                <HashLink to="/#message" className="footer-nav-link" smooth>
-                  {selectLan == "uz"
-                    ? "Aloqa"
-                    : selectLan == "eng"
-                    ? "Contact us"
-                    : null}
-                </HashLink>
+                {location.pathname == "/" ? (
+                  <HashLink to="/#message" className="footer-nav-link" smooth>
+                    {selectLan == "uz"
+                      ? "Aloqa"
+                      : selectLan == "eng"
+                      ? "Contact us"
+                      : null}
+                  </HashLink>
+                ) : (
+                  <span
+                    onClick={() => cancel("/#message")}
+                    className="footer-nav-link cursor-pointer"
+                    smooth
+                  >
+                    {selectLan == "uz"
+                      ? "Aloqa"
+                      : selectLan == "eng"
+                      ? "Contact us"
+                      : null}
+                  </span>
+                )}
               </li>
             </ul>
           </div>
