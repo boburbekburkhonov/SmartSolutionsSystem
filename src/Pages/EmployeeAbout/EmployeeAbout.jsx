@@ -24,6 +24,12 @@ const EmployeeAbout = (props) => {
     });
   }, [props.location]);
 
+  dataEmployees.sort((a, b) => {
+    if (new Date(a.createAt).getTime() < new Date(b.createAt).getTime()) {
+      return -1;
+    }
+  });
+
   return (
     <>
       <main className="main">

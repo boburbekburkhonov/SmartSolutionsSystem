@@ -121,9 +121,9 @@ const HeroAbout = (props) => {
                 <li>
                   <p className="a_hero__desc">
                     {selectLan == "uz"
-                      ? "Qurilish Qurilish Ta’mirlash MChJ"
+                      ? "Qurilish Ta’mirlash MChJ"
                       : selectLan == "eng"
-                      ? "Construction Construction Repair LLC"
+                      ? "Construction Repair LLC"
                       : null}
                   </p>
                 </li>
