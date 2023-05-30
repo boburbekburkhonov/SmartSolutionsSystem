@@ -13,9 +13,7 @@ const VideoAbout = (props) => {
     fetch(`${api}/users/cases`)
       .then((res) => res.json())
       .then((data) => {
-        setDataVideos([]);
-        const arr = data.filter((e) => e.len == selectLan);
-        setDataVideos(arr);
+        setDataVideos(data);
       });
   }, [selectLan]);
 

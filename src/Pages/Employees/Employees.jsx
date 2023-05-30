@@ -15,9 +15,7 @@ const Employees = (props) => {
     fetch(`${api}/users/employeesThree`)
       .then((res) => res.json())
       .then((data) => {
-        setDataEmployees([]);
-        const arr = data.filter((e) => e.len == selectLan);
-        setDataEmployees(arr);
+        setDataEmployees(data);
       });
   }, [selectLan]);
 

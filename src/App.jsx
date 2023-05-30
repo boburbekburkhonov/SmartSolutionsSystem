@@ -45,12 +45,7 @@ function App() {
               to="/#"
               className="d-flex align-items-center header-logo-link"
             >
-              <img
-                src="https://smart-solution.uz/assets/img/apple-touch-icon.png"
-                alt="logo"
-                width="55"
-                height="55"
-              />
+              <img src={logo} alt="logo" width="55" height="55" />
               <p className="header-desc m-0 ms-2">Smart Solutions System</p>
             </HashLink>
           </div>
@@ -305,7 +300,13 @@ function App() {
           </div>
 
           <div className="footer-among-wrapper d-flex flex-column align-items-start">
-            <h4 className="m-0 footer-among-heading">Foydali havolalar</h4>
+            <h4 className="m-0 footer-among-heading">
+              {selectLan == "uz"
+                ? "Foydali havolalar"
+                : selectLan == "eng"
+                ? "Useful links"
+                : null}
+            </h4>
 
             <ul className="list-unstyled d-flex flex-column align-items-start m-0 site-nav-list-footer">
               <li className="footer-nav-item ms-0">
@@ -481,7 +482,7 @@ function App() {
               <li className="footer-sites">
                 <a
                   className="footer-sites-link text-decoration-none"
-                  href="tel:+998998341193"
+                  href="tel:998998341193"
                   target="_blank"
                 >
                   <i className="bx bxl-whatsapp"></i>
