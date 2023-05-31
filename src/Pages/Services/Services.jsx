@@ -13,12 +13,10 @@ const Services = (props) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`${api}/users/servicesThree`)
+    fetch(`${api}/users/servicesThree/${selectLan}`)
       .then((res) => res.json())
       .then((data) => {
-        setDataService([]);
-        const arr = data.filter((e) => e.len == selectLan);
-        setDataService(arr);
+        setDataService(data);
       });
   }, [selectLan]);
 

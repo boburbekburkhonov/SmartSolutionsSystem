@@ -17,12 +17,10 @@ const News = (props) => {
   const [dataNews, setDataNews] = useState([]);
 
   useEffect(() => {
-    fetch(`${api}/users/newsThree`)
+    fetch(`${api}/users/newsThree/${selectLan}`)
       .then((res) => res.json())
       .then((data) => {
-        setDataNews([]);
-        const arr = data.filter((e) => e.len == selectLan);
-        setDataNews(arr);
+        setDataNews(data);
       });
   }, [selectLan]);
 
