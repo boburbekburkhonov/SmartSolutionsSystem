@@ -19,7 +19,6 @@ const Services = (props) => {
         setDataService(data);
       });
   }, [selectLan]);
-
   return (
     <section id="services" className="services">
       <div className="container">

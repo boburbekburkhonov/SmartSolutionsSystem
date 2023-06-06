@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 // import React from "react";
 import "./Products.css";
@@ -21,6 +22,7 @@ const Products = (props) => {
       });
   }, [selectLan]);
 
+  console.log(dataProduct);
   return (
     <>
       <section id="products" className="products">
@@ -46,12 +48,15 @@ const Products = (props) => {
                   />
                   <div className="item__body">
                     <h4 className="item__header">{item.name}</h4>
-                    <p className="item__desc">{item.desc.split("!@#")[0]}</p>
+                    <p className="item__desc"> {item.desc.split("!@#")[0]}</p>
                     <span
                       className="text-decoration-none"
                       onClick={() => navigate(`/product/about/${item.id}`)}
                     >
-                      <Button selectLan={selectLan} />
+                      <div className="d-flex justify-content-between align-items-end flex-wrap">
+                        <Button selectLan={selectLan} />
+                        <span className="product__made m-0">{ item.status == 'true' ? 'Made in @SmartSolutionsSystem' :''}</span>
+                      </div>
                     </span>
                   </div>
                 </li>
