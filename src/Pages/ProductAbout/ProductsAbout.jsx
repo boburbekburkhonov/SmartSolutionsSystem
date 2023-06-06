@@ -84,10 +84,9 @@ const ProductsAbout = (props) => {
                 >
                    <div className="item">
                     <iframe
-                    className="videos__you"
-                    width="400"
-                    height="224"
-                    src='https://www.youtube.com/embed/W7Zatp6qYQc'
+                    className="product_video"
+                    
+                    src={dataProduct.video}
                     title="YouTube video player"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
