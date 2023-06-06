@@ -22,7 +22,6 @@ const Products = (props) => {
       });
   }, [selectLan]);
 
-  console.log(dataProduct);
   return (
     <>
       <section id="products" className="products">

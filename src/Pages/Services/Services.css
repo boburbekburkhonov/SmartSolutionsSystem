@@ -70,7 +70,7 @@
 
   .services-item {
     max-width: 500px;
-    height: 380px;
+    justify-content: space-between;
     width: 100%;
   }
 

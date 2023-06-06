@@ -31,35 +31,21 @@ const ProductsAbout = (props) => {
     });
   }, [props.location]);
 
-  // const items = dataProduct.pImages?.map((item, index) => {
-  //   return (
-  //     <>
-  //       <img
-  //         key={index}
-  //         className="a_products__img"
-  //         src={`${apiImage}/${item.link}`}
-  //         onDragStart={handleDragStart}
-  //         role="presentation"
-  //       />
-  //     </>
-  //   );
-  // });
 
   const items = dataProduct.pImages?.map((item, index) => {
     return (
-        <>
-          <img
+      <>
+        <img
           key={index}
           className="a_products__img"
           src={`${apiImage}/${item.link}`}
           onDragStart={handleDragStart}
           role="presentation"
         />
-        </>
+      </>
+    );
+  });
 
-    )
-})
- 
   const prodectDescArr = dataProduct.desc
     ?.split("!@#")
     .filter((e, index) => index != 0);
@@ -80,19 +66,19 @@ const ProductsAbout = (props) => {
                   disableButtonsControls={true}
                   autoPlayInterval={2000}
                   mouseTracking
-                  // items={items}
                 >
-                   <div className="item">
+                  <div className="item">
                     <iframe
-                    className="product_video"
-                    
-                    src={dataProduct.video}
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
+                      className="videos__you"
+                      width="400"
+                      height="224"
+                      src={dataProduct.video}
+                      title="YouTube video player"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
                     ></iframe>
                   </div>
-                  { ...items}
+                  {...items}
                 </AliceCarousel>
 
                 <div className="a_products__right">
