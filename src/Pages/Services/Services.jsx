@@ -37,12 +37,12 @@ const Services = (props) => {
               <li className="services-item" key={index}>
                 <img
                   className="services-img"
-                  src={`${apiImage}/${item.img}`}
+                  src={`${apiImage}/${item?.img}`}
                   alt="service"
                   width="300"
                   height="220"
                 />
-                <p className="services-desc m-0">{item.title}</p>
+                <p className="services-desc m-0">{item?.title}</p>
               </li>
             );
           })}

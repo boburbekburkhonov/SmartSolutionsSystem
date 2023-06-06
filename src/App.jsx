@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable no-unused-vars */
 import HeroAbout from "./Pages/HeroAbout/HeroAbout";
 import ServiceAbout from "./Pages/ServiceAbout/ServiceAbout";
@@ -225,7 +226,7 @@ function App() {
         </div>
       ) : (
         <Routes>
-          <Route path="/" element={<Main selectLan={selectLan} />} />
+          <Route path="/*" element={<Main selectLan={selectLan} />} />
           <Route
             path="/hero/about"
             element={<HeroAbout location={location} selectLan={selectLan} />}
@@ -416,7 +417,7 @@ function App() {
 
               <li className="footer-nav-item ms-0 mt-2">
                 {location.pathname == "/" ? (
-                  <HashLink to="/#message" className="footer-nav-link" smooth>
+                  <HashLink to="/#message" className="footer-nav-link" >
                     {selectLan == "uz"
                       ? "Aloqa"
                       : selectLan == "eng"
@@ -427,7 +428,7 @@ function App() {
                   <span
                     onClick={() => cancel("/#message")}
                     className="footer-nav-link cursor-pointer"
-                    smooth
+                    
                   >
                     {selectLan == "uz"
                       ? "Aloqa"
