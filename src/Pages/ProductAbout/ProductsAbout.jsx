@@ -31,19 +31,35 @@ const ProductsAbout = (props) => {
     });
   }, [props.location]);
 
+  // const items = dataProduct.pImages?.map((item, index) => {
+  //   return (
+  //     <>
+  //       <img
+  //         key={index}
+  //         className="a_products__img"
+  //         src={`${apiImage}/${item.link}`}
+  //         onDragStart={handleDragStart}
+  //         role="presentation"
+  //       />
+  //     </>
+  //   );
+  // });
+
   const items = dataProduct.pImages?.map((item, index) => {
     return (
-      <>
-        <img
+        <>
+          <img
           key={index}
           className="a_products__img"
           src={`${apiImage}/${item.link}`}
           onDragStart={handleDragStart}
           role="presentation"
         />
-      </>
-    );
-  });
+        </>
+
+    )
+})
+ 
   const prodectDescArr = dataProduct.desc
     ?.split("!@#")
     .filter((e, index) => index != 0);
@@ -64,8 +80,21 @@ const ProductsAbout = (props) => {
                   disableButtonsControls={true}
                   autoPlayInterval={2000}
                   mouseTracking
-                  items={items}
-                />
+                  // items={items}
+                >
+                   <div className="item">
+                    <iframe
+                    className="videos__you"
+                    width="400"
+                    height="224"
+                    src='https://www.youtube.com/embed/W7Zatp6qYQc'
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                    ></iframe>
+                  </div>
+                  { ...items}
+                </AliceCarousel>
 
                 <div className="a_products__right">
                   <h3 className="a_products__title">
