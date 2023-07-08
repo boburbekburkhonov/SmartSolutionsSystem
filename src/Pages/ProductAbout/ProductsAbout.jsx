@@ -50,62 +50,62 @@ const ProductsAbout = (props) => {
     ?.split("!@#")
     .filter((e, index) => index != 0);
 
-  return (
-    <>
-      <main className="main">
-        <h2 className="a_products__header">Smart water</h2>
-        <section className="products__about">
-          <div className="container products__about__container">
-            {!dataProduct.name ? (
-              <span className="loader"></span>
-            ) : (
-              <>
-                <AliceCarousel
-                  autoPlay={true}
-                  animationDuration="2500"
-                  disableButtonsControls={true}
-                  autoPlayInterval={2000}
-                  mouseTracking
-                >
-                  <div className="item">
-                    <iframe
-                      className="videos__you"
-                      width="400"
-                      height="224"
-                      src={dataProduct.video}
-                      title="YouTube video player"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    ></iframe>
-                  </div>
-                  {...items}
-                </AliceCarousel>
+    return (
+      <>
+        <main className="main">
+          <h2 className="a_products__header">{dataProduct.name}</h2>
+          <section className="products__about">
+            <div className="container products__about__container">
+              {!dataProduct.name ? (
+                <span className="loader"></span>
+              ) : (
+                <>
+                  <AliceCarousel
+                    autoPlay={true}
+                    animationDuration="2500"
+                    disableButtonsControls={true}
+                    autoPlayInterval={2000}
+                    mouseTracking
+                  >
+                    <div className="item">
+                      <iframe
+                        className="videos__you"
+                        width="400"
+                        height="224"
+                        src={dataProduct.video}
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowFullScreen
+                      ></iframe>
+                    </div>
+                    {...items}
+                  </AliceCarousel>
 
-                <div className="a_products__right">
-                  <h3 className="a_products__title">
-                    <strong>{dataProduct.name}</strong>
-                  </h3>
-                  {prodectDescArr.map((e, index) => {
-                    return (
-                      <>
-                        <span
-                          key={index}
-                          className="a_products__desc p-0 d-inline-block me-auto"
-                        >
-                          {e}
-                        </span>
-                        <br />
-                      </>
-                    );
-                  })}
-                </div>
-              </>
-            )}
-          </div>
-        </section>
-      </main>
-    </>
-  );
+                  <div className="a_products__right">
+                    <h3 className="a_products__title">
+                      <strong>{dataProduct.name}</strong>
+                    </h3>
+                    {prodectDescArr.map((e, index) => {
+                      return (
+                        <>
+                          <span
+                            key={index}
+                            className="a_products__desc p-0 d-inline-block me-auto"
+                          >
+                            {e}
+                          </span>
+                          <br />
+                        </>
+                      );
+                    })}
+                  </div>
+                </>
+              )}
+            </div>
+          </section>
+        </main>
+      </>
+    );
 };
 
 export default ProductsAbout;
