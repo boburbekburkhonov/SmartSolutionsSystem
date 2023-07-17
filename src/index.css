@@ -571,3 +571,21 @@ body {
   }
 
 }
+
+/*! ANIMATION */
+.block p{
+  margin: 0;
+	font-weight: 700;
+	font-size: 18px;
+  color:#ff0000;
+  padding-top: 35px;
+  white-space: nowrap;
+}
+
+@media (max-width: 450px) {
+
+  .block p{
+    font-size: 15px;
+  }
+
+}

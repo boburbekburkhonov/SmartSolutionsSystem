@@ -1,0 +1,121 @@
+.map_container {
+  padding-top: 80px !important;
+}
+
+.map-heading-span {
+  color: #32779C;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.map-heading {
+  margin-bottom: 70px !important;
+}
+
+.xarita-div {
+  max-width: 800px;
+  width: 100%;
+}
+
+.xarita-div svg path {
+  fill: #94e6ffb1;
+}
+
+.xarita-div svg path:hover {
+  fill: #00c3ff;
+  cursor: pointer;
+}
+
+.on {
+  fill: #007ca1!important;
+}
+
+.map-region-heading {
+  font-size: 34px;
+  font-weight: 500;
+}
+
+.map-smart-water-desc {
+  font-size: 24px;
+  color: #32779C;
+  font-weight: 600;
+}
+
+.map-smart-water-desc-stat {
+  font-size: 24px;
+  color: #ed6262;
+  font-weight: 700;
+}
+
+.map-statistic-wrapper {
+  background: #F5F5F5;
+  padding: 20px 60px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1265px) {
+
+  .map-wrapper {
+    justify-content: center !important;
+  }
+
+  .xarita-div {
+    margin-bottom: 50px;
+  }
+
+  .xarita-div {
+    max-width: 1000px;
+  }
+
+  .map-statistic-wrapper {
+    padding: 20px 80px;
+  }
+
+}
+
+@media (max-width: 720px) {
+
+  .map-heading-span {
+    color: #32779C;
+    font-weight: 700;
+    font-size: 25px
+  }
+
+  .map-heading {
+    font-size: 25px;
+    margin-bottom: 50px !important;
+  }
+
+  .map-region-heading {
+    font-size: 28px;
+  }
+
+  .map-smart-water-desc {
+    font-size: 20px;
+  }
+
+  .map-smart-water-desc-stat {
+    font-size: 20px;
+  }
+
+  .map-statistic-wrapper {
+    padding: 20px 40px;
+  }
+
+}
+
+@media (max-width: 520px) {
+
+  .map-statistic-wrapper {
+    padding: 10px 20px;
+  }
+
+}
+
+@media (max-width: 440px) {
+
+  .map-statistic-wrapper {
+    padding: 5px 10px;
+  }
+
+}

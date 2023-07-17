@@ -8,6 +8,7 @@ import Employees from "../Employees/Employees";
 import Message from "../Message/Message";
 import Partners from "../Partners/Partners";
 import { Helmet, HelmetProvider } from "react-helmet-async";
+import Map from "../Map/Map";
 
 const Main = (props) => {
   const { selectLan } = props;
@@ -18,6 +19,7 @@ const Main = (props) => {
         <>
           <Hero selectLan={selectLan} />
           <Products selectLan={selectLan} />
+          <Map selectLan={selectLan} />
           <Services selectLan={selectLan} />
           <News selectLan={selectLan} />
           <Videos selectLan={selectLan} />

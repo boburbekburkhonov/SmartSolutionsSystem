@@ -9,7 +9,7 @@ const EmployeeAbout = (props) => {
   const [dataEmployees, setDataEmployees] = useState([]);
 
   useEffect(() => {
-    fetch(`${api}/users/employees`)
+    fetch(`${api}/users/employees/${selectLan}/all`)
       .then((res) => res.json())
       .then((data) => {
         setDataEmployees(data);

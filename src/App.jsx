@@ -417,7 +417,7 @@ function App() {
 
               <li className="footer-nav-item ms-0 mt-2">
                 {location.pathname == "/" ? (
-                  <HashLink to="/#message" className="footer-nav-link" >
+                  <HashLink to="/#message" className="footer-nav-link">
                     {selectLan == "uz"
                       ? "Aloqa"
                       : selectLan == "eng"
@@ -428,7 +428,6 @@ function App() {
                   <span
                     onClick={() => cancel("/#message")}
                     className="footer-nav-link cursor-pointer"
-                    
                   >
                     {selectLan == "uz"
                       ? "Aloqa"
@@ -510,6 +509,16 @@ function App() {
                 </a>
               </li>
             </ul>
+
+            <div className="block">
+              <p>
+                {selectLan == "uz"
+                  ? "Sayt test rejimida ishlamoqda!"
+                  : selectLan == "eng"
+                  ? "The site is in test mode!"
+                  : null}
+              </p>
+            </div>
           </div>
         </div>
         <div className="footer__bottom">
