@@ -3,12 +3,12 @@ import "./Map.css";
 
 const Map = (props) => {
   const { selectLan } = props;
-  const [mapRegion, setMapRegion] = useState("O'zbekistan");
+  const [mapRegion, setMapRegion] = useState("O'zbekiston");
 
   useEffect(() => {
     setMapRegion(
       selectLan == "uz"
-        ? "O'zbekistan"
+        ? "O'zbekiston"
         : selectLan == "eng"
         ? "Uzbekistan"
         : null
@@ -112,7 +112,9 @@ const Map = (props) => {
             >
               <path
                 markerMid="rdllf"
-                className={`${mapRegion == "Buxoro" ? "on" : ""}`}
+                className={`${
+                  mapRegion == "Buxoro" || mapRegion == "Bukhara" ? "on" : ""
+                }`}
                 onClick={() => {
                   regionWaterTotal("Buxoro");
                   regionWellTotal("Buxoro");
@@ -129,7 +131,9 @@ const Map = (props) => {
                 name="Bukhoro"
               ></path>
               <path
-                className={`ac ${mapRegion == "Xorazm" ? "on" : ""}`}
+                className={`ac ${
+                  mapRegion == "Xorazm" || mapRegion == "Khorezm" ? "on" : ""
+                }`}
                 onClick={() => {
                   regionWaterTotal("Xorazm");
                   regionWellTotal("Xorazm");
@@ -147,7 +151,10 @@ const Map = (props) => {
               ></path>
               <path
                 className={`pathxarita active ${
-                  mapRegion == "Qoraqalpog'iston" ? "on" : ""
+                  mapRegion == "Qoraqalpog'iston" ||
+                  mapRegion == "Karakalpakstan"
+                    ? "on"
+                    : ""
                 }`}
                 onClick={() => {
                   regionWaterTotal("Qoraqalpog'iston");
@@ -165,7 +172,9 @@ const Map = (props) => {
                 name="Karakalpakstan"
               ></path>
               <path
-                className={`${mapRegion == "Navoi" ? "on" : ""}`}
+                className={`${
+                  mapRegion == "Navoiy" || mapRegion == "Navoi" ? "on" : ""
+                }`}
                 onClick={() => {
                   regionWaterTotal("Navoi");
                   regionWellTotal("Navoi");
@@ -182,7 +191,11 @@ const Map = (props) => {
                 name="Navoi"
               ></path>
               <path
-                className={`${mapRegion == "Samarqand" ? "on" : ""}`}
+                className={`${
+                  mapRegion == "Samarqand" || mapRegion == "Samarkand"
+                    ? "on"
+                    : ""
+                }`}
                 onClick={() => {
                   regionWaterTotal("Samarqand");
                   regionWellTotal("Samarqand");
@@ -199,7 +212,11 @@ const Map = (props) => {
                 name="Samarkand"
               ></path>
               <path
-                className={`${mapRegion == "Qashqadarya" ? "on" : ""}`}
+                className={`${
+                  mapRegion == "Qashqadarya" || mapRegion == "Kashkadarya"
+                    ? "on"
+                    : ""
+                }`}
                 onClick={() => {
                   regionWaterTotal("Qashqadarya");
                   regionWellTotal("Qashqadarya");
@@ -216,7 +233,11 @@ const Map = (props) => {
                 name="Kashkadarya"
               ></path>
               <path
-                className={`${mapRegion == "Surxandaryo" ? "on" : ""}`}
+                className={`${
+                  mapRegion == "Surxandaryo" || mapRegion == "Surkhandarya"
+                    ? "on"
+                    : ""
+                }`}
                 onClick={() => {
                   regionWaterTotal("Surxandaryo");
                   regionWellTotal("Surxandaryo");
@@ -233,7 +254,9 @@ const Map = (props) => {
                 name="Surkhandarya"
               ></path>
               <path
-                className={`${mapRegion == "Andijon" ? "on" : ""}`}
+                className={`${
+                  mapRegion == "Andijon" || mapRegion == "Andijan" ? "on" : ""
+                }`}
                 onClick={() => {
                   regionWaterTotal("Andijon");
                   regionWellTotal("Andijon");
@@ -250,7 +273,9 @@ const Map = (props) => {
                 name="Andijon"
               ></path>
               <path
-                className={`${mapRegion == "Farg'ona" ? "on" : ""}`}
+                className={`${
+                  mapRegion == "Farg'ona" || mapRegion == "Ferghana" ? "on" : ""
+                }`}
                 onClick={() => {
                   regionWaterTotal("Farg'ona");
                   regionWellTotal("Farg'ona");
@@ -284,7 +309,9 @@ const Map = (props) => {
                 name="Namangan"
               ></path>
               <path
-                className={`${mapRegion == "Jizzax" ? "on" : ""}`}
+                className={`${
+                  mapRegion == "Jizzax" || mapRegion == "Jizzakh" ? "on" : ""
+                }`}
                 onClick={() => {
                   regionWaterTotal("Jizzax");
                   regionWellTotal("Jizzax");
@@ -318,7 +345,9 @@ const Map = (props) => {
                 name="Sirdaryo"
               ></path>
               <path
-                className={`${mapRegion == "Tashkent" ? "on" : ""}`}
+                className={`${
+                  mapRegion == "Tashkent" || mapRegion == "Toshkent" ? "on" : ""
+                }`}
                 onClick={() => {
                   regionWaterTotal("Tashkent");
                   regionWellTotal("Tashkent");
