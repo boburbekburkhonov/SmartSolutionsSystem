@@ -10,6 +10,7 @@ import partner5 from "../../assets/images/client-6.svg";
 import partner21 from "../../assets/images/tailhooo22.png";
 import partner22 from "../../assets/images/pngwing.com.png";
 import partner23 from "../../assets/images/wengsheng.png";
+import sisgeo from "../../assets/images/sisgeo.png";
 
 const Partners = (props) => {
   const { selectLan } = props;
@@ -79,6 +80,14 @@ const Partners = (props) => {
 
         <div className="container partners__container">
           <ul className="partners__list">
+            <li className="partners__item ">
+              <img
+                src={sisgeo}
+                alt=""
+                className="partners__img partners__img20"
+              />
+            </li>
+
             <li className="partners__item ">
               <img
                 src={partner21}

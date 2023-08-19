@@ -1,20 +1,18 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import "./NewsAbout.css";
 import { api, apiImage } from "../../Api/Api";
+import { useParams } from "react-router-dom";
 
 const NewsAbout = (props) => {
   const { selectLan } = props;
   const [dataNews, setDataNews] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
-    fetch(`${api}/users/news`)
+    fetch(`${api}/users/news/addition/${id}`)
       .then((res) => res.json())
       .then((data) => {
-        setDataNews([]);
-        const arr = data.filter((e) => e.len == selectLan);
-        setDataNews(arr);
+        setDataNews(data);
       });
   }, [selectLan]);
 
@@ -24,15 +22,17 @@ const NewsAbout = (props) => {
     });
   }, [props.location]);
 
+  dataNews.sort((a, b) => {
+    if (new Date(a.createAt).getTime() > new Date(b.createAt).getTime()) {
+      return -1;
+    }
+  });
+
   return (
     <>
       <main className="main">
         <h2 className="a_news__header">
-          {selectLan == "uz"
-            ? "Barcha Yangiliklar"
-            : selectLan == "eng"
-            ? "All News"
-            : null}
+          {window.localStorage.getItem("title")}
         </h2>
 
         <section className="a_news__about">
@@ -50,16 +50,14 @@ const NewsAbout = (props) => {
                         className="a_news__item"
                       >
                         <img
-                          src={`${apiImage}/${item.img}`}
-                          width={336}
-                          height={270}
+                          src={`${apiImage}/${item?.link}`}
                           alt=""
-                          className="a_news__img"
+                          className="a_news__img m-auto"
                         />
 
                         <div className="a_news__body text-center">
-                          <h3 className="a_news__title">{item.title}</h3>
-                          {item.desc.split("!@#").map((e) => {
+                          <h3 className="a_news__title">{item?.title}</h3>
+                          {item?.desc.split("!@#").map((e) => {
                             return (
                               <>
                                 <span className="a_news__desc text-start d-inline-block">
@@ -68,9 +66,9 @@ const NewsAbout = (props) => {
                               </>
                             );
                           })}
-                          <p className="a_news_location">{item.location}</p>
+                          <p className="a_news_location">{item?.location}</p>
                           <strong className="a_news__date d-none">
-                            {item.createAt}
+                            {item?.createAt}
                           </strong>
                         </div>
                       </li>

@@ -23,7 +23,7 @@ const Main = (props) => {
           <Services selectLan={selectLan} />
           <News selectLan={selectLan} />
           <Videos selectLan={selectLan} />
-          <Employees selectLan={selectLan} />
+          {/* <Employees selectLan={selectLan} /> */}
           <Message selectLan={selectLan} />
           <Partners selectLan={selectLan} />
 

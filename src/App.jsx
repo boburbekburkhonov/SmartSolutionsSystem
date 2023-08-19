@@ -137,7 +137,7 @@ function App() {
                 )}
               </li>
 
-              <li className="header-nav-item">
+              {/* <li className="header-nav-item">
                 {location.pathname == "/" ? (
                   <HashLink to="/#employees" className="header-nav-link">
                     {selectLan == "uz"
@@ -158,7 +158,7 @@ function App() {
                       : null}
                   </HashLink>
                 )}
-              </li>
+              </li> */}
 
               <li className="header-nav-item">
                 {location.pathname == "/" ? (
@@ -201,7 +201,10 @@ function App() {
               className={
                 location.pathname.split("/")[1] +
                   location.pathname.split("/")[2] ==
-                "productabout"
+                  "productabout" ||
+                location.pathname.split("/")[1] +
+                  location.pathname.split("/")[2] ==
+                  "newsabout"
                   ? "d-none"
                   : "form-select header-nav-select ms-3"
               }
@@ -242,7 +245,7 @@ function App() {
             element={<ServiceAbout location={location} selectLan={selectLan} />}
           />
           <Route
-            path="/news/about"
+            path="/news/about/:id"
             element={<NewsAbout location={location} selectLan={selectLan} />}
           />
           <Route
@@ -392,7 +395,7 @@ function App() {
                 )}
               </li>
 
-              <li className="footer-nav-item ms-0 mt-2">
+              {/* <li className="footer-nav-item ms-0 mt-2">
                 {location.pathname == "/" ? (
                   <HashLink to="/#employees" className="footer-nav-link">
                     {selectLan == "uz"
@@ -413,7 +416,7 @@ function App() {
                       : null}
                   </span>
                 )}
-              </li>
+              </li> */}
 
               <li className="footer-nav-item ms-0 mt-2">
                 {location.pathname == "/" ? (

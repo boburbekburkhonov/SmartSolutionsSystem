@@ -32,28 +32,20 @@ const News = (props) => {
 
   const items = dataNews?.map((item, index) => {
     return (
-      <div key={index} className="news__item">
-        <img
-          src={`${apiImage}/${item.img}`}
-          width={336}
-          height={270}
-          alt=""
-          className="news__img"
-        />
+      <div
+        key={index}
+        onClick={() => {
+          window.localStorage.setItem("title", item?.title);
+          navigate(`/news/about/${item.id}`);
+        }}
+        className="news__item"
+      >
+        <img src={`${apiImage}/${item?.img}`} alt="" className="news__img" />
 
         <div className="news__body">
-          <h3 className="news__header">{item.title}</h3>
-          {item.desc.split("!@#").map((e) => {
-            return (
-              <>
-                <span className="news__desc text-start d-inline-block">
-                  {e}
-                </span>
-              </>
-            );
-          })}
-          <p className="news_location">{item.location}</p>
-          <strong className="news__date d-none">{item.createAt}</strong>
+          <h3 className="news__header">{item?.title}</h3>
+          <p className="news_location">{item?.location}</p>
+          <strong className="news__date d-none">{item?.createAt}</strong>
         </div>
       </div>
     );
@@ -64,29 +56,13 @@ const News = (props) => {
       <section id="news" className="news__section">
         <div className="container news__container">
           <div className="news__top">
-            <h2 className="header__news mb-0 m-auto">
+            <h2 className="header__news mb-0 m-auto mb-5">
               {selectLan == "uz"
                 ? "Yangiliklar"
                 : selectLan == "eng"
                 ? "News"
                 : null}
             </h2>
-          </div>
-
-          <div className="mb-5">
-            <span
-              className="more-btn4 ms-auto text-decoration-none"
-              onClick={() => navigate("/news/about")}
-            >
-              <img src={right} alt="right" width="20" height="16" />
-              <span className="more-btn-span cursor-pointer">
-                {selectLan == "uz"
-                  ? "Barcha yangiliklar"
-                  : selectLan == "eng"
-                  ? "All News"
-                  : null}
-              </span>
-            </span>
           </div>
 
           <div className="news__bottom">
@@ -102,20 +78,6 @@ const News = (props) => {
                 items={items}
               />
             </ul>
-
-            <span
-              className="more-btn2 text-decoration-none cursor-pointer"
-              onClick={() => navigate("/news/about")}
-            >
-              <img src={right} alt="right" width="20" height="16" />
-              <span className="more-btn-span cursor-pointer">
-                {selectLan == "uz"
-                  ? "Barcha yangiliklar"
-                  : selectLan == "eng"
-                  ? "All News"
-                  : null}
-              </span>
-            </span>
           </div>
         </div>
       </section>
