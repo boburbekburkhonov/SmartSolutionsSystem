@@ -29,43 +29,53 @@ const Partners = (props) => {
         <div className="container partners__container">
           <ul className="partners__list">
             <li className="partners__item ">
-              <img
-                src={partner2}
-                alt=""
-                className="partners__img partners__img1"
-              />
+              <a href="#">
+                <img
+                  src={partner2}
+                  alt=""
+                  className="partners__img partners__img1"
+                />
+              </a>
             </li>
 
             <li className="partners__item">
-              <img
-                src={partner1}
-                alt=""
-                className="partners__img partners__img2"
-              />
+              <a href="#">
+                <img
+                  src={partner1}
+                  alt=""
+                  className="partners__img partners__img1"
+                />
+              </a>
             </li>
 
             <li className="partners__item">
-              <img
-                src={partner3}
-                alt=""
-                className="partners__img partners__img3"
-              />
+              <a href="https://iarc.uz/" target="_blank">
+                <img
+                  src={partner3}
+                  alt=""
+                  className="partners__img partners__img3"
+                />
+              </a>
             </li>
 
             <li className="partners__item">
-              <img
-                src={partner4}
-                alt=""
-                className="partners__img partners__img4"
-              />
+              <a href="https://water.gov.uz/uz" target="_blank">
+                <img
+                  src={partner4}
+                  alt=""
+                  className="partners__img partners__img3"
+                />
+              </a>
             </li>
 
             <li className="partners__item">
-              <img
-                src={partner5}
-                alt=""
-                className="partners__img partners__img5"
-              />
+              <a href="#" target="_blank">
+                <img
+                  src={partner5}
+                  alt=""
+                  className="partners__img partners__img3"
+                />
+              </a>
             </li>
           </ul>
         </div>
@@ -81,27 +91,33 @@ const Partners = (props) => {
         <div className="container partners__container">
           <ul className="partners__list">
             <li className="partners__item ">
-              <img
-                src={sisgeo}
-                alt=""
-                className="partners__img partners__img20"
-              />
+              <a href="https://www.sisgeo.com/" target="_blank">
+                <img
+                  src={sisgeo}
+                  alt=""
+                  className="partners__img partners__img20"
+                />
+              </a>
             </li>
 
             <li className="partners__item ">
-              <img
-                src={partner21}
-                alt=""
-                className="partners__img partners__img20"
-              />
+              <a href="https://tailhoo.en.alibaba.com/" target="_blank">
+                <img
+                  src={partner21}
+                  alt=""
+                  className="partners__img partners__img20"
+                />
+              </a>
             </li>
 
             <li className="partners__item ">
-              <img
-                src={partner22}
-                alt=""
-                className="partners__img partners__img20"
-              />
+              <a href="https://www.xylem.com/en-us/" target="_blank">
+                <img
+                  src={partner22}
+                  alt=""
+                  className="partners__img partners__img20"
+                />
+              </a>
             </li>
 
             <li className="partners__item ">

@@ -68,12 +68,12 @@ const News = (props) => {
           <div className="news__bottom">
             <ul className="news__list">
               <AliceCarousel
-                autoPlay={true}
+                // autoPlay={true}
                 autoPlayStrategy="all"
                 responsive={responsive}
-                animationDuration="2500"
+                animationDuration="900"
                 disableDotsControls={true}
-                autoPlayInterval={2000}
+                // autoPlayInterval={2000}
                 mouseTracking
                 items={items}
               />

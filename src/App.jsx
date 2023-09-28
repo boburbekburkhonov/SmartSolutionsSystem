@@ -17,6 +17,22 @@ function App() {
   const [selectLan, setSelectLan] = useState("uz");
   const location = useLocation();
   const navigate = useNavigate();
+  const view = localStorage.getItem("view");
+
+  if (view == null) {
+    fetch(`${api}/views/create`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        number: 1,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => data);
+    localStorage.setItem("view", true);
+  }
 
   const [dataProduct, setDataProduct] = useState([]);
 
@@ -282,7 +298,7 @@ function App() {
             height={55}
             alt="logo"
           />
-          <h2 className="footer__header">Smart solution System</h2>
+          <h2 className="footer__header">Smart solutions System</h2>
         </div>
 
         <div
@@ -300,7 +316,7 @@ function App() {
               height={55}
               alt="logo"
             />
-            <h2 className="footer__header">Smart solution System</h2>
+            <h2 className="footer__header">Smart solutions System</h2>
           </div>
 
           <div className="footer-among-wrapper d-flex flex-column align-items-start">

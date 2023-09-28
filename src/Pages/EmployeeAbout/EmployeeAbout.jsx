@@ -48,7 +48,7 @@ const EmployeeAbout = (props) => {
                 {dataEmployees.map((item, index) => {
                   return (
                     <li
-                      className="a_employees-item d-flex align-items-center justify-content-between flex-wrap"
+                      className="a_employees-item text-center d-flex align-items-center justify-content-between flex-wrap"
                       key={index}
                     >
                       <img

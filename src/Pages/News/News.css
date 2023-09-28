@@ -139,6 +139,7 @@
 
 .alice-carousel__stage-item {
   cursor: pointer;
+  overflow: hidden;
 }
 
 .alice-carousel__stage-item:hover {
@@ -149,6 +150,15 @@
   opacity: 0.5;
 }
 
+/* .alice-carousel__stage-item div img {
+  height: auto;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.alice-carousel__stage-item:hover div img {
+	width: 400px;
+} */
 
 @media (max-width: 900px) {
 
@@ -227,7 +237,6 @@
   }
 
 }
-
 
 @media (max-width: 510px) {
 

@@ -3,9 +3,11 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useEffect } from "react";
 import "./HeroAbout.css";
+import { useNavigate } from "react-router-dom";
 
 const HeroAbout = (props) => {
   const { selectLan } = props;
+  const navigate = useNavigate();
 
   useEffect(() => {
     window.scrollTo({
@@ -51,6 +53,19 @@ const HeroAbout = (props) => {
                     ? "Bizning mijozlarimiz"
                     : selectLan == "eng"
                     ? "Our customers"
+                    : null}
+                </a>
+              </li>
+
+              <li>
+                <a
+                  onClick={() => navigate("/employee/about")}
+                  className="a_hero_link a_hero_link-team"
+                >
+                  {selectLan == "uz"
+                    ? "Jamoa"
+                    : selectLan == "eng"
+                    ? "Team"
                     : null}
                 </a>
               </li>

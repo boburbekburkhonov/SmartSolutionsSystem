@@ -2,14 +2,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .hero {
-  padding-top: 250px !important;
   padding-bottom: 180px;
-  background-image: url(../../assets//images/heros2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgba(8, 8, 8, 0.301);
+}
+
+.video-wrapper video {
+  position: absolute;
+  top: -10;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -11;
 }
 
 .hero-wrapper {
+  padding: 0 10px 0 10px;
   margin: auto;
   max-width: 650px;
   text-align: center;
@@ -23,6 +40,8 @@
   font-weight: 700;
   font-size: 44px;
   font-family: 'Roboto', sans-serif;
+  text-shadow: 4px 7px 12px rgb(0, 0, 0);
+  color: white;
 }
 
 .hero-desc {
@@ -31,10 +50,15 @@
   font-weight: 400;
   font-size: 19px;
   font-family: 'Roboto', sans-serif;
+  text-shadow: 4px 7px 12px rgb(0, 0, 0);
+  color: white;
 }
 
 
 @media (max-width: 700px) {
+  .hero {
+    padding-bottom: 100px !important;
+  }
 
   .hero-heading {
     font-size: 35px;
@@ -47,9 +71,6 @@
 }
 
 @media (max-width: 550px) {
-  .hero {
-    padding-top: 210px !important;
-  }
 
   .hero-heading {
     font-size: 30px;
@@ -62,7 +83,9 @@
 }
 
 @media (max-width: 420px) {
-
+  .hero {
+    padding-bottom: 50px !important;
+  }
 
   .hero-heading {
     font-size: 28px;

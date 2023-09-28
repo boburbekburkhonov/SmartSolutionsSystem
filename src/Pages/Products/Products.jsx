@@ -41,8 +41,8 @@ const Products = (props) => {
                   <img
                     className="item__img"
                     src={`${apiImage}/${item.pImages[0]?.link}`}
-                    width={494}
-                    height={266}
+                    // width={494}
+                    // height={266}
                     alt=""
                   />
                   <div className="item__body">
